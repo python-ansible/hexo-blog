@@ -96,20 +96,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Dogblog">
-<meta property="og:url" content="https://python-ansible.github.io/hexo-blog/index.html">
+  <meta name="description" content="#本文主要介绍git init git add git commit的使用方法 ##git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use a">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git基础命令">
+<meta property="og:url" content="https://python-ansible.github.io/hexo-blog/2019/01/25/git基础命令/index.html">
 <meta property="og:site_name" content="Dogblog">
+<meta property="og:description" content="#本文主要介绍git init git add git commit的使用方法 ##git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use a">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-25T02:40:47.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dogblog">
+<meta name="twitter:title" content="git基础命令">
+<meta name="twitter:description" content="#本文主要介绍git init git add git commit的使用方法 ##git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use a">
 
 
 
 
 
 
-  <link rel="canonical" href="https://python-ansible.github.io/hexo-blog/">
+  <link rel="canonical" href="https://python-ansible.github.io/hexo-blog/2019/01/25/git基础命令/">
 
 
 
@@ -119,7 +124,7 @@
   };
 </script>
 
-  <title>Dogblog</title>
+  <title>git基础命令 | Dogblog</title>
   
 
 
@@ -167,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -268,9 +272,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -302,10 +306,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/hexo-blog/2019/01/25/git基础命令/" class="post-title-link" itemprop="url">git基础命令</a>
+          <h1 class="post-title" itemprop="name headline">git基础命令
+
               
             
           </h1>
@@ -387,15 +389,11 @@
       
 
       
-        
-          
-            <p>#本文主要介绍<code>git init</code> <code>git add</code> <code>git commit</code>的使用方法</p>
+        <p>#本文主要介绍<code>git init</code> <code>git add</code> <code>git commit</code>的使用方法</p>
 <p>##git init<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Initializes a new local Git repository.</span><br><span class="line"></span><br><span class="line"> - Initialize a new local repository:</span><br><span class="line">   git init</span><br><span class="line"></span><br><span class="line"> - Initialize a barebones repository, suitable for use as a remote over ssh:</span><br><span class="line">   git init --bare</span><br></pre></td></tr></table></figure></p>
 <p>##git add<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Adds changed files to the index.</span><br><span class="line"></span><br><span class="line">- Add a file to the index:</span><br><span class="line">  git add path/to/file</span><br><span class="line"></span><br><span class="line">- Add all files (tracked and untracked):</span><br><span class="line">  git add -A</span><br><span class="line"></span><br><span class="line">- Only add already tracked files:</span><br><span class="line">  git add -u</span><br><span class="line"></span><br><span class="line">- Also add ignored files:</span><br><span class="line">  git add -f</span><br><span class="line"></span><br><span class="line">- Add parts of a file interactively:</span><br><span class="line">  git add -p path/to/file</span><br></pre></td></tr></table></figure></p>
 <p>##git commit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Commit files to the repository.</span><br><span class="line"></span><br><span class="line">- Commit staged files to the repository with a message:</span><br><span class="line">  git commit -m message</span><br><span class="line"></span><br><span class="line">- Auto stage all modified files and commit with a message:</span><br><span class="line">  git commit -a -m message</span><br><span class="line"></span><br><span class="line">- Replace the last commit with currently staged changes:</span><br><span class="line">  git commit --ame</span><br><span class="line"> </span><br><span class="line">- Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template：</span><br><span class="line">  -v : --verbose</span><br><span class="line">  git commit -v</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
 
@@ -416,192 +414,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/hexo-blog/2019/01/24/linux基础命令/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/hexo-blog/2019/01/24/linux基础命令/" class="post-title-link" itemprop="url">linux基础命令</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-01-24 22:43:04" itemprop="dateCreated datePublished" datetime="2019-01-24T22:43:04+08:00">2019-01-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-25 10:35:52" itemprop="dateModified" datetime="2019-01-25T10:35:52+08:00">2019-01-25</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/hexo-blog/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/hexo-blog/tags/git/" rel="tag"># git</a>
           
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#介绍<code>ls</code> <code>cat</code> <code>mv</code> <code>touch</code> 的基本用法</p>
-<p>##ls<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">List directory contents.</span><br><span class="line">  </span><br><span class="line">- List files one per line:</span><br><span class="line">  ls -1</span><br><span class="line">   </span><br><span class="line">- List all files, including hidden files:</span><br><span class="line">  ls -a</span><br><span class="line">   </span><br><span class="line">- Long format list (permissions, ownership, size and modification date) of all files:</span><br><span class="line">  ls -la</span><br><span class="line">   </span><br><span class="line">- Long format list with size displayed using human readable units (KB, MB, GB):</span><br><span class="line">  ls -lh</span><br><span class="line">   </span><br><span class="line">- Long format list sorted by size (descending):</span><br><span class="line">  ls -lS</span><br><span class="line">   </span><br><span class="line">- Long format list of all files, sorted by modification date (oldest first):</span><br><span class="line">  ls -ltr</span><br></pre></td></tr></table></figure></p>
-<p>##cat</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Print and concatenate files.</span><br><span class="line"></span><br><span class="line">- Print the contents of a file to the standard output:</span><br><span class="line">  cat file</span><br><span class="line"></span><br><span class="line">- Concatenate several files into the target file:</span><br><span class="line">  cat file1 file2 &gt; target_file</span><br><span class="line"></span><br><span class="line">- Append several files into the target file:</span><br><span class="line">  cat file1 file2 &gt;&gt; target_file</span><br><span class="line"></span><br><span class="line">- Number all output lines:</span><br><span class="line">  cat -n file</span><br></pre></td></tr></table></figure>
-<p>##mv<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Move or rename files and directories.</span><br><span class="line"></span><br><span class="line">- Move files in arbitrary locations:</span><br><span class="line">  mv source target</span><br><span class="line"></span><br><span class="line">- Do not prompt for confirmation before overwriting existing files:</span><br><span class="line">  mv -f source target</span><br><span class="line"></span><br><span class="line">- Prompt for confirmation before overwriting existing files, regardless of file permissions:</span><br><span class="line">  mv -i source target</span><br><span class="line"></span><br><span class="line">- Do not overwrite existing files at the target:</span><br><span class="line">  mv -n source target</span><br><span class="line"></span><br><span class="line">- Move files in verbose mode, showing files after they are moved:</span><br><span class="line">  mv -v source target</span><br></pre></td></tr></table></figure></p>
-<p>##touch<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Change a file access and modification times (atime, mtime).</span><br><span class="line"></span><br><span class="line">- Create a new empty file(s) or change the times for existing file(s) to current time:</span><br><span class="line">  touch filename</span><br><span class="line"></span><br><span class="line">- Set the times on a file to a specific date and time:</span><br><span class="line">  touch -t YYYYMMDDHHMM.SS filename</span><br><span class="line"></span><br><span class="line">- Use the times from a file to set the times on a second file:</span><br><span class="line">  touch -r filename filename2</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/hexo-blog/2019/01/24/linux基础命令/" rel="next" title="linux基础命令">
+                <i class="fa fa-chevron-left"></i> linux基础命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -611,14 +453,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -841,6 +684,10 @@
 
 
   
+  <script src="/hexo-blog/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/hexo-blog/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -851,6 +698,8 @@
 
   
 
+
+  
 
 
   
