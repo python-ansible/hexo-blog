@@ -1,4 +1,4 @@
-/* normalize.css v3.0.2 | MIT License | git.io/normalize */
+/* normalize.css v3.0.2 | MIT License | git001.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #79ffff;
+  background: #b3c4f5;
 }
 .links-of-blogroll {
   font-size: 13px;
