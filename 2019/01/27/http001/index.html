@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="git,">
+  <meta name="keywords" content="http,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
-<meta name="keywords" content="git">
+<meta name="description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
+<meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git基础命令">
-<meta property="og:url" content="https://python-ansible.github.io/hexo-blog/2019/01/25/git001/index.html">
+<meta property="og:title" content="http001">
+<meta property="og:url" content="https://python-ansible.github.io/hexo-blog/2019/01/27/http001/index.html">
 <meta property="og:site_name" content="Dogblog">
-<meta property="og:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
+<meta property="og:description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-25T11:05:26.256Z">
+<meta property="og:updated_time" content="2019-01-27T14:57:20.791Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git基础命令">
-<meta name="twitter:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
+<meta name="twitter:title" content="http001">
+<meta name="twitter:description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://python-ansible.github.io/hexo-blog/2019/01/25/git001/">
+  <link rel="canonical" href="https://python-ansible.github.io/hexo-blog/2019/01/27/http001/">
 
 
 
 
 
-  <title>git基础命令 | Dogblog</title>
+  <title>http001 | Dogblog</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/hexo-blog/2019/01/25/git001/">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/hexo-blog/2019/01/27/http001/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang Zelin">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git基础命令</h1>
+          <h1 class="post-title" itemprop="name headline">http001</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T10:23:04+08:00">
-                2019-01-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-27T22:04:55+08:00">
+                2019-01-27
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/hexo-blog/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -384,9 +384,8 @@
       
 
       
-        <h1 id="本文主要介绍git-init-git-add-git-commit的使用方法"><a href="#本文主要介绍git-init-git-add-git-commit的使用方法" class="headerlink" title="本文主要介绍git init git add git commit的使用方法"></a>本文主要介绍<code>git init</code> <code>git add</code> <code>git commit</code>的使用方法</h1><h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Initializes a new local Git repository.</span><br><span class="line"></span><br><span class="line"> - Initialize a new local repository:</span><br><span class="line">   git init</span><br><span class="line"></span><br><span class="line"> - Initialize a barebones repository, suitable for use as a remote over ssh:</span><br><span class="line">   git init --bare</span><br></pre></td></tr></table></figure>
-<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Adds changed files to the index.</span><br><span class="line"></span><br><span class="line">- Add a file to the index:</span><br><span class="line">  git add path/to/file</span><br><span class="line"></span><br><span class="line">- Add all files (tracked and untracked):</span><br><span class="line">  git add -A</span><br><span class="line"></span><br><span class="line">- Only add already tracked files:</span><br><span class="line">  git add -u</span><br><span class="line"></span><br><span class="line">- Also add ignored files:</span><br><span class="line">  git add -f</span><br><span class="line"></span><br><span class="line">- Add parts of a file interactively:</span><br><span class="line">  git add -p path/to/file</span><br></pre></td></tr></table></figure>
-<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Commit files to the repository.</span><br><span class="line"></span><br><span class="line">- Commit staged files to the repository with a message:</span><br><span class="line">  git commit -m message</span><br><span class="line"></span><br><span class="line">- Auto stage all modified files and commit with a message:</span><br><span class="line">  git commit -a -m message</span><br><span class="line"></span><br><span class="line">- Replace the last commit with currently staged changes:</span><br><span class="line">  git commit --ame</span><br><span class="line"> </span><br><span class="line">- Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template：</span><br><span class="line">  -v : --verbose</span><br><span class="line">  git commit -v</span><br></pre></td></tr></table></figure>
+        <h1 id="HTTP学习01"><a href="#HTTP学习01" class="headerlink" title="HTTP学习01"></a>HTTP学习01</h1><h2 id="HTTP起源"><a href="#HTTP起源" class="headerlink" title="HTTP起源"></a>HTTP起源</h2><h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h2 id="CURL命令学习"><a href="#CURL命令学习" class="headerlink" title="CURL命令学习"></a>CURL命令学习</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Transfers data from or to a server.<br>支持大多数协议，包括HTTP，FTP and POP3<br>这里主要介绍HTTP相关的。</p>
+
       
     </div>
     
@@ -403,7 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/hexo-blog/tags/git/" rel="tag"># git</a>
+            <a href="/hexo-blog/tags/http/" rel="tag"># http</a>
           
         </div>
       
@@ -416,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo-blog/2019/01/24/linux001/" rel="next" title="linux基础命令">
-                <i class="fa fa-chevron-left"></i> linux基础命令
+              <a href="/hexo-blog/2019/01/25/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
               </a>
             
           </div>
@@ -426,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/hexo-blog/2019/01/25/hexo001/" rel="prev" title="hexo教程001">
-                hexo教程001 <i class="fa fa-chevron-right"></i>
+              <a href="/hexo-blog/2019/01/27/html001/" rel="prev" title="html001">
+                html001 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文主要介绍git-init-git-add-git-commit的使用方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍git init git add git commit的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">1.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">1.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">1.3.</span> <span class="nav-text">git commit</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP学习01"><span class="nav-number">1.</span> <span class="nav-text">HTTP学习01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP起源"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP响应"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CURL命令学习"><span class="nav-number">1.4.</span> <span class="nav-text">CURL命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
