@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
+<meta name="description" content="HTTP学习01HTTP起源HTTP全称HTTP即HyperText Transfer Protocol，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。 HTTP1.1改进： 缓存处理 带宽优化及网络连接的使用 错误通知的管理 消息在网络中的发送 互联网地址的维护 安全性及完整性  HTTP2.0:最初由google研发，2015年5月作为互联网标准正式发布。 HTTP请求请求方">
 <meta name="keywords" content="http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="http001">
+<meta property="og:title" content="http1.1学习">
 <meta property="og:url" content="https://python-ansible.github.io/2019/01/27/http001/index.html">
 <meta property="og:site_name" content="Dogblog">
-<meta property="og:description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
+<meta property="og:description" content="HTTP学习01HTTP起源HTTP全称HTTP即HyperText Transfer Protocol，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。 HTTP1.1改进： 缓存处理 带宽优化及网络连接的使用 错误通知的管理 消息在网络中的发送 互联网地址的维护 安全性及完整性  HTTP2.0:最初由google研发，2015年5月作为互联网标准正式发布。 HTTP请求请求方">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-27T14:57:20.791Z">
+<meta property="og:updated_time" content="2019-01-29T01:34:35.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="http001">
-<meta name="twitter:description" content="HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。">
+<meta name="twitter:title" content="http1.1学习">
+<meta name="twitter:description" content="HTTP学习01HTTP起源HTTP全称HTTP即HyperText Transfer Protocol，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。 HTTP1.1改进： 缓存处理 带宽优化及网络连接的使用 错误通知的管理 消息在网络中的发送 互联网地址的维护 安全性及完整性  HTTP2.0:最初由google研发，2015年5月作为互联网标准正式发布。 HTTP请求请求方">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>http001 | Dogblog</title>
+  <title>http1.1学习 | Dogblog</title>
   
 
 
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">http001</h1>
+          <h1 class="post-title" itemprop="name headline">http1.1学习</h1>
         
 
         <div class="post-meta">
@@ -384,7 +384,87 @@
       
 
       
-        <h1 id="HTTP学习01"><a href="#HTTP学习01" class="headerlink" title="HTTP学习01"></a>HTTP学习01</h1><h2 id="HTTP起源"><a href="#HTTP起源" class="headerlink" title="HTTP起源"></a>HTTP起源</h2><h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h2 id="CURL命令学习"><a href="#CURL命令学习" class="headerlink" title="CURL命令学习"></a>CURL命令学习</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Transfers data from or to a server.<br>支持大多数协议，包括HTTP，FTP and POP3<br>这里主要介绍HTTP相关的。</p>
+        <h2 id="HTTP学习01"><a href="#HTTP学习01" class="headerlink" title="HTTP学习01"></a>HTTP学习01</h2><h3 id="HTTP起源"><a href="#HTTP起源" class="headerlink" title="HTTP起源"></a>HTTP起源</h3><h4 id="HTTP全称"><a href="#HTTP全称" class="headerlink" title="HTTP全称"></a>HTTP全称</h4><p>HTTP即HyperText Transfer Protocol，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。</p>
+<h4 id="HTTP1-1改进："><a href="#HTTP1-1改进：" class="headerlink" title="HTTP1.1改进："></a>HTTP1.1改进：</h4><ul>
+<li>缓存处理</li>
+<li>带宽优化及网络连接的使用</li>
+<li>错误通知的管理</li>
+<li>消息在网络中的发送</li>
+<li>互联网地址的维护</li>
+<li>安全性及完整性</li>
+</ul>
+<h4 id="HTTP2-0"><a href="#HTTP2-0" class="headerlink" title="HTTP2.0:"></a>HTTP2.0:</h4><p>最初由google研发，2015年5月作为互联网标准正式发布。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><h4 id="请求方法8种"><a href="#请求方法8种" class="headerlink" title="请求方法8种"></a>请求方法8种</h4><ul>
+<li>GET<br>读取数据</li>
+<li>HEAD<br>与GET一样是发出资源请求，服务器不返回资源的文本部分。</li>
+<li>POST<br>提交数据（文件或表单）</li>
+<li>PUT<br>上传最新内容（多用于修改）</li>
+<li>DELETE<br>删除资源</li>
+<li>TRACE<br>回显服务器收到的请求，用于测试或诊断</li>
+<li>OPTIONS<br>返回资源支持的所有HTTP方法</li>
+<li>CONNECT<br>将连接改为管道方式的代理服务器，多用于SSL加密服务的连接。</li>
+</ul>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><ul>
+<li><p>1xx消息–请求已经被服务器接受，继续处理<br>不常用，略</p>
+</li>
+<li><p>2xx成功–请求已成功被服务器接收、理解、并接受<br>常用响应如下：  </p>
+<ul>
+<li>201 Created：创建成功，返回URI</li>
+<li>202 Accepted：服务器已接受请求，多用于异步。</li>
+<li>204 No Content: 服务器成功处理了请求，不返回任何内容。</li>
+</ul>
+</li>
+<li><p>3xx重定向–需要后续操作才能完成这一请求<br>常用响应如下：</p>
+<ul>
+<li>301 Moved Permanently：资源已永久移动，在<strong>Location</strong>中返回新的若干个URI。</li>
+<li>302 Found：临时重定向</li>
+<li>303 See Other：为了替代302，实现POST后的GET重定向。</li>
+<li>304 Not Modified: 资源未改变，使用缓存。</li>
+</ul>
+</li>
+<li><p>4xx请求错误–请求含有词法错误或者无法被执行<br>常用响应如下：</p>
+<ul>
+<li>400 Bad Request：客户端明显错误</li>
+<li>401 Unauthorized：未认证</li>
+<li>403 Forbidden：拒绝执行</li>
+<li>404 Not Found：找不到资源</li>
+<li>405 Method Not Allowed</li>
+<li>408 Request Timeout</li>
+<li>409 Conflict</li>
+<li>423 Locked</li>
+<li>429 Too Many Requests</li>
+</ul>
+</li>
+<li><p>5xx服务器错误–服务器在处理某个正确请求时发生错误<br>常用响应如下：</p>
+<ul>
+<li>500 Internal Server Error:</li>
+<li>502 Bad Gateway:</li>
+<li>503 Service Unavailable</li>
+<li>504 Gateway Timeout</li>
+</ul>
+</li>
+</ul>
+<h3 id="CURL命令学习"><a href="#CURL命令学习" class="headerlink" title="CURL命令学习"></a>CURL命令学习</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>Transfers data from or to a server.<br>支持大多数协议，包括HTTP，FTP and POP3 ，这里主要介绍HTTP相关的。</p>
+<h4 id="全称"><a href="#全称" class="headerlink" title="全称"></a>全称</h4><p>Command Line URL Viewer，是一个Linux命令行工具。</p>
+<p>####用法简介</p>
+<ul>
+<li><p>下载URL内容到文件[output]：<br>curl <code>http://www.baidu.com</code> -o filename</p>
+</li>
+<li><p>将url输出保存在对应的文件名下[remote-name]：<br>curl -O <code>http://www.baidu.com/filename</code></p>
+</li>
+<li><p>跟随重定向[Location]，自动续传[Continue]，保存到对应的文件名下：<br>curl -O -L -C <code>http://www.baidu.com/filename</code></p>
+</li>
+<li><p>模拟post请求[data]:<br>curl -d ‘name=bob’ <code>http://www.baidu.com/form</code></p>
+</li>
+<li><p>指定method(默认GET）和[header]:<br>curl -H ‘X-My-Header: 123’ -X PUT <code>http://www.baidu.com</code></p>
+</li>
+<li><p>发送Json数据，指定content-type：<br>curl -d ‘{“name”: “bob”}’ -H ‘Content-Type: application/json’ <code>http://www.baidu.com/users/1234</code></p>
+</li>
+<li><p>使用用户认证[user authentication]：<br>curl -u username:password <code>http://www.baidu.com</code></p>
+</li>
+<li><p>传递客户端证书[certificate]和资源密钥[key]，跳过证书验证：<br>curl –cert client.pem –key key.pem –insecure <code>https://www.baidu.com</code></p>
+</li>
+</ul>
 
       
     </div>
@@ -589,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP学习01"><span class="nav-number">1.</span> <span class="nav-text">HTTP学习01</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP起源"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP响应"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CURL命令学习"><span class="nav-number">1.4.</span> <span class="nav-text">CURL命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP学习01"><span class="nav-number">1.</span> <span class="nav-text">HTTP学习01</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP起源"><span class="nav-number">1.1.</span> <span class="nav-text">HTTP起源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP全称"><span class="nav-number">1.1.1.</span> <span class="nav-text">HTTP全称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP1-1改进："><span class="nav-number">1.1.2.</span> <span class="nav-text">HTTP1.1改进：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP2-0"><span class="nav-number">1.1.3.</span> <span class="nav-text">HTTP2.0:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求方法8种"><span class="nav-number">1.2.1.</span> <span class="nav-text">请求方法8种</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP响应"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CURL命令学习"><span class="nav-number">1.4.</span> <span class="nav-text">CURL命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">1.4.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全称"><span class="nav-number">1.4.2.</span> <span class="nav-text">全称</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

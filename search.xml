@@ -23,9 +23,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[http001]]></title>
+    <title><![CDATA[http1.1学习]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F27%2Fhttp001%2F</url>
-    <content type="text"><![CDATA[HTTP学习01HTTP起源HTTP请求HTTP响应CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3这里主要介绍HTTP相关的。]]></content>
+    <content type="text"><![CDATA[HTTP学习01HTTP起源HTTP全称HTTP即HyperText Transfer Protocol，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。 HTTP1.1改进： 缓存处理 带宽优化及网络连接的使用 错误通知的管理 消息在网络中的发送 互联网地址的维护 安全性及完整性 HTTP2.0:最初由google研发，2015年5月作为互联网标准正式发布。 HTTP请求请求方法8种 GET读取数据 HEAD与GET一样是发出资源请求，服务器不返回资源的文本部分。 POST提交数据（文件或表单） PUT上传最新内容（多用于修改） DELETE删除资源 TRACE回显服务器收到的请求，用于测试或诊断 OPTIONS返回资源支持的所有HTTP方法 CONNECT将连接改为管道方式的代理服务器，多用于SSL加密服务的连接。 HTTP响应 1xx消息–请求已经被服务器接受，继续处理不常用，略 2xx成功–请求已成功被服务器接收、理解、并接受常用响应如下： 201 Created：创建成功，返回URI 202 Accepted：服务器已接受请求，多用于异步。 204 No Content: 服务器成功处理了请求，不返回任何内容。 3xx重定向–需要后续操作才能完成这一请求常用响应如下： 301 Moved Permanently：资源已永久移动，在Location中返回新的若干个URI。 302 Found：临时重定向 303 See Other：为了替代302，实现POST后的GET重定向。 304 Not Modified: 资源未改变，使用缓存。 4xx请求错误–请求含有词法错误或者无法被执行常用响应如下： 400 Bad Request：客户端明显错误 401 Unauthorized：未认证 403 Forbidden：拒绝执行 404 Not Found：找不到资源 405 Method Not Allowed 408 Request Timeout 409 Conflict 423 Locked 429 Too Many Requests 5xx服务器错误–服务器在处理某个正确请求时发生错误常用响应如下： 500 Internal Server Error: 502 Bad Gateway: 503 Service Unavailable 504 Gateway Timeout CURL命令学习定义Transfers data from or to a server.支持大多数协议，包括HTTP，FTP and POP3 ，这里主要介绍HTTP相关的。 全称Command Line URL Viewer，是一个Linux命令行工具。 ####用法简介 下载URL内容到文件[output]：curl http://www.baidu.com -o filename 将url输出保存在对应的文件名下[remote-name]：curl -O http://www.baidu.com/filename 跟随重定向[Location]，自动续传[Continue]，保存到对应的文件名下：curl -O -L -C http://www.baidu.com/filename 模拟post请求[data]:curl -d ‘name=bob’ http://www.baidu.com/form 指定method(默认GET）和[header]:curl -H ‘X-My-Header: 123’ -X PUT http://www.baidu.com 发送Json数据，指定content-type：curl -d ‘{“name”: “bob”}’ -H ‘Content-Type: application/json’ http://www.baidu.com/users/1234 使用用户认证[user authentication]：curl -u username:password http://www.baidu.com 传递客户端证书[certificate]和资源密钥[key]，跳过证书验证：curl –cert client.pem –key key.pem –insecure https://www.baidu.com]]></content>
       <categories>
         <category>http</category>
       </categories>
