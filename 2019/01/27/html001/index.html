@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:description" content="起源 HTML 全称 HyperText Markup Language 超文本标记语言，常与CSS、JavaScript一起设计网页。 HTML 主要负责网站的结构和内容   CSS 主要负责网站的样式   JavaScript 主要负责网站的行为 HTML和CSS的标准均由W3C(万维网联盟)指定和发布 本文主要介绍HTML5的常用标签  HTML 学习网站 MDN W3school Quiz">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-30T05:13:29.001Z">
+<meta property="og:updated_time" content="2019-01-30T06:38:28.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html语言学习01">
 <meta name="twitter:description" content="起源 HTML 全称 HyperText Markup Language 超文本标记语言，常与CSS、JavaScript一起设计网页。 HTML 主要负责网站的结构和内容   CSS 主要负责网站的样式   JavaScript 主要负责网站的行为 HTML和CSS的标准均由W3C(万维网联盟)指定和发布 本文主要介绍HTML5的常用标签  HTML 学习网站 MDN W3school Quiz">
@@ -400,7 +400,9 @@
 <h2 id="HTML-常用标签"><a href="#HTML-常用标签" class="headerlink" title="HTML 常用标签"></a>HTML 常用标签</h2><h3 id="a-anchor-锚元素"><a href="#a-anchor-锚元素" class="headerlink" title="a anchor 锚元素"></a>a anchor 锚元素</h3><ul>
 <li>可以创建一个到其他网页、文件、同一页面其他位置、电子邮件地址或者其他URL的超链接<br></li>
 <li>描述部分可以嵌套img使用<br></li>
-<li>示例：<code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</code></li>
+<li>_top/_blank/_parent/_slef</li>
+<li>示例：<br><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</code></li>
+<li>伪协议，待补充。<br><code>&lt;a href=&quot;javascript:;&quot; name=&quot;price&quot;&gt;test&lt;/a&gt;</code></li>
 </ul>
 <p>###head </p>
 <ul>
@@ -529,7 +531,8 @@
 <h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><ul>
 <li>二维表格数据</li>
 <li>thead tbody tfoot</li>
-<li>td table data tr table row th table head<br>示例：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Table with thead, tfoot, and tbody<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Header content 1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Header content 2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Body data 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Body data 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tfoot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Footer data 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Footer data 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<li>td table data tr table row th table head</li>
+<li>col colgroup 待补充<br>示例：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Table with thead, tfoot, and tbody<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Header content 1<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">th</span>&gt;</span>Header content 2<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Body data 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Body data 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tfoot</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Footer data 1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">td</span>&gt;</span>Footer data 2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>效果：</p>
@@ -556,6 +559,12 @@
 <h3 id="svg-Scalable-Vector-Graphics"><a href="#svg-Scalable-Vector-Graphics" class="headerlink" title="svg Scalable Vector Graphics"></a>svg Scalable Vector Graphics</h3><ul>
 <li>不规则图形</li>
 <li>未完待续</li>
+</ul>
+<p>###iframe</p>
+<ul>
+<li>内联框架元素，将另一个HTML页面嵌入到当前页面</li>
+<li>示例：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"#"</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">title</span>=<span class="string">"iframe example 1"</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">width</span>=<span class="string">"400"</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="空元素-empty-element"><a href="#空元素-empty-element" class="headerlink" title="空元素 empty element"></a>空元素 empty element</h2><ul>
 <li>不存在子节点的元素</li>
@@ -693,7 +702,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -704,7 +713,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -715,7 +724,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
