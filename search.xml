@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[bash002]]></title>
+    <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fbash002%2F</url>
+    <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css001]]></title>
+    <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fcss001%2F</url>
+    <content type="text"><![CDATA[CSS 学习加载css方式1234内联 style 属性style 标签&lt;link rel="stylesheet" href="./a.css"&gt;@import url(./a.css); clearfix12345.clearfix::after&#123; content: ''; display: block; clear: both;&#125; 横向布局方式 父模块 clearfix子模块 float: right; left; display: inline-block; 有bug 背景背景图片background-image:url(./1.JPG); 背景颜色background: #F7F8FA; 16进制 字体font-family: “Arial Black”;font-size: 13px;font-weight: normal; bold; 加粗font-style: normal; italic;斜体 oblique;倾斜体color: rgba(255, 255, 255, 0.7); 下划线text-decoration: none; 取消下划线 内边距 padding12345678910111213141516padding-top: 1px;padding-right: 1px;padding-bottom: 1px;padding-left: 1px;padding: 0; #四个边#垂直方向| 水平方向padding: 5px 0; 垂直方向 水平方向#顶部| 水平方向| 底部padding: 1px 2px 3px;#上右下左，顺时针方向padding: 1px 1px 1px 1px; padding: inherit; 外边距 marginmargin-top:margin-right:margin-bottom:margin-left:margin: top right bottom leftmargin: 0;margin 取值支持：auto length 包含两种：em 字距 px 像素 列表样式list-stylelist-style:none; 无样式circle; 圆点标记square inside; 方点标记 ###border 边框支持三种属性：width 宽度style 样式color 颜色支持四个方向 border-bottomborder-bottom: 3px solid transparent; 3像素坚实透明border-bottom-color: #DC6465; border 调试大法border: 1px solid red; text-align 行内对齐text-align: left; center; justify-all;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[jetbrains]]></title>
+    <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fjetbrains%2F</url>
+    <content type="text"><![CDATA[surround with mac:command + shift + T win:ctrl + alt + T ##格式化代码 mac: command + option + L win: ctrl + alt + L]]></content>
+      <categories>
+        <category>jetbrains</category>
+      </categories>
+      <tags>
+        <tag>jetbrains</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[bash001]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F31%2Fbash001%2F</url>
     <content type="text"><![CDATA[转载自：LinuxTOY 编辑命令 Ctrl + a ：移到命令行首 Ctrl + e ：移到命令行尾 Ctrl + f ：按字符前移（右向） Ctrl + b ：按字符后移（左向） Alt + f ：按单词前移（右向） Alt + b ：按单词后移（左向） Ctrl + xx：在命令行首和光标之间移动 Ctrl + u ：从光标处删除至命令行首 Ctrl + k ：从光标处删除至命令行尾 Ctrl + w ：从光标处删除至字首 Alt + d ：从光标处删除至字尾 Ctrl + d ：删除光标处的字符 Ctrl + h ：删除光标前的字符 Ctrl + y ：粘贴至光标后 Alt + c ：从光标处更改为首字母大写的单词 Alt + u ：从光标处更改为全部大写的单词 Alt + l ：从光标处更改为全部小写的单词 Ctrl + t ：交换光标处和之前的字符 Alt + t ：交换光标处和之前的单词 Alt + Backspace：与 Ctrl + w 相同类似，分隔符有些差别 [感谢 rezilla 指正] 重新执行命令 Ctrl + r：逆向搜索命令历史 Ctrl + g：从历史搜索模式退出 Ctrl + p：历史中的上一条命令 Ctrl + n：历史中的下一条命令 Alt + .：使用上一条命令的最后一个参数 控制命令 Ctrl + l：清屏 Ctrl + o：执行当前命令，并选择上一条命令 Ctrl + s：阻止屏幕输出 Ctrl + q：允许屏幕输出 Ctrl + c：终止命令 Ctrl + z：挂起命令 Bang (!) 命令 !!：执行上一条命令 !blah：执行最近的以 blah 开头的命令，如 !ls !blah:p：仅打印输出，而不执行 !$：上一条命令的最后一个参数，与 Alt + . 相同 !$:p：打印输出 !$ 的内容 !*：上一条命令的所有参数 !:p：打印输出 ! 的内容 ^blah：删除上一条命令中的 blah ^blah^foo：将上一条命令中的 blah 替换为 foo ^blah^foo^：将上一条命令中所有的 blah 都替换为 foo 友情提示：以上介绍的大多数 Bash 快捷键仅当在 emacs 编辑模式时有效，若你将 Bash 配置为 vi 编辑模式，那将遵循 vi 的按键绑定。Bash 默认为 emacs 编辑模式。如果你的 Bash 不在 emacs 编辑模式，可通过 set -o emacs 设置。 ^S、^Q、^C、^Z 是由终端设备处理的，可用 stty 命令设置。]]></content>
@@ -14,7 +47,7 @@
   <entry>
     <title><![CDATA[vim学习]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F31%2Fvim001%2F</url>
-    <content type="text"><![CDATA[vim教程vimtutoroperator [number] motionvim支持重复操作，只要在motion前加入[number] 移动12345678光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。h (左移)j (下行) k (上行) l (右移)行首：0行尾：$ 进入1vim $file 退出12:q! 放弃所有改动。:wq 保存改动。 插入123456o 在光标下方插入一行。O 在光标上方插入一行。i 在光标前插入文本a 在光标后插入文本。A 在光标所在的行末之后插入文本。 operator [number] motion123456789在正常模式下修改命令的格式是：operator [number] motion其中：operator - 操作符，代表要做的事情，比如 d 代表删除[number] - 可以附加的数字，代表动作重复的次数motion - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，e 使光标移动到单词末尾。 2w #向前移动两个单词3e #向前移动三个单词的末尾0 #移动到行首 撤销123撤消以前的操作：u撤消在一行中所做的改动：U撤消以前的撤消命令，恢复以前的操作结果：CTRL-R 删除、复制、粘贴1234567891011121314在正常模式下删除光标所在位置的字符：x从当前光标删除至下一个单词：dw从当前光标删除至当前行末尾：d$删除整行：dd删除到当前单词末尾：de 2dd #ndd删除多行d4w&amp;d3w #删除大写字母单词 this line FGHI JK LMN OP of words is Q RS TUV cleaned up.—》this line of words is cleaned up.yy-p #即复制粘贴删除后的内容，会放在vim寄存器中，使用p可以粘贴。内容置于光标之后，如果删除的是整行，将置于当前光标所在行的下一行。 替换12345678910111213r 替换光标所在位置 R 进入替换模式，按 &lt;ESC&gt; 键回到正常模式。ce 可以替换当前光标到单词末尾的内容；c$ 可以替换当前光标到行末的内容。cwc [number] e|w #多个单词的替换行内替换第一个字符串:s/old/new行内替换所有字符串:s/old/new/g在两行内替换所有字符串:#,#s/old/new/g文件内替换所有字符串:%s/old/new/g全文替换时确认每个替换:%s/old/new/gc 跳转1234CTRL-G 显示光标所在位置和文件信息。G 将光标跳转至文件最后一行。gg 将光标跳转至文件第一行。[number]G #跳转任意行 查找12345678/ $str 正向查找字符串。? $str 反向查找字符串。n 键重复上一次的命令N 向相反方向查找CTRL-O 跳转回旧的位置，CTRL-I 带您到较新的位置。如果光标当前位置是括号(、)、[、]、&#123;、&#125;，按 % 会将光标移动到配对的括号上。 外部命令1234567891011121314:!command 用于执行一个外部命令 command。请看一些实际例子：(MS-DOS) (Unix):!dir :!ls - 用于显示当前目录的内容。:!del FILENAME :!rm FILENAME - 用于删除名为 FILENAME 的文件。:w FILENAME 将当前 VIM 中编辑的文件保存到FILENAME中。v motion :w FILENAME 将编辑文件中可视模式下选中的内容保存到FILENAME 中。:r FILENAME 读取磁盘文件 FILENAME 将其插入到当前文件的光标位置后。:r !dir 可以读取 dir 命令的输出并将其放到当前文件的光标后面。 选项设置1234567:set xxx ，一些有用的选项如下：&apos;ic&apos; &apos;ignorecase&apos; 查找时忽略字母大小写&apos;is&apos; &apos;incsearch&apos; 查找短语时显示部分匹配&apos;hls&apos; &apos;hlsearch&apos; 高亮显示所有的匹配短语选项名可以用完整版本，也可以用缩略版本。在选项前加上 no 可以关闭选项： :set noic 帮助1234567891011121314:help 或者按 &lt;F1&gt; 键或 &lt;Help&gt; 键可以打开帮助窗口。:help cmd 可以找到关于 cmd 命令的帮助。CTRL-W CTRL-W 可以使您在窗口之间跳转。:q 以关闭帮助窗口可以创建 vimrc 启动脚本文件用来保存偏好设置。读取vimrc 示例文件 :r $VIMRUNTIME/vimrc_example.vim输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。按 &lt;TAB&gt; 可以使用一个补全。 以后再研究z 和 fzf 快速搜索zsh 比vim更好用 ColorPix 取色工具]]></content>
+    <content type="text"><![CDATA[vim教程vimtutoroperator [number] motionvim支持重复操作，只要在motion前加入[number] 移动12345678光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。h (左移)j (下行) k (上行) l (右移)行首：0行尾：$ 进入1vim $file 退出12:q! 放弃所有改动。:wq 保存改动。 插入123456o 在光标下方插入一行。O 在光标上方插入一行。i 在光标前插入文本a 在光标后插入文本。A 在光标所在的行末之后插入文本。 operator [number] motion123456789在正常模式下修改命令的格式是：operator [number] motion其中：operator - 操作符，代表要做的事情，比如 d 代表删除[number] - 可以附加的数字，代表动作重复的次数motion - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，e 使光标移动到单词末尾。 2w #向前移动两个单词3e #向前移动三个单词的末尾0 #移动到行首 撤销123撤消以前的操作：u撤消在一行中所做的改动：U撤消以前的撤消命令，恢复以前的操作结果：CTRL-R 删除、复制、粘贴1234567891011121314在正常模式下删除光标所在位置的字符：x从当前光标删除至下一个单词：dw从当前光标删除至当前行末尾：d$删除整行：dd删除到当前单词末尾：de 2dd #ndd删除多行d4w&amp;d3w #删除大写字母单词 this line FGHI JK LMN OP of words is Q RS TUV cleaned up.—》this line of words is cleaned up.yy-p #即复制粘贴删除后的内容，会放在vim寄存器中，使用p可以粘贴。内容置于光标之后，如果删除的是整行，将置于当前光标所在行的下一行。 替换12345678910111213r 替换光标所在位置 R 进入替换模式，按 &lt;ESC&gt; 键回到正常模式。ce 可以替换当前光标到单词末尾的内容；c$ 可以替换当前光标到行末的内容。cwc [number] e|w #多个单词的替换行内替换第一个字符串:s/old/new行内替换所有字符串:s/old/new/g在两行内替换所有字符串:#,#s/old/new/g文件内替换所有字符串:%s/old/new/g全文替换时确认每个替换:%s/old/new/gc 跳转123456789CTRL-G 显示光标所在位置和文件信息。G 将光标跳转至文件最后一行。gg 将光标跳转至文件第一行。[number]G #跳转任意行ctrl+f 向下翻页ctrl+b 向上翻页ctrl+d 向下半页ctrl+u 向上半页 查找12345678/ $str 正向查找字符串。? $str 反向查找字符串。n 键重复上一次的命令N 向相反方向查找CTRL-O 跳转回旧的位置，CTRL-I 带您到较新的位置。如果光标当前位置是括号(、)、[、]、&#123;、&#125;，按 % 会将光标移动到配对的括号上。 编码常用12345678910111213141516zo 打开代码折叠zc 关闭代码折叠注：可以是任意的成对符号，比如&apos; &quot; ( [ &#123; &lt;ci$ 更改符号内的文本di$ 删除符号内的文本yi$ 复制符号内的文本vi$ 选中符号内的文本i-&gt;a 即包括符号一起复制系统剪贴板内容到vimreg 查看寄存器按照提示操作，最后需要加上p复制vim到系统剪贴板&quot;+yy 复制当前行&quot;+ny 复制n行 外部命令1234567891011121314:!command 用于执行一个外部命令 command。请看一些实际例子：(MS-DOS) (Unix):!dir :!ls - 用于显示当前目录的内容。:!del FILENAME :!rm FILENAME - 用于删除名为 FILENAME 的文件。:w FILENAME 将当前 VIM 中编辑的文件保存到FILENAME中。v motion :w FILENAME 将编辑文件中可视模式下选中的内容保存到FILENAME 中。:r FILENAME 读取磁盘文件 FILENAME 将其插入到当前文件的光标位置后。:r !dir 可以读取 dir 命令的输出并将其放到当前文件的光标后面。 选项设置1234567:set xxx ，一些有用的选项如下：&apos;ic&apos; &apos;ignorecase&apos; 查找时忽略字母大小写&apos;is&apos; &apos;incsearch&apos; 查找短语时显示部分匹配&apos;hls&apos; &apos;hlsearch&apos; 高亮显示所有的匹配短语选项名可以用完整版本，也可以用缩略版本。在选项前加上 no 可以关闭选项： :set noic 帮助1234567891011121314:help 或者按 &lt;F1&gt; 键或 &lt;Help&gt; 键可以打开帮助窗口。:help cmd 可以找到关于 cmd 命令的帮助。CTRL-W CTRL-W 可以使您在窗口之间跳转。:q 以关闭帮助窗口可以创建 vimrc 启动脚本文件用来保存偏好设置。读取vimrc 示例文件 :r $VIMRUNTIME/vimrc_example.vim输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。按 &lt;TAB&gt; 可以使用一个补全。 以后再研究z 和 fzf 快速搜索zsh 比vim更好用 ColorPix 取色工具]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -58,7 +91,7 @@
   <entry>
     <title><![CDATA[test]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F25%2Ftest%2F</url>
-    <content type="text"><![CDATA[test123456789101112131415161718192021222324252627282930313233343520190127inline-block不用关注html标签没有块级元素和内联元素的区别的，css才有html不应该管样式，只管内容html定义结构和内容css管样式js管什么？导航条 navigation baralt 可选内容alternativea 标签全称 anchor 连接 锚hr 水平分割线 horizon rulebanner 底层大图描述列表 description list dl其中有dt description term 描述词dd description definition 描述定义br 强制换行 break rowtr table rowp paragraph 段落form 必须有提交按钮form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？submit 可以提交checkbox 勾选框label标记input老司机写法：label包含inputinput要有name，不然实际没有起作用checkbox 多选radio 单选select 下拉列表，多选，单选textarea 多行输入table 只有三个thead tr td(data) thtbody tr td thtfoot tr td thcolgroup col现在都用class了设定表格样式，collapse]]></content>
+    <content type="text"><![CDATA[test12345678910111213141516171819202122inline-block不用关注html标签没有块级元素和内联元素的区别的，css才有html不应该管样式，只管内容html定义结构和内容css管样式js管什么？alt 可选内容alternativea 标签全称 anchor 连接 锚banner 底层大图form 必须有提交按钮form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？submit 可以提交checkbox 勾选框label标记input老司机写法：label包含inputinput要有name，不然实际没有起作用checkbox 多选radio 单选select 下拉列表，多选，单选textarea 多行输入colgroup col现在都用class了设定表格样式，collapse 12子元素float left 浮动 父元素必须添加clearfixinherit 继承 120190201]]></content>
   </entry>
   <entry>
     <title><![CDATA[hexo教程001]]></title>

@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dogblog">
-<meta property="og:url" content="https://python-ansible.github.io/archives/2019/index.html">
+<meta property="og:url" content="https://python-ansible.github.io/page/2/index.html">
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="https://python-ansible.github.io/archives/2019/">
+  <link rel="canonical" href="https://python-ansible.github.io/page/2/">
 
 
 
 
 
-  <title>Archive | Dogblog</title>
+  <title>Dogblog</title>
   
 
 
@@ -140,7 +140,8 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -275,391 +276,302 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
 
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/25/git001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/01/25/git001/" itemprop="url">git基础命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T10:23:04+08:00">
+                2019-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
           
-        
-        Um..! 12 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
+            <h1 id="本文主要介绍git-init-git-add-git-commit的使用方法"><a href="#本文主要介绍git-init-git-add-git-commit的使用方法" class="headerlink" title="本文主要介绍git init git add git commit的使用方法"></a>本文主要介绍<code>git init</code> <code>git add</code> <code>git commit</code>的使用方法</h1><h2 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Initializes a new local Git repository.</span><br><span class="line"></span><br><span class="line"> - Initialize a new local repository:</span><br><span class="line">   git init</span><br><span class="line"></span><br><span class="line"> - Initialize a barebones repository, suitable for use as a remote over ssh:</span><br><span class="line">   git init --bare</span><br></pre></td></tr></table></figure>
+<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Adds changed files to the index.</span><br><span class="line"></span><br><span class="line">- Add a file to the index:</span><br><span class="line">  git add path/to/file</span><br><span class="line"></span><br><span class="line">- Add all files (tracked and untracked):</span><br><span class="line">  git add -A</span><br><span class="line"></span><br><span class="line">- Only add already tracked files:</span><br><span class="line">  git add -u</span><br><span class="line"></span><br><span class="line">- Also add ignored files:</span><br><span class="line">  git add -f</span><br><span class="line"></span><br><span class="line">- Add parts of a file interactively:</span><br><span class="line">  git add -p path/to/file</span><br></pre></td></tr></table></figure>
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Commit files to the repository.</span><br><span class="line"></span><br><span class="line">- Commit staged files to the repository with a message:</span><br><span class="line">  git commit -m message</span><br><span class="line"></span><br><span class="line">- Auto stage all modified files and commit with a message:</span><br><span class="line">  git commit -a -m message</span><br><span class="line"></span><br><span class="line">- Replace the last commit with currently staged changes:</span><br><span class="line">  git commit --ame</span><br><span class="line"> </span><br><span class="line">- Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template：</span><br><span class="line">  -v : --verbose</span><br><span class="line">  git commit -v</span><br></pre></td></tr></table></figure>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/02/01/bash002/" itemprop="url">
-              
-                <span itemprop="name">bash002</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-01T17:08:37+08:00" content="2019-02-01">
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/02/01/css001/" itemprop="url">
-              
-                <span itemprop="name">css001</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-01T14:59:14+08:00" content="2019-02-01">
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/02/01/jetbrains/" itemprop="url">
-              
-                <span itemprop="name">jetbrains</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-01T11:38:25+08:00" content="2019-02-01">
-          02-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/31/bash001/" itemprop="url">
-              
-                <span itemprop="name">bash001</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-31T10:49:49+08:00" content="2019-01-31">
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/31/vim001/" itemprop="url">
-              
-                <span itemprop="name">vim学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-31T09:39:47+08:00" content="2019-01-31">
-          01-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/27/markdown/" itemprop="url">
-              
-                <span itemprop="name">markdown说明</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-27T22:18:04+08:00" content="2019-01-27">
-          01-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/27/html001/" itemprop="url">
-              
-                <span itemprop="name">html语言学习01</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-27T22:05:08+08:00" content="2019-01-27">
-          01-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/27/http001/" itemprop="url">
-              
-                <span itemprop="name">http1.1学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-27T22:04:55+08:00" content="2019-01-27">
-          01-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/25/test/" itemprop="url">
-              
-                <span itemprop="name">test</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-25T16:12:48+08:00" content="2019-01-25">
-          01-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/hexo-blog/2019/01/25/hexo001/" itemprop="url">
-              
-                <span itemprop="name">hexo教程001</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-25T11:02:55+08:00" content="2019-01-25">
-          01-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
   
   
   
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/24/linux001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/01/24/linux001/" itemprop="url">linux基础命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-24T22:43:04+08:00">
+                2019-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="介绍ls-cat-mv-touch-的基本用法"><a href="#介绍ls-cat-mv-touch-的基本用法" class="headerlink" title="介绍ls cat mv touch 的基本用法"></a>介绍<code>ls</code> <code>cat</code> <code>mv</code> <code>touch</code> 的基本用法</h1><h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">List directory contents.</span><br><span class="line">  </span><br><span class="line">- List files one per line:</span><br><span class="line">  ls -1</span><br><span class="line">   </span><br><span class="line">- List all files, including hidden files:</span><br><span class="line">  ls -a</span><br><span class="line">   </span><br><span class="line">- Long format list (permissions, ownership, size and modification date) of all files:</span><br><span class="line">  ls -la</span><br><span class="line">   </span><br><span class="line">- Long format list with size displayed using human readable units (KB, MB, GB):</span><br><span class="line">  ls -lh</span><br><span class="line">   </span><br><span class="line">- Long format list sorted by size (descending):</span><br><span class="line">  ls -lS</span><br><span class="line">   </span><br><span class="line">- Long format list of all files, sorted by modification date (oldest first):</span><br><span class="line">  ls -ltr</span><br></pre></td></tr></table></figure>
+<h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Print and concatenate files.</span><br><span class="line"></span><br><span class="line">- Print the contents of a file to the standard output:</span><br><span class="line">  cat file</span><br><span class="line"></span><br><span class="line">- Concatenate several files into the target file:</span><br><span class="line">  cat file1 file2 &gt; target_file</span><br><span class="line"></span><br><span class="line">- Append several files into the target file:</span><br><span class="line">  cat file1 file2 &gt;&gt; target_file</span><br><span class="line"></span><br><span class="line">- Number all output lines:</span><br><span class="line">  cat -n file</span><br></pre></td></tr></table></figure>
+<h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Move or rename files and directories.</span><br><span class="line"></span><br><span class="line">- Move files in arbitrary locations:</span><br><span class="line">  mv source target</span><br><span class="line"></span><br><span class="line">- Do not prompt for confirmation before overwriting existing files:</span><br><span class="line">  mv -f source target</span><br><span class="line"></span><br><span class="line">- Prompt for confirmation before overwriting existing files, regardless of file permissions:</span><br><span class="line">  mv -i source target</span><br><span class="line"></span><br><span class="line">- Do not overwrite existing files at the target:</span><br><span class="line">  mv -n source target</span><br><span class="line"></span><br><span class="line">- Move files in verbose mode, showing files after they are moved:</span><br><span class="line">  mv -v source target</span><br></pre></td></tr></table></figure>
+<h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Change a file access and modification times (atime, mtime).</span><br><span class="line"></span><br><span class="line">- Create a new empty file(s) or change the times for existing file(s) to current time:</span><br><span class="line">  touch filename</span><br><span class="line"></span><br><span class="line">- Set the times on a file to a specific date and time:</span><br><span class="line">  touch -t YYYYMMDDHHMM.SS filename</span><br><span class="line"></span><br><span class="line">- Use the times from a file to set the times on a second file:</span><br><span class="line">  touch -r filename filename2</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/hexo-blog/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/hexo-blog/archives/2019/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/hexo-blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/hexo-blog/">1</a><span class="page-number current">2</span>
   </nav>
-
 
 
 
