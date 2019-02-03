@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[chrome001]]></title>
+    <url>%2Fhexo-blog%2F2019%2F02%2F02%2Fchrome001%2F</url>
+    <content type="text"><![CDATA[开发者工具的使用 Preserve log保留日志：1.可以保留跳转的日志]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>chrome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[bash002]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fbash002%2F</url>
     <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h]]></content>
@@ -14,7 +25,7 @@
   <entry>
     <title><![CDATA[css001]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fcss001%2F</url>
-    <content type="text"><![CDATA[CSS 学习加载css方式1234内联 style 属性style 标签&lt;link rel="stylesheet" href="./a.css"&gt;@import url(./a.css); clearfix12345.clearfix::after&#123; content: ''; display: block; clear: both;&#125; 横向布局方式 父模块 clearfix子模块 float: right; left; display: inline-block; 有bug 背景背景图片background-image:url(./1.JPG); 背景颜色background: #F7F8FA; 16进制 字体font-family: “Arial Black”;font-size: 13px;font-weight: normal; bold; 加粗font-style: normal; italic;斜体 oblique;倾斜体color: rgba(255, 255, 255, 0.7); 下划线text-decoration: none; 取消下划线 内边距 padding12345678910111213141516padding-top: 1px;padding-right: 1px;padding-bottom: 1px;padding-left: 1px;padding: 0; #四个边#垂直方向| 水平方向padding: 5px 0; 垂直方向 水平方向#顶部| 水平方向| 底部padding: 1px 2px 3px;#上右下左，顺时针方向padding: 1px 1px 1px 1px; padding: inherit; 外边距 marginmargin-top:margin-right:margin-bottom:margin-left:margin: top right bottom leftmargin: 0;margin 取值支持：auto length 包含两种：em 字距 px 像素 列表样式list-stylelist-style:none; 无样式circle; 圆点标记square inside; 方点标记 ###border 边框支持三种属性：width 宽度style 样式color 颜色支持四个方向 border-bottomborder-bottom: 3px solid transparent; 3像素坚实透明border-bottom-color: #DC6465; border 调试大法border: 1px solid red; text-align 行内对齐text-align: left; center; justify-all;]]></content>
+    <content type="text"><![CDATA[CSS 学习加载css方式1234内联 style 属性style 标签&lt;link rel="stylesheet" href="./a.css"&gt;@import url(./a.css); clearfix12345.clearfix::after&#123; content: ''; display: block; clear: both;&#125; 横向布局方式 父模块 clearfix 子模块 float: left; display: inline-block;有bug 背景背景图片background-image:url(./1.JPG); 背景颜色background: #F7F8FA; 16进制 字体 font-family: “Arial Black”; font-size: 13px; font-weight: normal; bold; 加粗 font-style: normal; italic;斜体 oblique;倾斜体 color: rgba(255, 255, 255, 0.7); 下划线 text-decoration: none; 取消下划线 内边距 padding12345678910111213141516padding-top: 1px;padding-right: 1px;padding-bottom: 1px;padding-left: 1px;padding: 0; #四个边#垂直方向| 水平方向padding: 5px 0; 垂直方向 水平方向#顶部| 水平方向| 底部padding: 1px 2px 3px;#上右下左，顺时针方向padding: 1px 1px 1px 1px; padding: inherit; 外边距 margin123456789margin-top:margin-right:margin-bottom:margin-left:margin: top right bottom leftmargin: 0;margin 取值支持：auto &lt;percentage&gt; &lt;length&gt;length 包含两种：em 字距 px 像素 列表样式list-style1234list-style: none; 无样式circle; 圆点标记square inside; 方点标记 ###border 边框 支持三种属性： width 宽度 style 样式 color 颜色 支持四个方向 border-bottom border-bottom: 3px solid transparent; 3像素坚实透明 border-bottom-color: #DC6465; border 调试大法border: 1px solid red; text-align 行内对齐 text-align: left; center; justify-all; CSS层级关系1234有&gt; 代表固定的层级关系.TopNavBar &gt; nav &gt; ul &gt; li &gt; a无&gt;代表不固定的层级关系，可能存在多级跳跃。.TopNavBar nav &gt; ul &gt; li &gt; a 三角形变换100px solid transparent;1234567width: 10px;height: 10px;border-top-color: black;border-right-color: blue;border-bottom-color: green;border-left-color: red;border-top-width: 0px; box-sizing content-box 是默认值当设置元素的宽和高时，只会应用到内容区。如果元素有padding和border实际宽度 = width + padding + border border-boxwidth = 内容 + padding + border一些专家甚至建议将所有元素的box-sizing 都设置为border-box display inline都在一行里面设置width、height无效margin、padding 垂直方向无效水平方向有效 block每个独占一行width、height、margin、padding都可以设置 inline-block既呈现为inline，又呈现为block内联对象会排列在同一行但是也可以设置高、宽]]></content>
       <categories>
         <category>css</category>
       </categories>
@@ -91,7 +102,7 @@
   <entry>
     <title><![CDATA[test]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F25%2Ftest%2F</url>
-    <content type="text"><![CDATA[test12345678910111213141516171819202122inline-block不用关注html标签没有块级元素和内联元素的区别的，css才有html不应该管样式，只管内容html定义结构和内容css管样式js管什么？alt 可选内容alternativea 标签全称 anchor 连接 锚banner 底层大图form 必须有提交按钮form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？submit 可以提交checkbox 勾选框label标记input老司机写法：label包含inputinput要有name，不然实际没有起作用checkbox 多选radio 单选select 下拉列表，多选，单选textarea 多行输入colgroup col现在都用class了设定表格样式，collapse 12子元素float left 浮动 父元素必须添加clearfixinherit 继承 120190201]]></content>
+    <content type="text"><![CDATA[test12345678910111213141516171819202122inline-block不用关注html标签没有块级元素和内联元素的区别的，css才有html不应该管样式，只管内容html定义结构和内容css管样式js管什么？alt 可选内容alternativea 标签全称 anchor 连接 锚banner 底层大图form 必须有提交按钮form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？submit 可以提交checkbox 勾选框label标记input老司机写法：label包含inputinput要有name，不然实际没有起作用checkbox 多选radio 单选select 下拉列表，多选，单选textarea 多行输入colgroup col现在都用class了设定表格样式，collapse 12子元素float left 浮动 父元素必须添加clearfixinherit 继承 120190202]]></content>
   </entry>
   <entry>
     <title><![CDATA[hexo教程001]]></title>
