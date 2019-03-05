@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-12T09:59:00.292Z">
+<meta property="og:updated_time" content="2019-03-01T09:43:18.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基础命令">
 <meta name="twitter:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
@@ -395,6 +395,7 @@
 <h2 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h2><p>^ 向上移动一个提交记录<br>^2 多个父节点时，选择第二个父节点<br>~<num> 向上移动多个提交记录</num></p>
 <h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><p>切换分支 分离HEAD<br>git checkout $branch<br>git checkout c1</p>
 <h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>备份更改，暂存到git中，回到干净的工作目录。<br>git stash 备份当前<br>git stash list<br>git stash pop<br>git stash clear<br>git stash apply 取出某一个stash</p>
+<h2 id="git-放弃本地修改-强制更新"><a href="#git-放弃本地修改-强制更新" class="headerlink" title="git 放弃本地修改 强制更新"></a>git 放弃本地修改 强制更新</h2><p>git fetch –all<br>git reset –hard origin/master</p>
 
       
     </div>
@@ -516,7 +517,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -527,7 +528,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -538,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -599,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文主要介绍git-init-git-add-git-commit的使用方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍git init git add git commit的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">1.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">1.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">1.3.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-number">1.4.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">1.5.</span> <span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-describe"><span class="nav-number">1.6.</span> <span class="nav-text">git describe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch-f"><span class="nav-number">1.7.</span> <span class="nav-text">git branch -f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">1.8.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对引用"><span class="nav-number">1.9.</span> <span class="nav-text">相对引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout"><span class="nav-number">1.10.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-number">1.11.</span> <span class="nav-text">git stash</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文主要介绍git-init-git-add-git-commit的使用方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍git init git add git commit的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">1.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">1.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">1.3.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-number">1.4.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">1.5.</span> <span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-describe"><span class="nav-number">1.6.</span> <span class="nav-text">git describe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch-f"><span class="nav-number">1.7.</span> <span class="nav-text">git branch -f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">1.8.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对引用"><span class="nav-number">1.9.</span> <span class="nav-text">相对引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout"><span class="nav-number">1.10.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-number">1.11.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-放弃本地修改-强制更新"><span class="nav-number">1.12.</span> <span class="nav-text">git 放弃本地修改 强制更新</span></a></li></ol></li></ol></div>
             
 
           </div>
