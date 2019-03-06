@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css-IFC]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F06%2Fcss012%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css-bootstrap]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F06%2Fcss011%2F</url>
+    <content type="text"><![CDATA[bootstrap 是给后端用的UI工具。。。bootstrap.css 完全版bootstrap.min.css 删除回车空格后的版本]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[css-表单美化]]></title>
     <url>%2Fhexo-blog%2F2019%2F03%2F04%2Fcss010%2F</url>
-    <content type="text"><![CDATA[百度搜索栏制作]]></content>
+    <content type="text"><![CDATA[百度搜索栏制作 1234567891011&lt;svg&gt; &lt;use xlink:href=&quot;#icon-fake&quot;&gt;&lt;/use&gt;&lt;/svg&gt;fill: #4b94fc; svg填充颜色cursor: pointer; 手指型鼠标LVHA:link 尚未访问的链接:visited 已经访问过的链接:hover 虚指:active 激活:focus 点击、触摸、tab时触发 上传文件vertical-align: top; 消除img下方的空隙opacity: 0; 透明底层img上层inputhttps://frankfang.github.io/wheels/demos/image-picker.html 涟漪按钮transform: scale(10); 放大visibility: hidden; -&gt;visibility: visible;pointer-events: none; 穿透堆叠上下文监听鼠标点击位置放大]]></content>
       <categories>
         <category>css</category>
       </categories>
@@ -80,7 +102,7 @@
   <entry>
     <title><![CDATA[yum001]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F27%2Fyum001%2F</url>
-    <content type="text"><![CDATA[yum install createrepo 创建目录 不同平台需要单独存放mkdir -p /data/yum/centos/6/{i386,x86_64} 初始化repocreaterepo -p -d -o yum/centos/6/i386 yum/centos/6/i386createrepo -p -d -o yum/centos/6/x86_64 yum/centos/6/x86_64 更新repocreaterepo –workers 10 服务端配置yum install httpdchown -R apache:apache /home/yum/vim /etc/httpd/conf/httpd.conf NameVirtualHost *:80 DocumentRoot /home/yumServerName XXX.XXX.XXX #填写绑定的域名Options Indexes FollowSymlinks repo配置文件[test]name=yum testbaseurl=http://XXX.XXX.XXX/centos/6enabled=1gpgcheck=1gpgkey=http://XXX.XXX.XXX/centos/RPM-GPG-KEY-TESTREPO yumwritten in python查看yumvarpython -c ‘import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)’$releasever 发行版 7$arch cpu平台 ia32e$basearch 基本平台 x86_64]]></content>
+    <content type="text"><![CDATA[yum install createrepo 创建目录 不同平台需要单独存放mkdir -p /data/yum/centos/6/{i386,x86_64} 初始化repocreaterepo -p -d -o yum/centos/6/i386 yum/centos/6/i386createrepo -p -d -o yum/centos/6/x86_64 yum/centos/6/x86_64 更新repocreaterepo –workers 10 服务端配置yum install httpdchown -R apache:apache /home/yum/vim /etc/httpd/conf/httpd.conf NameVirtualHost *:80 DocumentRoot /home/yumServerName XXX.XXX.XXX #填写绑定的域名Options Indexes FollowSymlinks repo配置文件[test]name=yum testbaseurl=http://XXX.XXX.XXX/centos/6enabled=1gpgcheck=1gpgkey=http://XXX.XXX.XXX/centos/RPM-GPG-KEY-TESTREPO yumwritten in python查看yumvarpython -c ‘import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)’$releasever 发行版 7$arch cpu平台 ia32e$basearch 基本平台 x86_64 查看远程所有版本的包yum search –showduplicates orchestration]]></content>
       <categories>
         <category>yum</category>
       </categories>
@@ -217,7 +239,7 @@
   <entry>
     <title><![CDATA[bash002]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fbash002%2F</url>
-    <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h egrepegrep “^[^#]” /etc/neutron.conf 不太理解]]></content>
+    <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h egrepegrep “^[^#]” /etc/neutron.conf 不太理解 crontab 123456789* * * * * command 分 时 日 月 周 命令第1列表示分钟1～59 每分钟用*或者 */1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 0 4 * * 0 /usr/bin/systemctl stop ntpd &amp;&amp; /usr/sbin/ntpdate 192.168.0.1 &amp;&amp; /usr/bin/systemctl start ntpd ln -s 源文件 链接文件]]></content>
       <categories>
         <category>Linux</category>
       </categories>

@@ -291,6 +291,297 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/05/css002/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/02/05/css002/" itemprop="url">css002</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-05T20:02:26+08:00">
+                2019-02-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>css generator</strong><br>可以自动生成css代码</p>
+<p>如何使用CSS做出：<br>1.左右布局<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left-half"</span>&gt;</span></span><br><span class="line">      左边</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right-half"</span>&gt;</span></span><br><span class="line">      右边</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用背景渐变<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  background-image: </span><br><span class="line">    linear-gradient(</span><br><span class="line">      to right,</span><br><span class="line">      #f7941d 0%,</span><br><span class="line">      #f7941d 50%,</span><br><span class="line">      #8d5022 50%,</span><br><span class="line">      #8d5022 100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用绝对定位<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background-color: #f7941d;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background-color: #8d5022;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 0px;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用假表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: table;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half,</span><br><span class="line">.right-half &#123;</span><br><span class="line">  display:table-cell;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line"> background: #8d5022;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用float<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.left-half,</span><br><span class="line">.right-half &#123;</span><br><span class="line">  float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background: #8d5022;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">注意，父元素需要class=clearfix,</span><br><span class="line">因为float会使div脱离文档流，需要clearfix把后面正常参与文档流的内容后挪，</span><br><span class="line">不然会造成div中的内容与后面的内容视觉上重合。</span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">  content: '';</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!--IE8以下 支持--&gt;</span></span><br><span class="line">.clearfix&#123;</span><br><span class="line">  zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用inline-block<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.left-half &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background: #8d5022;</span><br><span class="line">  display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用flexbox<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half,</span><br><span class="line">.right-half &#123;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background: #8d5022;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用grid<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">  grid-column: 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background: #8d5022;</span><br><span class="line">  grid-column: 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>左中右布局<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">      左边</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">      中间</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">      右边</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>1.float<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.left ,</span><br><span class="line">.center,</span><br><span class="line">.right &#123;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 30%</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left &#123;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.center &#123;</span><br><span class="line">  background: #f7941d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  background: #8d5022;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.float + inline-block<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">container &#123;</span><br><span class="line">    width:100%;</span><br><span class="line">    text-align:center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left &#123;</span><br><span class="line">    float:left;</span><br><span class="line">    width:200px;</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.center &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    margin:0 auto;</span><br><span class="line">    width:200px;</span><br><span class="line">    background: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">    float:right;</span><br><span class="line">    width:200px;</span><br><span class="line">    background: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.flexbox css3<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  flex-wrap: nowrap;</span><br><span class="line">  justify-content: space-between;</span><br><span class="line">  background-color: lightyellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left ,</span><br><span class="line">.center ,</span><br><span class="line">.right &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  border: 2px dashed red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>水平居中<br>内联元素：<br>text-align: center;<br>块级元素：<br>margin: 0 auto;</p>
+<p>垂直居中<br>1.不知道高度，绝对定位<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.parent &#123;</span><br><span class="line">    position:relative;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">.child &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.父元素高度已知，相对定位<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.parent &#123;</span><br><span class="line">        height:xxx;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">.child &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    top: 50%;</span><br><span class="line">    transform: translateY(-50%);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.flex<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.parent &#123;</span><br><span class="line">    display: flex;/*Flex布局*/</span><br><span class="line">    display: -webkit-flex; /* Safari */</span><br><span class="line">    align-items: center;/*指定垂直居中*/</span><br><span class="line">    justify-content: center;/*指定水平居中*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4.table 居中，适用于IE</p>
+<p>5.不写父元素高度，使用padding补，天然垂直居中。</p>
+<p>等其他小技巧</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/04/macos/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/02/04/macos/" itemprop="url">macos</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-04T17:38:00+08:00">
+                2019-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>1Clipboard<br>剪贴板工具<br><code>opt + com + v</code></li>
+<li>zsh 插件<blockquote>
+<p>zsh-autosuggesions<br>autojump<br>zsh-syntax-highlighting<br>dotenv</p>
+</blockquote>
+</li>
+<li>vim </li>
+<li>yd<br>有道词典翻译工具</li>
+<li>xScope<br>设计师工具</li>
+<li>axure<br>产品原型设计工具</li>
+<li>window tidy<br>窗口分屏</li>
+<li>colorsnapper2<br>取色工具</li>
+<li>IDE<br>pycharm<br>webstorm<br><strong>IDE 插件</strong></li>
+<li>translation</li>
+<li>ideavim<br><strong> IDE 快捷方式 </strong></li>
+<li>替换 command + r</li>
+<li>正则<br><code>([a-z]) -&gt; &#39;$1&#39;,</code></li>
+<li>brew</li>
+<li>npm</li>
+<li>postman</li>
+<li>navicat</li>
+<li>compare</li>
+<li>ipython</li>
+<li>tmux</li>
+</ul>
+<h2 id="系统快捷键"><a href="#系统快捷键" class="headerlink" title="系统快捷键"></a>系统快捷键</h2><p>command + 空格 聚焦搜索<br>font mac 字体查看  </p>
+<h2 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a>iTerm2</h2><p>command + D 垂直分屏<br>shift + command + D 水平分屏<br>command + w 关闭<br>command + u 透明背景</p>
+<hr>
+<h1 id="装机软件"><a href="#装机软件" class="headerlink" title="装机软件"></a>装机软件</h1><ul>
+<li>Balsamiq Mockups3 原型图绘制软件  </li>
+<li>SketchBook Pro 画图软件</li>
+<li>KeyCastr 显示按键</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/02/chrome001/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -537,7 +828,13 @@
           
             <ul>
 <li>du<br>从小到大显示所有的文件(包含隐藏文件)<br><code>du -ahd1|sort -h</code>  </li>
-<li>egrep<br>egrep “^[^#]” /etc/neutron.conf 不太理解</li>
+<li><p>egrep<br>egrep “^[^#]” /etc/neutron.conf 不太理解</p>
+</li>
+<li><p>crontab</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">*　　*　　*　　*　　*　　command  </span><br><span class="line">分　时　日　月　周　命令</span><br><span class="line">第1列表示分钟1～59 每分钟用*或者 */1表示  </span><br><span class="line">第2列表示小时1～23（0表示0点）  </span><br><span class="line">第3列表示日期1～31  </span><br><span class="line">第4列表示月份1～12  </span><br><span class="line">第5列标识号星期0～6（0表示星期天）  </span><br><span class="line">第6列要运行的命令  </span><br><span class="line">0 4 * * 0 /usr/bin/systemctl stop ntpd &amp;&amp; /usr/sbin/ntpdate 192.168.0.1 &amp;&amp; /usr/bin/systemctl start ntpd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ln -s 源文件 链接文件</p>
+</li>
 </ul>
 
           
@@ -1941,383 +2238,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/27/http001/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/01/27/http001/" itemprop="url">http1.1学习</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-27T22:04:55+08:00">
-                2019-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/Http/" itemprop="url" rel="index">
-                    <span itemprop="name">Http</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="HTTP起源"><a href="#HTTP起源" class="headerlink" title="HTTP起源"></a>HTTP起源</h2><h3 id="HTTP全称"><a href="#HTTP全称" class="headerlink" title="HTTP全称"></a>HTTP全称</h3><p>HTTP即<strong>HyperText Transfer Protocol</strong>，<strong>超文本传输协议</strong>，是应用层协议，万维网的数据通信基础。本文主要介绍HTTP1.1。</p>
-<h3 id="HTTP1-1改进"><a href="#HTTP1-1改进" class="headerlink" title="HTTP1.1改进"></a>HTTP1.1改进</h3><ul>
-<li>缓存处理</li>
-<li>带宽优化及网络连接的使用</li>
-<li>错误通知的管理</li>
-<li>消息在网络中的发送</li>
-<li>互联网地址的维护</li>
-<li>安全性及完整性</li>
-</ul>
-<h3 id="HTTP2-0"><a href="#HTTP2-0" class="headerlink" title="HTTP2.0"></a>HTTP2.0</h3><p>最初由google研发，2015年5月作为互联网标准正式发布。</p>
-<p><img src="/hexo-blog/2019/01/27/http001/001.png" alt="服务器与浏览器的交互" title="服务器与浏览器的交互"></p>
-<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="请求方法8种"><a href="#请求方法8种" class="headerlink" title="请求方法8种"></a>请求方法8种</h3><ul>
-<li>GET<br>读取数据</li>
-<li>HEAD<br>与GET一样是发出资源请求，服务器不返回资源的文本部分。</li>
-<li>POST<br>提交数据（文件或表单）</li>
-<li>PUT<br>上传最新内容（多用于修改）</li>
-<li>DELETE<br>删除资源</li>
-<li>TRACE<br>回显服务器收到的请求，用于测试或诊断</li>
-<li>OPTIONS<br>返回资源支持的所有HTTP方法</li>
-<li>CONNECT<br>将连接改为管道方式的代理服务器，多用于SSL加密服务的连接。</li>
-</ul>
-<h3 id="HTTP-Header"><a href="#HTTP-Header" class="headerlink" title="HTTP Header"></a>HTTP Header</h3><p><a href="https://zh.wikipedia.org/wiki/HTTP%E5%A4%B4%E5%AD%97%E6%AE%B5" title="HTTP-Header" target="_blank" rel="noopener"><font color="#0099ff">HTTP Header详细说明</font></a></p>
-<h4 id="HTTP-Header-Content-Type"><a href="#HTTP-Header-Content-Type" class="headerlink" title="HTTP Header Content-Type"></a>HTTP Header Content-Type</h4><p><a href="http://www.iana.org/assignments/media-types/media-types.xhtml" title="Content-Type" target="_blank" rel="noopener"><font color="#0099ff">Content-Type详细说明</font></a></p>
-<ul>
-<li><p>常用的Content-Type</p>
-<ul>
-<li><p>Type application</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">application/EDI-X12   </span><br><span class="line">application/EDIFACT   </span><br><span class="line">application/javascript   </span><br><span class="line">application/octet-stream   </span><br><span class="line">application/ogg   </span><br><span class="line">application/pdf  </span><br><span class="line">application/xhtml+xml   </span><br><span class="line">application/x-shockwave-flash    </span><br><span class="line">application/json  </span><br><span class="line">application/ld+json  </span><br><span class="line">application/xml   </span><br><span class="line">application/zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type audio</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">audio/mpeg   </span><br><span class="line">audio/x-ms-wma   </span><br><span class="line">audio/vnd.rn-realaudio   </span><br><span class="line">audio/x-wav</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type image</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">image/gif   </span><br><span class="line">image/jpeg   </span><br><span class="line">image/png   </span><br><span class="line">image/tiff    </span><br><span class="line">image/vnd.microsoft.icon    </span><br><span class="line">image/x-icon   </span><br><span class="line">image/vnd.djvu   </span><br><span class="line">image/svg+xml</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type multipart</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">multipart/mixed    </span><br><span class="line">multipart/alternative   </span><br><span class="line">multipart/related (using by MHTML (HTML mail).)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type text</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">text/css    </span><br><span class="line">text/csv    </span><br><span class="line">text/html    </span><br><span class="line">text/javascript (已废弃)    </span><br><span class="line">text/plain    </span><br><span class="line">text/xml</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type video</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">video/mpeg    </span><br><span class="line">video/mp4    </span><br><span class="line">video/quicktime    </span><br><span class="line">video/x-ms-wmv    </span><br><span class="line">video/x-msvideo    </span><br><span class="line">video/x-flv   </span><br><span class="line">video/webm</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="HTTP响应状态码"><a href="#HTTP响应状态码" class="headerlink" title="HTTP响应状态码"></a>HTTP响应状态码</h3><p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" title="HTTP Status-code" target="_blank" rel="noopener"><font color="#0099ff">详细说明</font></a></p>
-<p><strong>常用status_code:</strong>    </p>
-<ul>
-<li><p>1xx消息–请求已经被服务器接受，继续处理<br>不常用，略</p>
-</li>
-<li><p>2xx成功–请求已成功被服务器接收、理解、并接受<br>常用响应如下：  </p>
-<ul>
-<li>201 Created：创建成功，返回URI</li>
-<li>202 Accepted：服务器已接受请求，多用于异步。</li>
-<li>204 No Content: 服务器成功处理了请求，不返回任何内容。</li>
-</ul>
-</li>
-<li><p>3xx重定向–需要后续操作才能完成这一请求<br>常用响应如下：</p>
-<ul>
-<li>301 Moved Permanently：资源已永久移动，在<strong>Location</strong>中返回新的若干个URI。</li>
-<li>302 Found：临时重定向</li>
-<li>303 See Other：为了替代302，实现POST后的GET重定向。</li>
-<li>304 Not Modified: 资源未改变，使用缓存。</li>
-</ul>
-</li>
-<li><p>4xx请求错误–请求含有词法错误或者无法被执行<br>常用响应如下：</p>
-<ul>
-<li>400 Bad Request：客户端明显错误</li>
-<li>401 Unauthorized：未认证</li>
-<li>403 Forbidden：拒绝执行</li>
-<li>404 Not Found：找不到资源</li>
-<li>405 Method Not Allowed</li>
-<li>408 Request Timeout</li>
-<li>409 Conflict</li>
-<li>423 Locked</li>
-<li>429 Too Many Requests</li>
-</ul>
-</li>
-<li><p>5xx服务器错误–服务器在处理某个正确请求时发生错误<br>常用响应如下：</p>
-<ul>
-<li>500 Internal Server Error:</li>
-<li>502 Bad Gateway:</li>
-<li>503 Service Unavailable</li>
-<li>504 Gateway Timeout</li>
-</ul>
-</li>
-</ul>
-<h3 id="HTTP—ETag"><a href="#HTTP—ETag" class="headerlink" title="HTTP—ETag"></a>HTTP—ETag</h3><p><a href="https://zh.wikipedia.org/wiki/HTTP_ETag" title="ETag" target="_blank" rel="noopener"><font color="#0099ff">详细说明</font></a></p>
-<p>ETag提供一种<strong>缓存验证</strong>机制，如果资源改变，hash之后的ETag值就会变化。<br><code>ETag： &quot;686897696a7c876b7e&quot;</code></p>
-<p><img src="/hexo-blog/2019/01/27/http001/002.jpg" alt="URL的常见组成" title="URL"></p>
-<h2 id="CURL命令学习"><a href="#CURL命令学习" class="headerlink" title="CURL命令学习"></a>CURL命令学习</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>Transfers data from or to a server.<br>支持大多数协议，包括HTTP，FTP and POP3 ，这里主要介绍HTTP相关的。</p>
-<h3 id="全称"><a href="#全称" class="headerlink" title="全称"></a>全称</h3><p>Command Line URL Viewer，是一个Linux命令行工具。</p>
-<h3 id="用法简介"><a href="#用法简介" class="headerlink" title="用法简介"></a>用法简介</h3><ul>
-<li><p>下载URL内容到文件[output]：<br>curl <code>http://www.baidu.com</code> -o filename</p>
-</li>
-<li><p>将url输出保存在对应的文件名下[remote-name]：<br>curl -O <code>http://www.baidu.com/filename</code></p>
-</li>
-<li><p>跟随重定向[Location]，自动续传[Continue]，保存到对应的文件名下：<br>curl -O -L -C <code>http://www.baidu.com/filename</code></p>
-</li>
-<li><p>模拟post请求[data]:<br>curl -d ‘name=bob’ <code>http://www.baidu.com/form</code></p>
-</li>
-<li><p>指定method(默认GET）和[header]:<br>curl -H ‘X-My-Header: 123’ -X PUT <code>http://www.baidu.com</code></p>
-</li>
-<li><p>发送Json数据，指定content-type：<br>curl -d ‘{“name”: “bob”}’ -H ‘Content-Type: application/json’ <code>http://www.baidu.com/users/1234</code></p>
-</li>
-<li><p>使用用户认证[user authentication]：<br>curl -u username:password <code>http://www.baidu.com</code></p>
-</li>
-<li><p>传递客户端证书[certificate]和资源密钥[key]，跳过证书验证：<br>curl –cert client.pem –key key.pem –insecure <code>https://www.baidu.com</code></p>
-</li>
-<li><p>silence &amp; verbose<br>curl -s -v – <code>http://www.baidu.com</code></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/25/test/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/01/25/test/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-25T16:12:48+08:00">
-                2019-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">inline-block不用关注</span><br><span class="line">html标签没有块级元素和内联元素的区别的，css才有</span><br><span class="line">html不应该管样式，只管内容</span><br><span class="line">html定义结构和内容</span><br><span class="line">css管样式</span><br><span class="line">js管什么？</span><br><span class="line">alt 可选内容alternative</span><br><span class="line">a 标签全称 anchor 连接 锚</span><br><span class="line">banner 底层大图</span><br><span class="line">form 必须有提交按钮</span><br><span class="line">form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？</span><br><span class="line">submit 可以提交</span><br><span class="line">checkbox 勾选框</span><br><span class="line">label标记input</span><br><span class="line">老司机写法：label包含input</span><br><span class="line">input要有name，不然实际没有起作用</span><br><span class="line">checkbox 多选</span><br><span class="line">radio 单选</span><br><span class="line">select 下拉列表，多选，单选</span><br><span class="line">textarea 多行输入</span><br><span class="line">colgroup col</span><br><span class="line">现在都用class了设定表格样式，collapse</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">子元素float left 浮动 父元素必须添加clearfix</span><br><span class="line">inherit 继承</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">20190203</span><br><span class="line">所有非空标签都有伪类</span><br><span class="line">比如 ::before ::after</span><br><span class="line">有点像python里面的with或者tearup，teardown。不过用法不太一样？</span><br><span class="line">剪切板管理器</span><br><span class="line">yd 插件</span><br><span class="line">css shadow generator</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2370,7 +2290,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
