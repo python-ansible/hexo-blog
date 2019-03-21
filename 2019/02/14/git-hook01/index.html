@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后">
+<meta name="description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后 pre-commi">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识git-hook01">
 <meta property="og:url" content="https://python-ansible.github.io/2019/02/14/git-hook01/index.html">
 <meta property="og:site_name" content="Dogblog">
-<meta property="og:description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后">
+<meta property="og:description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后 pre-commi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-06T06:46:51.328Z">
+<meta property="og:updated_time" content="2019-03-07T08:32:06.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识git-hook01">
-<meta name="twitter:description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后">
+<meta name="twitter:description" content="git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后 pre-commi">
 
 
 
@@ -388,6 +388,7 @@
 <h2 id="待研究"><a href="#待研究" class="headerlink" title="待研究"></a>待研究</h2><p>在提交代码后，自动部署静态页面<br>主要使用post-receive实现</p>
 <h2 id="客户端钩子"><a href="#客户端钩子" class="headerlink" title="客户端钩子"></a>客户端钩子</h2><p>commit-msg<br>pre-commit 提交之前<br>post-commit 提交之后</p>
 <h2 id="服务器钩子"><a href="#服务器钩子" class="headerlink" title="服务器钩子"></a>服务器钩子</h2><p>pre-receive 接受之前<br>update 更新之前<br>post-update 更新之后<br>post-receive 接受之后</p>
+<p>pre-commit hook<br>检查提交信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line">regularExpression=<span class="string">"^\s?\[(feature|bugfix|refactor|other)\]\s?\[.+\]\s?.+"</span></span><br><span class="line">error_msg=<span class="string">"</span></span><br><span class="line"><span class="string">-----------------------------------------------</span></span><br><span class="line"><span class="string">提交信息首行请按照如下格式书写:</span></span><br><span class="line"><span class="string">[commitType][module] description</span></span><br><span class="line"><span class="string">detail ...</span></span><br><span class="line"><span class="string">1. commitType只能是feature（新功能）、bugfix（修复bug）、refactor（重构）、other（其他）</span></span><br><span class="line"><span class="string">2. module 则为对应的功能模块，如: lvsfullnat pa_nat 等</span></span><br><span class="line"><span class="string">3. description 简单描述改动。</span></span><br><span class="line"><span class="string">4. detail 详细描述改动。</span></span><br><span class="line"><span class="string">-----------------------------------------------</span></span><br><span class="line"><span class="string">例如：</span></span><br><span class="line"><span class="string">[feature][lvsfullnat-2.17] 自动解绑pool</span></span><br><span class="line"><span class="string">1.neutron_lbass/service/pa_lvs/pa_lvs_plugin.py</span></span><br><span class="line"><span class="string">  删除时判断，如果是最后一个member，自动解绑pool。</span></span><br><span class="line"><span class="string">2.neutron_lbass/db/loadbalancer_lvsdb.py</span></span><br><span class="line"><span class="string">  修改对应的 orm 函数 delete_pool_member"</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">#获取提交信息</span></span><br><span class="line">firstLine=`head -n1 <span class="string">"<span class="variable">$1</span>"</span>`</span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"你的提交信息如下: \n<span class="variable">$firstLine</span>"</span></span><br><span class="line"><span class="keyword">if</span> [[ <span class="string">"<span class="variable">$firstLine</span>"</span> =~ <span class="variable">$regularExpression</span> ]]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"commit success"</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"commit fail"</span></span><br><span class="line"><span class="built_in">echo</span> -e <span class="string">"你的提交信息如下：\n`cat .git/COMMIT_EDITMSG`"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$error_msg</span>"</span> &gt;&amp;2</span><br><span class="line"><span class="built_in">exit</span> 1</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -509,7 +510,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -520,7 +521,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -531,7 +532,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

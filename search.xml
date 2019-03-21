@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[httpd]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F18%2Fhttpd%2F</url>
+    <content type="text"><![CDATA[使用UTF-8编码，文件名全显示IndexOptions Charset=UTF-8 NameWidth=*]]></content>
+      <categories>
+        <category>httpd</category>
+      </categories>
+      <tags>
+        <tag>httpd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[windows]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F18%2Fwindows%2F</url>
+    <content type="text"><![CDATA[搜索工具：Everything *markdown:Haroopad Typora **]]></content>
+      <categories>
+        <category>windows</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript05]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F17%2Fjavascript05%2F</url>
+    <content type="text"><![CDATA[JS 对象全局对象windowwindow. 可以省略mdn window 详细了解 ECMAScript 规定： parseInt parseFloat Number() 还可以初始化为对象 String() 还可以初始化为对象 Boolean() 还可以初始化为对象 Object() 还可以初始化为对象 setTimeout(function(){}, 3000) 指定时间 ms 后执行函数 私有： alert 弹窗 prompt 输入框 confirm 确认框 console.log console.dir document (文档) DOM document.createElement document.getElementById history (浏览器) BOM 12345678910111213141516var n = 1n.xxx = 2n.xxx // undefinedvar n = new Number(1)n.xxx = 2n.xxx // 2var f1 = falsevar f2 = new Boolean(false)if(f1)&#123;console.log(1)&#125; // if(f2)&#123;console.log(2)&#125; // 2s.charAt(0) 等同于 s[0]s.charCodeAt(0) 获取ascii编码s.charCodeAt(0).toString(16) 获取16进制ascii编码s.trim() 去除字符串 python strip 原型链共用属性 底层实现thisproto 原型proto: Object 保存所有Object共用方法proto: Number proto: Object (Number 有两层)Boolean String 同 Numbervar 对象 = new 函数对象123456789101112131415161718192021var o1 = new Object()var o2 = new Object()var n1 = new Number()o1 === o2 // falseo1.toString() === o2.toString() // trueo1.toString() === n1.toString() // false对象.__proto__ === 函数.prototypeo1.__proto__ === Object.prototype // truen1.__proto__ === Number.prototype // truen1.__proto__.__proto__ === Object.prototype // true声明一个变量，会把 __proto__ 绑定到 prototypeObject.__proto__ === Function.prototypeObject.prototype.__proto__ === nullvar function = new Function()function.__proto__ === Function.prototype// 另外，所有函数都是由 Function 构造出来的，所以Number.__proto__ === Function.prototype // 因为 Number 是函数，是 Function 的实例Object.__proto__ === Function.prototype // 因为 Object 是函数，是 Function 的实例Function.__proto__ === Function.prototye // 因为 Function 是函数，是 Function 的实例！]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript04]]></title>
+    <url>%2Fhexo-blog%2F2019%2F03%2F14%2Fjavascript04%2F</url>
+    <content type="text"><![CDATA[7种数据类型number/string/boolean/symbol/null/undefined/object number十进制 3二进制 0b11 = 3八进制 011 = 9十六进制 0x11 = 17 string多行字符串123456789不推荐var s1 = &apos;12345 \ 67890&apos;推荐var s2 = &apos;12345&apos; + &apos;67890&apos;ES6var s3 = `1234567890` boolean&amp;&amp; 与 || 或 null &amp; undefined 变量没有赋值 undefined 空对象 unll 空非对象 undefined objectkey 如果有引号，无限制如果没有引号遵循变量名命名规范符合规范的也可以使用 person.name 方式 ，注意：name 表示 ‘name’delete person.name symbol主要用于生成唯一值12345678var race = &#123; protoss: Symbol(&apos;protoss&apos;), terran: Symbol(&apos;terran&apos;), zerg: Symbol(&apos;zerg&apos;)&#125;race.protoss !== race.terran // truerace.protoss !== race.zerg // true 转换 –&gt; number string boolean symbol null undefined object number \ toString 或者 + ‘’ Boolean() 或者!! string . \ !! boolean . toString 或者 + ‘’ \ symbol . X \ null . toString报错 + ‘’ !! \ undefined . toString报错 + ‘’ !! \ object . toString 或者+ ‘’ ‘[obj Obj]’ !! \ 老司机使用 + ‘’ 代替 toString 也可以用 String() 七个falsy值：flase 0 NaN ‘’ “” null undefined所有对象都是true str –&gt; number Number(‘1’) === 1 parseInt(‘1’,10) === 1 parseFloat(‘1.23’) === 1.23 ‘1’ - 0 === 1 推荐 + &#39;1&#39; === 1 typeof typeof null : object typeof fn : function 转码btoa 转Base64atob 转回非ASCII码btoa(encodeURI(‘王’)) //encodeURIComponentdecodeURI(atob(“JUU3JThFJThC”)) //decodeURIComponent 简单数据直接存在 Stack复杂数据在 Stack 存储 Heap 地址，是对内存的引用。 循环引用123var a = &#123;&#125; a.self = a a.self.self 面试题12345var a = &#123;n:1&#125;;var b = a;a.x = a = &#123;n:2&#125;;alert(a.x); //undefinedalert(b.x); //[object Object] 垃圾回收如果一个对象没有被引用，将被回收。123var fn = function()&#123;&#125;document.body.onclick = fnfn = null //function()&#123;&#125; 不会被回收 深拷贝 vs 浅拷贝对于简单类型，赋值就是深拷贝改变b，完全不会影响到a针对对象浅拷贝var a = {name: ‘frank’}var b = ab.name = ‘b’a.name === ‘b’ //true深拷贝 对 Heap 内存完全拷贝]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[css-IFC]]></title>
     <url>%2Fhexo-blog%2F2019%2F03%2F06%2Fcss012%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[inline formatting context font-size: 100px;类似活字印刷磨具的大小 em-square可以超出 bleed outside line-height: 100px;指定内联元素的真实占位不同字体基线对齐line-height 默认normal，值不确定，每个字体的设计师给出 vertical-align: top;实际占地面积的顶部对齐vertical-align: middle;也不靠谱，用flex,float(inline-block 也不好)align-items: center; 图片下面有空隙div 里面放一个imgimg和div里看不见的字体基线对齐？？？1.vertical-align: middle|top;2.img{display: block;}3.不要font-size: 0; inline-block 对不齐时 有空隙时用 flex float]]></content>
       <categories>
         <category>css</category>
       </categories>
@@ -14,7 +58,7 @@
   <entry>
     <title><![CDATA[css-bootstrap]]></title>
     <url>%2Fhexo-blog%2F2019%2F03%2F06%2Fcss011%2F</url>
-    <content type="text"><![CDATA[bootstrap 是给后端用的UI工具。。。bootstrap.css 完全版bootstrap.min.css 删除回车空格后的版本]]></content>
+    <content type="text"><![CDATA[bootstrap 是给后端用的UI工具。。。bootstrap.css 完全版bootstrap.min.css 删除回车空格后的版本依赖jquery栅格系统 grid system 一共十二格row -15px;控制布局col-$大小-n 占位col-$大小-offset-n 偏移量默认响应式四个分界值0~768 xs768~992 sm992~1200 md1200~ lg]]></content>
       <categories>
         <category>css</category>
       </categories>
@@ -124,7 +168,7 @@
   <entry>
     <title><![CDATA[mysql-pt 套件使用 001]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F26%2Fmysql001%2F</url>
-    <content type="text"><![CDATA[percona-xtrabackup不停机备份工具yum install -y percona-xtrabackup 连接mysql服务器xtrabackup --user=DVADER --password=14MY0URF4TH3R --backup --target-dir=/data/backups/ 创建备份xtrabackup --backup --target-dir=/data/backups/ 准备备份 – 处理一致性xtrabackup --prepare --target-dir=/data/backups/ 恢复备份rsync -avrP /data/backups/ /var/lib/mysql/rsync -avz /root/wzl/backups/ root@100.68.8.27:/var/lib/mysql/ 修改权限chown -R mysql:mysql /var/lib/mysql 跳过单个主备不一致12set global sql_slave_skip_counter=1;start slave; 查看每个表的数据大小这个不准不要用！select table_name,table_rows,data_length/1024/1024 &quot;data_length&quot; from information_schema.tables where table_schema in (&#39;neutron&#39;,&#39;keystone&#39;) order by table_rows desc; percona-toolkit依赖12rpm -qa perl-DBI perl-DBD-MySQL perl-Time-HiRes perl-IO-Socket-SSL yum install -y perl-DBI perl-DBD-MySQL perl-Time-HiRes perl-IO-Socket-SSL perl-Digest perl-Digest-MD5 perl-TermReadKey 安装123https://www.percona.com/downloads/percona-toolkit/LATEST/ rpm -ivh percona-toolkit rpm -ivh percona-toolkit-debuginfo 确认12pt-query-digest -help pt-table-checksum -help 权限12CREATE USER &apos;new_root&apos;@&apos;%&apos; IDENTIFIED BY &apos;***&apos;; GRANT ALL PRIVILEGES ON *.* TO &apos;new_root&apos;@&apos;%&apos; IDENTIFIED BY &apos;***&apos; WITH GRANT OPTION; –create-replicate-table 只有第一次需要 检查数据库的一致性pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --databases=neutron,keystone h=192.168.1.102,u=root,p=root,P=3306 检查表的一致性pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --replicate=neutron.checksums --create-replicate-table --databases=neutron --tables=haha h=192.168.1.101,u=root,p=123456,P=3306 只打印pt-table-sync --replicate=neutron.checksums h=192.168.1.101,u=root,p=123456 h=192.168.1.102,u=root,p=123456 --print 执行修复pt-table-sync --replicate=neutron.checksums h=192.168.1.101,u=root,p=123456 h=192.168.1.102,u=root,p=123456 --execute binlog以二进制日志记录了所有的 DDL(数据定义) 语句 和 DML(数据操作) 语句。语句以事件保存，不包括查询语句，主要用于数据的恢复和复制。1234567891011show binary logs;mysqlbinlog mysqld-bin.000001-d -databasemysqlbinlog -d neutron mysqld-bin.000001 &gt; neutron.txt-D --disable-log-bin 禁用mysqlbinlog -D mysqld-bin.000001-s --short-form 只输出sql--start-datetime--stop-datetime--start-position--stop-position 远程读取123-R --read-from-remote-server -h --host mysqlbinlog -R -h 192.168.0.1 -p root mysqld-bin.000001]]></content>
+    <content type="text"><![CDATA[percona-xtrabackup不停机备份工具yum install -y percona-xtrabackup 连接mysql服务器xtrabackup --user=DVADER --password=14MY0URF4TH3R --backup --target-dir=/data/backups/ 创建备份xtrabackup --backup --target-dir=/data/backups/ 准备备份 – 处理一致性xtrabackup --prepare --target-dir=/data/backups/ 恢复备份rsync -avrP /data/backups/ /var/lib/mysql/rsync -avz /root/wzl/backups/ root@100.68.8.27:/var/lib/mysql/ 修改权限chown -R mysql:mysql /var/lib/mysql 跳过单个主备不一致12set global sql_slave_skip_counter=1;start slave; 查看每个表的数据大小这个不准不要用！select table_name,table_rows,data_length/1024/1024 &quot;data_length&quot; from information_schema.tables where table_schema in (&#39;neutron&#39;,&#39;keystone&#39;) order by table_rows desc; percona-toolkit依赖12rpm -qa perl-DBI perl-DBD-MySQL perl-Time-HiRes perl-IO-Socket-SSL yum install -y perl-DBI perl-DBD-MySQL perl-Time-HiRes perl-IO-Socket-SSL perl-Digest perl-Digest-MD5 perl-TermReadKey 安装123https://www.percona.com/downloads/percona-toolkit/LATEST/ rpm -ivh percona-toolkit rpm -ivh percona-toolkit-debuginfo 确认12pt-query-digest -help pt-table-checksum -help 权限12CREATE USER &apos;new_root&apos;@&apos;%&apos; IDENTIFIED BY &apos;***&apos;; GRANT ALL PRIVILEGES ON *.* TO &apos;new_root&apos;@&apos;%&apos; IDENTIFIED BY &apos;***&apos; WITH GRANT OPTION; –create-replicate-table 只有第一次需要 检查数据库的一致性pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --databases=neutron,keystone h=192.168.1.102,u=root,p=root,P=3306 检查表的一致性pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --replicate=neutron.checksums --create-replicate-table --databases=neutron --tables=haha h=192.168.1.101,u=root,p=123456,P=3306 只打印pt-table-sync --replicate=neutron.checksums h=192.168.1.101,u=root,p=123456 h=192.168.1.102,u=root,p=123456 --print 执行修复pt-table-sync --replicate=neutron.checksums h=192.168.1.101,u=root,p=123456 h=192.168.1.102,u=root,p=123456 --execute binlog以二进制日志记录了所有的 DDL(数据定义) 语句 和 DML(数据操作) 语句。语句以事件保存，不包括查询语句，主要用于数据的恢复和复制。1234567891011show binary logs;mysqlbinlog mysqld-bin.000001-d -databasemysqlbinlog -d neutron mysqld-bin.000001 &gt; neutron.txt-D --disable-log-bin 禁用mysqlbinlog -D mysqld-bin.000001-s --short-form 只输出sql--start-datetime--stop-datetime--start-position--stop-position 远程读取123-R --read-from-remote-server -h --host mysqlbinlog -R -h 192.168.0.1 -p root mysqld-bin.000001 批量删除表1Select CONCAT( &apos;drop table &apos;, task_id, &apos;;&apos; )FROM task Where start_time = &apos;1999-01-01 01&apos; and end_time &lt; &apos;2019-01-01 01&apos;; event_scheduler12345678910111213141516171819SET GLOBAL event_scheduler=1;USE keystone;delimiter $$CREATE EVENT IF NOT EXISTS token_expire_remove ON SCHEDULE EVERY 1 DAY STARTS TIMESTAMP &apos;2019-03-20 02:00:00&apos;DOBEGINSTART TRANSACTION;SET @timenow=now();DELETE FROM token WHERE expires &lt; @timenow;COMMIT;END $$delimiter;查看:show processlist;持久化:event_scheduler=ON]]></content>
       <categories>
         <category>db</category>
       </categories>
@@ -191,7 +235,7 @@
   <entry>
     <title><![CDATA[初识git-hook01]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F14%2Fgit-hook01%2F</url>
-    <content type="text"><![CDATA[git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后]]></content>
+    <content type="text"><![CDATA[git hook 简介git hook可以在特定操作之前或者之后执行自定义的脚本 待研究在提交代码后，自动部署静态页面主要使用post-receive实现 客户端钩子commit-msgpre-commit 提交之前post-commit 提交之后 服务器钩子pre-receive 接受之前update 更新之前post-update 更新之后post-receive 接受之后 pre-commit hook检查提交信息123456789101112131415161718192021222324252627282930#!/usr/bin/env bashregularExpression="^\s?\[(feature|bugfix|refactor|other)\]\s?\[.+\]\s?.+"error_msg="-----------------------------------------------提交信息首行请按照如下格式书写:[commitType][module] descriptiondetail ...1. commitType只能是feature（新功能）、bugfix（修复bug）、refactor（重构）、other（其他）2. module 则为对应的功能模块，如: lvsfullnat pa_nat 等3. description 简单描述改动。4. detail 详细描述改动。-----------------------------------------------例如：[feature][lvsfullnat-2.17] 自动解绑pool1.neutron_lbass/service/pa_lvs/pa_lvs_plugin.py 删除时判断，如果是最后一个member，自动解绑pool。2.neutron_lbass/db/loadbalancer_lvsdb.py 修改对应的 orm 函数 delete_pool_member" #获取提交信息firstLine=`head -n1 "$1"`echo -e "你的提交信息如下: \n$firstLine"if [[ "$firstLine" =~ $regularExpression ]]; then echo "commit success" exit 0fiecho "commit fail"echo -e "你的提交信息如下：\n`cat .git/COMMIT_EDITMSG`"echo "$error_msg" &gt;&amp;2exit 1]]></content>
       <categories>
         <category>git</category>
       </categories>
@@ -223,7 +267,7 @@
   <entry>
     <title><![CDATA[macos]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F04%2Fmacos%2F</url>
-    <content type="text"><![CDATA[1Clipboard剪贴板工具opt + com + v zsh 插件 zsh-autosuggesionsautojumpzsh-syntax-highlightingdotenv vim yd有道词典翻译工具 xScope设计师工具 axure产品原型设计工具 window tidy窗口分屏 colorsnapper2取色工具 IDEpycharmwebstormIDE 插件 translation ideavim IDE 快捷方式 替换 command + r 正则([a-z]) -&gt; &#39;$1&#39;, brew npm postman navicat compare ipython tmux 系统快捷键command + 空格 聚焦搜索font mac 字体查看 iTerm2command + D 垂直分屏shift + command + D 水平分屏command + w 关闭command + u 透明背景 装机软件 Balsamiq Mockups3 原型图绘制软件 SketchBook Pro 画图软件 KeyCastr 显示按键]]></content>
+    <content type="text"><![CDATA[1Clipboard剪贴板工具opt + com + v zsh 插件 zsh-autosuggesionsautojumpzsh-syntax-highlightingdotenv vim yd有道词典翻译工具 xScope设计师工具 axure产品原型设计工具 window tidy窗口分屏 colorsnapper2取色工具 IDEpycharmwebstormIDE 插件 translation ideavim IDE 快捷方式 替换 command + r 正则([a-z]) -&gt; &#39;$1&#39;, brew npm postman navicat compare ipython tmux 系统快捷键command + 空格 聚焦搜索font mac 字体查看 iTerm2command + D 垂直分屏shift + command + D 水平分屏command + w 关闭command + u 透明背景 装机软件 Balsamiq Mockups3 原型图绘制软件 SketchBook Pro 画图软件 KeyCastr 显示按键 gifox 截图工具 Alfred 搜索工具 Typora markdown工具 Dash 文档阅读工具]]></content>
   </entry>
   <entry>
     <title><![CDATA[chrome001]]></title>
@@ -239,7 +283,7 @@
   <entry>
     <title><![CDATA[bash002]]></title>
     <url>%2Fhexo-blog%2F2019%2F02%2F01%2Fbash002%2F</url>
-    <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h egrepegrep “^[^#]” /etc/neutron.conf 不太理解 crontab 123456789* * * * * command 分 时 日 月 周 命令第1列表示分钟1～59 每分钟用*或者 */1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 0 4 * * 0 /usr/bin/systemctl stop ntpd &amp;&amp; /usr/sbin/ntpdate 192.168.0.1 &amp;&amp; /usr/bin/systemctl start ntpd ln -s 源文件 链接文件]]></content>
+    <content type="text"><![CDATA[du从小到大显示所有的文件(包含隐藏文件)du -ahd1|sort -h egrepegrep “^[^#]” /etc/neutron.conf 不太理解 crontab 123456789* * * * * command 分 时 日 月 周 命令第1列表示分钟1～59 每分钟用*或者 */1表示 第2列表示小时1～23（0表示0点） 第3列表示日期1～31 第4列表示月份1～12 第5列标识号星期0～6（0表示星期天） 第6列要运行的命令 0 4 * * 0 /usr/bin/systemctl stop ntpd &amp;&amp; /usr/sbin/ntpdate 192.168.0.1 &amp;&amp; /usr/bin/systemctl start ntpd ln -s 源文件 链接文件 统计 ls -l|grep “^-“|wc -l ls -l|grep “^d”|wc -l -R 递归 tar tar -czvf target.tar.gz dir tar -xzf source.tar.gz -C dir grep grep -C 3 Failed (context around 3 lines) grep -E ‘2019-03-18 18:4[0-9]|2019-03-18 18:5[0-9]’ 正则匹配某个时间段的日志 grep -i 不区分大小写]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -343,7 +387,7 @@
   <entry>
     <title><![CDATA[git基础命令]]></title>
     <url>%2Fhexo-blog%2F2019%2F01%2F25%2Fgit001%2F</url>
-    <content type="text"><![CDATA[本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository: git init - Initialize a barebones repository, suitable for use as a remote over ssh: git init --bare git add12345678910111213141516Adds changed files to the index.- Add a file to the index: git add path/to/file- Add all files (tracked and untracked): git add -A- Only add already tracked files: git add -u- Also add ignored files: git add -f- Add parts of a file interactively: git add -p path/to/file git commit1234567891011121314Commit files to the repository.- Commit staged files to the repository with a message: git commit -m message- Auto stage all modified files and commit with a message: git commit -a -m message- Replace the last commit with currently staged changes: git commit --ame - Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template： -v : --verbose git commit -v git merge钻石合并git merge bugFix git rebase线性合并-i 交互式 interactivegit rebase -i HEAD~4 从前四次选择git rebase -i master 从当前分支选择然后和master合并git rebase bugFix master 把bugFix分支的内容合并到master分支上 git describe描述离你最近的taggit describe mastergit describe c1v1_2_gc5显示距离2个提交有一个tag名称是v1，提交记录是c5 git branch -fgit branch -f master c3把分支强制指定到提交c3 git cherry-pickgit cherry-pick c3 c5 c7把某一个分支的提交抓取到当前分支的HEAD上 相对引用^ 向上移动一个提交记录^2 多个父节点时，选择第二个父节点~ 向上移动多个提交记录 git checkout切换分支 分离HEADgit checkout $branchgit checkout c1 git stash备份更改，暂存到git中，回到干净的工作目录。git stash 备份当前git stash listgit stash popgit stash cleargit stash apply 取出某一个stash git 放弃本地修改 强制更新git fetch –allgit reset –hard origin/master]]></content>
+    <content type="text"><![CDATA[本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository: git init - Initialize a barebones repository, suitable for use as a remote over ssh: git init --bare git add12345678910111213141516Adds changed files to the index.- Add a file to the index: git add path/to/file- Add all files (tracked and untracked): git add -A- Only add already tracked files: git add -u- Also add ignored files: git add -f- Add parts of a file interactively: git add -p path/to/file git commit1234567891011121314Commit files to the repository.- Commit staged files to the repository with a message: git commit -m message- Auto stage all modified files and commit with a message: git commit -a -m message- Replace the last commit with currently staged changes: git commit --ame - Show unified diff between the HEAD commit and what would be committed at the bottom of the commit message template： -v : --verbose git commit -v git merge钻石合并git merge bugFix git rebase线性合并-i 交互式 interactivegit rebase -i HEAD~4 从前四次选择git rebase -i master 从当前分支选择然后和master合并git rebase bugFix master 把bugFix分支的内容合并到master分支上 git describe描述离你最近的taggit describe mastergit describe c1v1_2_gc5显示距离2个提交有一个tag名称是v1，提交记录是c5 git branch -fgit branch -f master c3把分支强制指定到提交c3 git cherry-pickgit cherry-pick c3 c5 c7把某一个分支的提交抓取到当前分支的HEAD上1.如果 a,b 两个提交修改一个文件，pick 后一个，需要手动修改冲突。2.如果 a,b 两个提交修改不同文件，pick 后一个，只会合入后一个的代码。 相对引用^ 向上移动一个提交记录^2 多个父节点时，选择第二个父节点~ 向上移动多个提交记录 git checkout切换分支 分离HEADgit checkout $branchgit checkout c1 git stash备份更改，暂存到git中，回到干净的工作目录。git stash 备份当前git stash listgit stash popgit stash cleargit stash apply 取出某一个stash git 放弃本地修改 强制更新git fetch –allgit reset –hard origin/master]]></content>
       <categories>
         <category>Git</category>
       </categories>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T09:43:18.265Z">
+<meta property="og:updated_time" content="2019-03-07T11:14:37.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基础命令">
 <meta name="twitter:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
@@ -391,7 +391,7 @@
 <h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><p>线性合并<br>-i 交互式 interactive<br>git rebase -i HEAD~4 从前四次选择<br>git rebase -i master 从当前分支选择然后和master合并<br>git rebase bugFix master 把bugFix分支的内容合并到master分支上</p>
 <h2 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a>git describe</h2><p>描述离你最近的tag<br>git describe master<br>git describe c1<br>v1_2_gc5<br>显示距离2个提交有一个tag名称是v1，提交记录是c5</p>
 <h2 id="git-branch-f"><a href="#git-branch-f" class="headerlink" title="git branch -f"></a>git branch -f</h2><p>git branch -f master c3<br>把分支强制指定到提交c3</p>
-<h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p>git cherry-pick c3 c5 c7<br>把某一个分支的提交抓取到当前分支的HEAD上</p>
+<h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p>git cherry-pick c3 c5 c7<br>把某一个分支的提交抓取到当前分支的HEAD上<br>1.如果 a,b 两个提交修改一个文件，pick 后一个，需要手动修改冲突。<br>2.如果 a,b 两个提交修改不同文件，pick 后一个，只会合入后一个的代码。</p>
 <h2 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h2><p>^ 向上移动一个提交记录<br>^2 多个父节点时，选择第二个父节点<br>~<num> 向上移动多个提交记录</num></p>
 <h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><p>切换分支 分离HEAD<br>git checkout $branch<br>git checkout c1</p>
 <h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>备份更改，暂存到git中，回到干净的工作目录。<br>git stash 备份当前<br>git stash list<br>git stash pop<br>git stash clear<br>git stash apply 取出某一个stash</p>
@@ -517,7 +517,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -528,7 +528,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -539,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
