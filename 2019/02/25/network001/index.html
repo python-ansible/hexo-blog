@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="网卡临时添加ipifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由route add -net 10.25.0.0/16 gw 30.30.3.65  ethtoolethtool ens5f1  lldptoollldptool -t -n -i ens5f1">
+<meta name="description" content="网卡临时添加ip 12ifconfig eth0 10.25.114.30 netmask 255.255.255.192 upifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由 12345678910route add -net 10.25.0.0/16 gw 30.30.3.65r">
 <meta name="keywords" content="ip,route">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识network001">
 <meta property="og:url" content="https://python-ansible.github.io/2019/02/25/network001/index.html">
 <meta property="og:site_name" content="Dogblog">
-<meta property="og:description" content="网卡临时添加ipifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由route add -net 10.25.0.0/16 gw 30.30.3.65  ethtoolethtool ens5f1  lldptoollldptool -t -n -i ens5f1">
+<meta property="og:description" content="网卡临时添加ip 12ifconfig eth0 10.25.114.30 netmask 255.255.255.192 upifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由 12345678910route add -net 10.25.0.0/16 gw 30.30.3.65r">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-01T02:01:36.268Z">
+<meta property="og:updated_time" content="2019-03-29T07:19:53.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识network001">
-<meta name="twitter:description" content="网卡临时添加ipifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由route add -net 10.25.0.0/16 gw 30.30.3.65  ethtoolethtool ens5f1  lldptoollldptool -t -n -i ens5f1">
+<meta name="twitter:description" content="网卡临时添加ip 12ifconfig eth0 10.25.114.30 netmask 255.255.255.192 upifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up  添加静态路由 12345678910route add -net 10.25.0.0/16 gw 30.30.3.65r">
 
 
 
@@ -385,15 +385,22 @@
 
       
         <ul>
-<li><p>网卡临时添加ip<br>ifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up</p>
+<li><p>网卡临时添加ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 10.25.114.30 netmask 255.255.255.192 up</span><br><span class="line">ifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加静态路由<br>route add -net 10.25.0.0/16 gw 30.30.3.65</p>
+<li><p>添加静态路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">route add -net 10.25.0.0/16 gw 30.30.3.65</span><br><span class="line">route del -net 0.0.0.0/0 gw 192.168.68.229</span><br><span class="line"></span><br><span class="line">route add -net 10.25.91.0 gw 10.25.114.1 netmask 255.255.255.0 dev eth0 metric 0</span><br><span class="line">route del -net 10.25.91.0 gw 10.25.114.1 netmask 255.255.255.0 dev eth0</span><br><span class="line"></span><br><span class="line">sudo route add -net default gw 10.25.60.161 netmask 0.0.0.0 dev eth0 metric 1</span><br><span class="line">sudo route del -net default gw 10.25.60.161 netmask 0.0.0.0 dev eth0 metric 1</span><br><span class="line"></span><br><span class="line">ip route add 10.25.0.0/16 via 10.25.60.161 dev eth0</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ethtool<br>ethtool ens5f1</p>
+<li><p>ethtool<br><code>ethtool ens5f1</code></p>
 </li>
-<li><p>lldptool<br>lldptool -t -n -i ens5f1</p>
+<li><p>lldptool<br><code>lldptool -t -n -i ens5f1</code></p>
+</li>
+<li><p>bond<br><code>cat /proc/net/bonding/bond0</code></p>
+</li>
+<li><p>没有自动分配ip<br>需要在/etc/sysconfig/network-scripts 里面增加 ifcfg-eth1 并且使用dhcp</p>
 </li>
 </ul>
+<p>*</p>
 
       
     </div>
@@ -508,7 +515,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -519,7 +526,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -530,7 +537,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -291,6 +291,523 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/27/javascript07/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/03/27/javascript07/" itemprop="url">javascript 函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T08:33:10+08:00">
+                2019-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>函数五种申明方法</p>
+</blockquote>
+<p><strong>函数就是可以反复调用的代码块</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function f(arg1, arg2)&#123;return undefined&#125; // f 全局</span><br><span class="line">var f = function(arg1, arg2)&#123;return&#125; // 匿名函数必须要赋值</span><br><span class="line">var x = function f()&#123;&#125; // f 函数内</span><br><span class="line">[√] console.log(x)</span><br><span class="line">[x] console.log(f)</span><br><span class="line">f = new Function(&apos;x&apos;, &apos;y&apos;, &apos;return x + y&apos;)</span><br><span class="line">f = (x, y) =&gt; &#123;return x + y&#125; //箭头函数</span><br><span class="line">f = (x, y) =&gt; x + y</span><br><span class="line">f = x =&gt; x * x</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>call<br>this 是函数和对象间的羁绊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f()</span><br><span class="line">f.call(undefined, arg1, arg2)</span><br><span class="line">call 的第一个参数可以用 this 得到</span><br><span class="line">call 后面的参数可以用 arguments 得到</span><br><span class="line">undefined =&gt; this</span><br><span class="line">[arg1, arg2] =&gt; arguments // 伪数组</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>调用堆栈 call stack，每进入一个函数，会记录位置，先进后出<br>递归有上限 – stack overflow<br>如果一个函数，使用了范围外的变量，就是闭包<br><strong>面试题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var f1 = function f2()&#123;&#125; // f1.name === &apos;f2&apos; f2.naem 未定义</span><br><span class="line"></span><br><span class="line">function f()&#123;</span><br><span class="line">	‘use strict&apos;</span><br><span class="line">	console.log(this)</span><br><span class="line">	&#125;</span><br><span class="line">f.call(1) // if(use strict)&#123;1&#125; else &#123;Number 对象1&#125;</span><br><span class="line"></span><br><span class="line">var a = console.log(1) // a undefined</span><br><span class="line"></span><br><span class="line">var a = (1,2) // a === 2</span><br><span class="line"></span><br><span class="line">var liTags = document.querySelectorAll(&apos;li&apos;)</span><br><span class="line">for (var i=0; i&lt;liTags.length; i++)&#123;</span><br><span class="line">  liTags[i].onclick = function()&#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 点击li2 打印6</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>apply<br>不确定参数个数时，使用apply<br>fn.apply(asThis, params)<br>bind<br>bind 返回一个新的函数（没有调用），这个新函数会call原来的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var view = &#123;</span><br><span class="line">  element: $(&apos;#div1&apos;),</span><br><span class="line">  bindEvents: function()&#123;</span><br><span class="line">    this.element.onclick = this.onClick.bind(this)</span><br><span class="line">  &#125;,</span><br><span class="line">  onClick: function()&#123;</span><br><span class="line">    this.element.addClass(&apos;active&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>柯里化/高阶函数</p>
+<ul>
+<li>柯里化<br>返回函数的函数<br>用于模板引擎和惰性求值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Handlerbar(template)&#123;</span><br><span class="line">  return function(data)&#123;</span><br><span class="line">    return template.replace(&apos;&#123;&#123;name&#125;&#125;&apos;, data.name)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var t = Handlerbar(&apos;&lt;h1&gt;Hi, I am &#123;&#123;name&#125;&#125;&lt;/h1&gt;&apos;)</span><br><span class="line">t(&#123;name:&apos;frank&apos;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>高阶函数</p>
+<ul>
+<li>接受一个或多个函数作为输入</li>
+<li>输出一个函数</li>
+<li>同时满足两个条件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">array.sort(function(a,b)&#123;a-b&#125;)</span><br><span class="line">array.forEach(function(a)&#123;&#125;)</span><br><span class="line">array.map(function()&#123;&#125;)</span><br><span class="line">array.filter(function()&#123;&#125;)</span><br><span class="line">array.reduce(function()&#123;&#125;)</span><br><span class="line">fn.bind.call(fn,&#123;&#125;,1,2,3)</span><br><span class="line">高阶函数的写法</span><br><span class="line">array.filter(function(n)&#123;n%2===0&#125;).reduce(function(prev,next)&#123;return prev+next&#125;,0)</span><br><span class="line">reduce(filter(array, function(n)&#123;n%2===0&#125;), function(prev,next)&#123;return prev+next&#125;,0)</span><br><span class="line">sort(filter(array, function(n)&#123;n%2===1&#125;), function(a,b)&#123;return a-b&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>回调</p>
+<ul>
+<li>被当做参数的函数就是回调</li>
+<li>一定会调用</li>
+<li>和同步异步无关</li>
+</ul>
+</li>
+<li><p>构造函数</p>
+<ul>
+<li>返回对象的函数就是构造函数</li>
+<li>一般首字母大写<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number(1)</span><br><span class="line">Object()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>箭头函数</p>
+<ul>
+<li>没有this</li>
+</ul>
+</li>
+<li><p>理解函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function curry(func , fixedParams)&#123;</span><br><span class="line">    if ( !Array.isArray(fixedParams) ) &#123; fixedParams = [ ] &#125;</span><br><span class="line">    return function()&#123;</span><br><span class="line">        let newParams = Array.prototype.slice.call(arguments); // 新传的所有参数</span><br><span class="line">        if ( (fixedParams.length+newParams.length) &lt; func.length ) &#123;</span><br><span class="line">            return curry(func , fixedParams.concat(newParams));</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            return func.apply(undefined, fixedParams.concat(newParams));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">var abc = function(a, b, c) &#123;</span><br><span class="line">  return [a, b, c];</span><br><span class="line">&#125;;</span><br><span class="line">var curried = curry(abc);</span><br><span class="line"></span><br><span class="line">curried(1)(2)(3);</span><br><span class="line">// =&gt; [1, 2, 3]</span><br><span class="line">curried(1, 2)(3);</span><br><span class="line">// =&gt; [1, 2, 3]</span><br><span class="line">curried(1, 2, 3);</span><br><span class="line">// =&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/26/javascript06/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/03/26/javascript06/" itemprop="url">javascript 标准库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T17:00:13+08:00">
+                2019-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>加 new 生成对象，不加 new 生成基本类型</p>
+<ul>
+<li>Number() 数字</li>
+<li>String() 字符串</li>
+<li>Boolean() 布尔值</li>
+</ul>
+<hr>
+<p>加不加 new 都一样</p>
+<ul>
+<li>Object()</li>
+<li>Array()<blockquote>
+<p>用于构造数组的全局对象<br>数组是按顺序排列的一组值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">不一致性</span><br><span class="line">var a = Array(3) // 只申明了数组的长度</span><br><span class="line">0 in a // false </span><br><span class="line">var a = Array(3,3) // a[0] = 3, a[1] = 3</span><br><span class="line">等价</span><br><span class="line">var a = [3,3]</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>Array.prototype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">push</span><br><span class="line">pop</span><br><span class="line">shift</span><br><span class="line">join</span><br></pre></td></tr></table></figure></p>
+<p>forEach<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">三个参数分别是value,key,a</span><br><span class="line">第三个参数不是必须的</span><br><span class="line">a.forEach(function(x,y,[z])&#123;</span><br><span class="line">  console.log(x,y,z)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>forEach 底层实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;0:&apos;a&apos;, 1:&apos;b&apos;, length:2&#125;</span><br><span class="line">obj.forEach = function(x)&#123;</span><br><span class="line">  for(let i=0; i&lt;obj.length; i++)&#123;</span><br><span class="line">    x(this[i], i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>sort<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.sort() // sort 会改变本身</span><br><span class="line">a.sort(function(x,y)&#123;return x-y&#125;)</span><br><span class="line">a.sort(function(x,y)&#123;return y-x&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>其他<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">a.join() //默认逗号</span><br><span class="line">a.concat(b)</span><br><span class="line">var b = a.concat([]) //产生一个新数组</span><br><span class="line">a.map(function(value, key)&#123;return value * 2&#125;)</span><br><span class="line">a.map(value =&gt; value * 2)</span><br><span class="line">a.filter(function(value, key)&#123;return value &gt; 5&#125;)</span><br><span class="line">a.reduce(function(x, y)&#123;return x + y&#125;, 0) // x 指每一次的结果, y 指a的每一项, return 即下一次的x, 0 x的初始值 </span><br><span class="line">a.reduce((x, y) =&gt; x + y, 0)</span><br><span class="line">a.reduce(function(arr, n)&#123;</span><br><span class="line">	arr.push(n * 2)</span><br><span class="line">	return arr</span><br><span class="line">	&#125;, []) // 使用 reduce 实现 map</span><br><span class="line">a.reduce(function(arr, n)&#123;</span><br><span class="line">  if(n % 2 === 0)&#123;</span><br><span class="line">    arr.push(n)</span><br><span class="line">  &#125;</span><br><span class="line">  return arr</span><br><span class="line">&#125;, []) // 使用 reduce 实现 filter</span><br></pre></td></tr></table></figure></p>
+<p>题目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">排序</span><br><span class="line">var students = [&apos;小明&apos;,&apos;小红&apos;,&apos;小花&apos;]</span><br><span class="line">var scores = &#123; 小明: 59, 小红: 99, 小花: 80 &#125;</span><br><span class="line">students.sort(function(x, y) &#123;</span><br><span class="line">    return scores[y] - scores[x]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">偶数的平方</span><br><span class="line">var a = [1,2,3,4,5,6,7,8,9]</span><br><span class="line">a.filter(x =&gt; x % 2 === 0).map(value =&gt; value*value)</span><br><span class="line"></span><br><span class="line">基数的和</span><br><span class="line">var a = [1,2,3,4,5,6,7,8,9]</span><br><span class="line">a.reduce(function(x, y)&#123;</span><br><span class="line">    if (y%2 === 1) &#123;</span><br><span class="line">        return x + y &#125;</span><br><span class="line">    else return x</span><br><span class="line">&#125;, 0)</span><br></pre></td></tr></table></figure></p>
+<p>arguments 伪数组</p>
+<ul>
+<li>Function()<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var f = function(a,b) &#123;</span><br><span class="line">  return a+b</span><br><span class="line">&#125;</span><br><span class="line">var f = new Function(&apos;a&apos;, &apos;b&apos;, &apos;return a+b&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Function.prototype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">call</span><br><span class="line">bind</span><br><span class="line">apply</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/21/qemu001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/03/21/qemu001/" itemprop="url">qemu001</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-21T22:40:18+08:00">
+                2019-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/qemu/" itemprop="url" rel="index">
+                    <span itemprop="name">qemu</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="qcow2-镜像释放磁盘空间"><a href="#qcow2-镜像释放磁盘空间" class="headerlink" title="qcow2 镜像释放磁盘空间"></a>qcow2 镜像释放磁盘空间</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><ul>
+<li>用0填满磁盘<code>dd if=/dev/zero of=~/junk</code></li>
+<li>释放空间 <code>rm junk</code></li>
+<li>关机<code>virsh shutdown kvm</code></li>
+<li>转换<code>qemu-img convert -O qcow2 source.qcow2 shrunk.qcow2</code></li>
+</ul>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><ul>
+<li>直接压缩转换`qemu-img </li>
+<li>convert -c -O qcow2 source.qcow2 shrunk.qcow2`</li>
+</ul>
+<h3 id="qcow2-镜像增加网卡"><a href="#qcow2-镜像增加网卡" class="headerlink" title="qcow2 镜像增加网卡"></a>qcow2 镜像增加网卡</h3><ul>
+<li>virsh domiflist snale</li>
+<li>virsh attach-interface snale –type bridge –source br0  –config</li>
+<li>virsh dumpxml snale &gt;/etc/libvirt/qemu/snale.xml</li>
+<li>virsh define /etc/libvirt/qemu/snale.xml</li>
+<li>virsh detach-interface snale  –type bridge –mac  52:54:00:14:86:cf  // 删除网卡</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/18/httpd/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -691,6 +1208,16 @@
 <li>document.getElementById  </li>
 <li>history (浏览器) BOM  </li>
 </ul>
+<p>DOM</p>
+<ul>
+<li>获取元素父节点 parentNode，parentElement</li>
+<li>检测元素是标签还是文字 nodeType === 1,nodeType === 3</li>
+<li>子标签 children</li>
+<li>子节点(包括标签和文字) childNodes</li>
+<li>获取下一个标签 循环访问 nextSibling 直到 nodeType === 1</li>
+<li>获取所有兄弟标签 声明空数组 siblings，遍历 div.parentNode.children，将 div 以外的元素 push 到数组里</li>
+<li>DOM博客 <a href="http://luopq.com/2015/11/30/javascript-dom/" target="_blank" rel="noopener">http://luopq.com/2015/11/30/javascript-dom/</a></li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var n = 1</span><br><span class="line">n.xxx = 2</span><br><span class="line">n.xxx // undefined</span><br><span class="line">var n = new Number(1)</span><br><span class="line">n.xxx = 2</span><br><span class="line">n.xxx // 2</span><br><span class="line"></span><br><span class="line">var f1 = false</span><br><span class="line">var f2 = new Boolean(false)</span><br><span class="line">if(f1)&#123;console.log(1)&#125; // </span><br><span class="line">if(f2)&#123;console.log(2)&#125; // 2</span><br><span class="line"></span><br><span class="line">s.charAt(0) 等同于 s[0]</span><br><span class="line">s.charCodeAt(0) 获取ascii编码</span><br><span class="line">s.charCodeAt(0).toString(16) 获取16进制ascii编码</span><br><span class="line">s.trim() 去除字符串 python strip</span><br></pre></td></tr></table></figure>
 <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>共用属性 底层实现this<br>proto 原型<br><strong>proto</strong>: Object 保存所有Object共用方法<br><strong>proto</strong>: Number <strong>proto</strong>: Object (Number 有两层)<br>Boolean String 同 Number<br>var 对象 = new 函数对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var o1 = new Object()</span><br><span class="line">var o2 = new Object()</span><br><span class="line">var n1 = new Number()</span><br><span class="line">o1 === o2 // false</span><br><span class="line">o1.toString() === o2.toString() // true</span><br><span class="line">o1.toString() === n1.toString() // false</span><br><span class="line">对象.__proto__ === 函数.prototype</span><br><span class="line">o1.__proto__ === Object.prototype // true</span><br><span class="line">n1.__proto__ === Number.prototype // true</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype // true</span><br><span class="line">声明一个变量，会把 __proto__ 绑定到 prototype</span><br><span class="line"></span><br><span class="line">Object.__proto__ === Function.prototype</span><br><span class="line">Object.prototype.__proto__ === null</span><br><span class="line">var function = new Function()</span><br><span class="line">function.__proto__ === Function.prototype</span><br><span class="line"></span><br><span class="line">// 另外，所有函数都是由 Function 构造出来的，所以</span><br><span class="line">Number.__proto__ === Function.prototype // 因为 Number 是函数，是 Function 的实例</span><br><span class="line">Object.__proto__ === Function.prototype // 因为 Object 是函数，是 Function 的实例</span><br><span class="line">Function.__proto__ === Function.prototye // 因为 Function 是函数，是 Function 的实例！</span><br></pre></td></tr></table></figure></p>
 
@@ -949,6 +1476,7 @@
 <p>简单数据直接存在 Stack<br>复杂数据在 Stack 存储 Heap 地址，是对内存的引用。</p>
 <p>循环引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;  </span><br><span class="line">a.self = a  </span><br><span class="line">a.self.self</span><br></pre></td></tr></table></figure></p>
 <p>面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;;</span><br><span class="line">alert(a.x); //undefined</span><br><span class="line">alert(b.x); //[object Object]</span><br></pre></td></tr></table></figure></p>
+<p><img src="/hexo-blog/2019/03/14/javascript04/内存图.png" alt="内存图" title="内存图"></p>
 <h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>如果一个对象没有被引用，将被回收。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;</span><br><span class="line">document.body.onclick = fn</span><br><span class="line">fn = null //function()&#123;&#125; 不会被回收</span><br></pre></td></tr></table></figure></p>
 <p>深拷贝 vs 浅拷贝<br>对于简单类型，赋值就是深拷贝<br>改变b，完全不会影响到a<br>针对对象<br>浅拷贝<br>var a = {name: ‘frank’}<br>var b = a<br>b.name = ‘b’<br>a.name === ‘b’ //true<br>深拷贝 对 Heap 内存完全拷贝</p>
 
@@ -1429,497 +1957,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/03/css009/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/03/css009/" itemprop="url">css-动态REM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T19:08:55+08:00">
-                2019-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>动态 REM 手机专用的自适应方案<br>px 像素<br>em 单位元素 font-size 计算值<br>rem 根元素的 font-size 的倍数<br>vh viewport high 视口高度<br>vw viewport width 视口宽度<br>网页默认 font-size 16px<br>chrome 默认最小 font-size 12px  </p>
-<p>##<br>PC 定宽 Float/Flex 1000px<br>手机 如何兼容各种型号<br>Nexus 412<em>732<br>iphone5 320</em>568<br>iphone6 375<em>667<br>ipthon6+ 414</em>736  </p>
-<ul>
-<li>响应式<br>0~320 css1<br>320~375 css2<br>374~414 css3<br>… cssn  </li>
-<li>不用宽度,用百分比 但是高度和宽度无法关联</li>
-</ul>
-<h2 id="REM"><a href="#REM" class="headerlink" title="REM"></a>REM</h2><ul>
-<li>按比例缩放<br>一切单位以宽度为基准，就能完美还原设计稿<br>1.利用 js 实现 font-size 等于 页面宽度  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> &gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var pageWidth = window.innerWidth</span></span><br><span class="line"><span class="xml">    document.write('<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">html&#123;font-size:' + pageWidth + 'px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>')</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>2.使用rem作为单位</p>
-<ul>
-<li><p>优化</p>
-<ul>
-<li>meta:vp</li>
-<li>等于 页面宽度的10%</li>
-<li><p>特别小的还是使用 px ：<br>border: 1px solid red;<br>font-size: 16px;  </p>
-</li>
-<li><p>直接写 px，通过saas翻译成 rem (less/sass/scss/webpack)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sass --watch scss:css  </span><br><span class="line">node-sass -wr scss -o css  </span><br><span class="line">scss 添加  </span><br><span class="line">@function px2rem( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;  </span><br><span class="line">$designWidth : 640;</span><br><span class="line"></span><br><span class="line">调用方式：px2rem(320)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<p>sass 安装<br>npm config set registry <a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">https://registry.npm.taobao.org/</a><br>sudo npm i -g node-sass<br>权限问题使用：<br>sudo npm install -g –unsafe-perm node-sass  </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/03/css008/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/03/css008/" itemprop="url">css-BFC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T17:31:00+08:00">
-                2019-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>BFC - block formatting context - 块级格式化上下文</p>
-<h2 id="BFC-的产生"><a href="#BFC-的产生" class="headerlink" title="BFC 的产生"></a>BFC 的产生</h2><p>一个块格式化上下文由以下之一创建：</p>
-<ul>
-<li>根元素或其它包含它的元素</li>
-<li>浮动元素 (元素的 float 不是 none)</li>
-<li>绝对定位元素 (元素具有 position 为 absolute 或 fixed)</li>
-<li>内联块 (元素具有 display: inline-block)</li>
-<li>表格单元格 (元素具有 display: table-cell，HTML表格单元格默认属性)</li>
-<li>表格标题 (元素具有 display: table-caption, HTML表格标题默认属性)</li>
-<li>具有overflow 且值不是 visible 的块元素，</li>
-<li>display: flow-root<br>css 3.0 新增功能，即让当前元素触发 BFC</li>
-<li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</li>
-</ul>
-<h2 id="BFC-功能"><a href="#BFC-功能" class="headerlink" title="BFC 功能"></a>BFC 功能</h2><ul>
-<li><p>在一个 BFC 中，盒在竖直方向一个接一个地放置，从包含块(父元素）的顶部开始。<br>两个兄弟盒之间的竖直距离由 ‘margin’ 属性决定。<br>同一个块格式化上下文中的相邻块级盒之间的竖直 margin 会合并。</p>
-</li>
-<li><p>一个 BFC 包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。<br>翻译一下</p>
-</li>
-<li><p>BFC 会包含所有内部元素，除非这些元素在另外一个 BFC 中。</p>
-</li>
-<li><p>爸爸管儿子<br>包含内部元素</p>
-</li>
-<li><p>兄弟划清界限<br>两个 BFC 之间划清界限</p>
-</li>
-<li><p>清除浮动</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/28/css007/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/02/28/css007/" itemprop="url">css布局套路</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T18:56:54+08:00">
-                2019-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>调试时加盒模型，border不占宽度<br>*{box-sizing: border-box;}</p>
-<h2 id="float"><a href="#float" class="headerlink" title="float"></a>float</h2><ul>
-<li>clearfix </li>
-</ul>
-<h2 id="一行多图片"><a href="#一行多图片" class="headerlink" title="一行多图片"></a>一行多图片</h2><ul>
-<li>nth-child</li>
-<li>wrapper<br>margin-left: -xpx;<br>margin-right: -xpx;</li>
-</ul>
-<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><h2 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h2><p>width: calc(25% - 8px);</p>
-<p><strong>手机上不要定宽高</strong></p>
-<p><strong>图片使用 background属性</strong><br>img 很难不变形<br>background: transparent url() no-repeat center;<br>background-size: cover;</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/hexo-blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/hexo-blog/page/4/">4</a><a class="extend next" rel="next" href="/hexo-blog/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/hexo-blog/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/hexo-blog/page/5/">5</a><a class="extend next" rel="next" href="/hexo-blog/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1967,7 +2009,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1978,7 +2020,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1989,7 +2031,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

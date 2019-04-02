@@ -291,6 +291,492 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/03/css009/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/03/03/css009/" itemprop="url">css-动态REM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T19:08:55+08:00">
+                2019-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>动态 REM 手机专用的自适应方案<br>px 像素<br>em 单位元素 font-size 计算值<br>rem 根元素的 font-size 的倍数<br>vh viewport high 视口高度<br>vw viewport width 视口宽度<br>网页默认 font-size 16px<br>chrome 默认最小 font-size 12px  </p>
+<p>##<br>PC 定宽 Float/Flex 1000px<br>手机 如何兼容各种型号<br>Nexus 412<em>732<br>iphone5 320</em>568<br>iphone6 375<em>667<br>ipthon6+ 414</em>736  </p>
+<ul>
+<li>响应式<br>0~320 css1<br>320~375 css2<br>374~414 css3<br>… cssn  </li>
+<li>不用宽度,用百分比 但是高度和宽度无法关联</li>
+</ul>
+<h2 id="REM"><a href="#REM" class="headerlink" title="REM"></a>REM</h2><ul>
+<li>按比例缩放<br>一切单位以宽度为基准，就能完美还原设计稿<br>1.利用 js 实现 font-size 等于 页面宽度  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> &gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    var pageWidth = window.innerWidth</span></span><br><span class="line"><span class="xml">    document.write('<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">html&#123;font-size:' + pageWidth + 'px;&#125;</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>')</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.使用rem作为单位</p>
+<ul>
+<li><p>优化</p>
+<ul>
+<li>meta:vp</li>
+<li>等于 页面宽度的10%</li>
+<li><p>特别小的还是使用 px ：<br>border: 1px solid red;<br>font-size: 16px;  </p>
+</li>
+<li><p>直接写 px，通过saas翻译成 rem (less/sass/scss/webpack)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sass --watch scss:css  </span><br><span class="line">node-sass -wr scss -o css  </span><br><span class="line">scss 添加  </span><br><span class="line">@function px2rem( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;  </span><br><span class="line">$designWidth : 640;</span><br><span class="line"></span><br><span class="line">调用方式：px2rem(320)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>sass 安装<br>npm config set registry <a href="https://registry.npm.taobao.org/" target="_blank" rel="noopener">https://registry.npm.taobao.org/</a><br>sudo npm i -g node-sass<br>权限问题使用：<br>sudo npm install -g –unsafe-perm node-sass  </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/03/css008/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/03/03/css008/" itemprop="url">css-BFC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-03T17:31:00+08:00">
+                2019-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>BFC - block formatting context - 块级格式化上下文</p>
+<h2 id="BFC-的产生"><a href="#BFC-的产生" class="headerlink" title="BFC 的产生"></a>BFC 的产生</h2><p>一个块格式化上下文由以下之一创建：</p>
+<ul>
+<li>根元素或其它包含它的元素</li>
+<li>浮动元素 (元素的 float 不是 none)</li>
+<li>绝对定位元素 (元素具有 position 为 absolute 或 fixed)</li>
+<li>内联块 (元素具有 display: inline-block)</li>
+<li>表格单元格 (元素具有 display: table-cell，HTML表格单元格默认属性)</li>
+<li>表格标题 (元素具有 display: table-caption, HTML表格标题默认属性)</li>
+<li>具有overflow 且值不是 visible 的块元素，</li>
+<li>display: flow-root<br>css 3.0 新增功能，即让当前元素触发 BFC</li>
+<li>column-span: all 应当总是会创建一个新的格式化上下文，即便具有 column-span: all 的元素并不被包裹在一个多列容器中。</li>
+</ul>
+<h2 id="BFC-功能"><a href="#BFC-功能" class="headerlink" title="BFC 功能"></a>BFC 功能</h2><ul>
+<li><p>在一个 BFC 中，盒在竖直方向一个接一个地放置，从包含块(父元素）的顶部开始。<br>两个兄弟盒之间的竖直距离由 ‘margin’ 属性决定。<br>同一个块格式化上下文中的相邻块级盒之间的竖直 margin 会合并。</p>
+</li>
+<li><p>一个 BFC 包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。<br>翻译一下</p>
+</li>
+<li><p>BFC 会包含所有内部元素，除非这些元素在另外一个 BFC 中。</p>
+</li>
+<li><p>爸爸管儿子<br>包含内部元素</p>
+</li>
+<li><p>兄弟划清界限<br>两个 BFC 之间划清界限</p>
+</li>
+<li><p>清除浮动</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/28/css007/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/02/28/css007/" itemprop="url">css布局套路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T18:56:54+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>调试时加盒模型，border不占宽度<br>*{box-sizing: border-box;}</p>
+<h2 id="float"><a href="#float" class="headerlink" title="float"></a>float</h2><ul>
+<li>clearfix </li>
+</ul>
+<h2 id="一行多图片"><a href="#一行多图片" class="headerlink" title="一行多图片"></a>一行多图片</h2><ul>
+<li>nth-child</li>
+<li>wrapper<br>margin-left: -xpx;<br>margin-right: -xpx;</li>
+</ul>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><h2 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h2><p>width: calc(25% - 8px);</p>
+<p><strong>手机上不要定宽高</strong></p>
+<p><strong>图片使用 background属性</strong><br>img 很难不变形<br>background: transparent url() no-repeat center;<br>background-size: cover;</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/28/css006/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1246,7 +1732,8 @@
 <h2 id="binlog"><a href="#binlog" class="headerlink" title="binlog"></a>binlog</h2><p>以二进制日志记录了所有的 DDL(数据定义) 语句 和 DML(数据操作) 语句。<br>语句以事件保存，不包括查询语句，主要用于数据的恢复和复制。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">show binary logs;</span><br><span class="line">mysqlbinlog mysqld-bin.000001</span><br><span class="line">-d -database</span><br><span class="line">mysqlbinlog -d neutron mysqld-bin.000001 &gt; neutron.txt</span><br><span class="line">-D --disable-log-bin 禁用</span><br><span class="line">mysqlbinlog -D mysqld-bin.000001</span><br><span class="line">-s --short-form 只输出sql</span><br><span class="line">--start-datetime</span><br><span class="line">--stop-datetime</span><br><span class="line">--start-position</span><br><span class="line">--stop-position</span><br></pre></td></tr></table></figure></p>
 <p><strong>远程读取</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-R --read-from-remote-server  </span><br><span class="line">-h --host  </span><br><span class="line">mysqlbinlog -R -h 192.168.0.1 -p root mysqld-bin.000001</span><br></pre></td></tr></table></figure></p>
 <p><strong>批量删除表</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Select CONCAT( &apos;drop table &apos;, task_id, &apos;;&apos; )FROM task Where start_time = &apos;1999-01-01 01&apos; and end_time &lt; &apos;2019-01-01 01&apos;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>event_scheduler</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL event_scheduler=1;</span><br><span class="line">USE keystone;</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line">CREATE EVENT IF NOT EXISTS token_expire_remove ON SCHEDULE EVERY 1 DAY STARTS TIMESTAMP &apos;2019-03-20 02:00:00&apos;</span><br><span class="line">DO</span><br><span class="line">BEGIN</span><br><span class="line">START TRANSACTION;</span><br><span class="line">SET @timenow=now();</span><br><span class="line">DELETE FROM token WHERE expires &lt; @timenow;</span><br><span class="line">COMMIT;</span><br><span class="line">END $$</span><br><span class="line">delimiter;</span><br><span class="line"></span><br><span class="line">查看:</span><br><span class="line">show processlist;</span><br><span class="line"></span><br><span class="line">持久化:</span><br><span class="line">event_scheduler=ON</span><br></pre></td></tr></table></figure></p>
+<p><strong>event_scheduler</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL event_scheduler=1;</span><br><span class="line">USE keystone;</span><br><span class="line"></span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE EVENT IF NOT EXISTS token_expire_remove ON SCHEDULE EVERY 1 DAY STARTS TIMESTAMP &apos;2019-03-20 02:00:00&apos;</span><br><span class="line">DO</span><br><span class="line">BEGIN</span><br><span class="line">START TRANSACTION;</span><br><span class="line">SET @timenow=now();</span><br><span class="line">DELETE FROM token WHERE expires &lt; @timenow;</span><br><span class="line">COMMIT;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER ;</span><br><span class="line">-------------------------------</span><br><span class="line">SET GLOBAL event_scheduler=1;</span><br><span class="line">USE bonree;</span><br><span class="line"></span><br><span class="line">DELIMITER $$</span><br><span class="line">CREATE EVENT IF NOT EXISTS table_expire_remove ON SCHEDULE EVERY 1 DAY STARTS TIMESTAMP &apos;2019-03-20 02:00:00&apos;</span><br><span class="line">DO</span><br><span class="line">BEGIN</span><br><span class="line">START TRANSACTION;</span><br><span class="line">SET @timenow=now();</span><br><span class="line">SET @enddate=date_add(@timenow,interval -1 quarter);</span><br><span class="line">SET @exeSql=&quot;SELECT CONCAT(&apos;DROP TABLE &apos;, task_id, &apos;;&apos;)FROM task WHERE start_time=&apos;1999-01-01 01&apos; AND end_time &lt; @enddate;&quot;;</span><br><span class="line">PREPARE stmt FROM @exeSql;</span><br><span class="line">EXECUTE stmt;</span><br><span class="line">DELETE FROM task WHERE start_time=&apos;1999-01-01 01&apos; AND end_time &lt; @enddate;</span><br><span class="line">COMMIT;</span><br><span class="line">END $$</span><br><span class="line">DELIMITER ;</span><br><span class="line">-------------------------------</span><br><span class="line">查看:</span><br><span class="line">show processlist;</span><br><span class="line">持久化:</span><br><span class="line">event_scheduler=ON</span><br></pre></td></tr></table></figure></p>
+<p><strong>压缩binlog</strong><br><code>tar -zcvf mysql-bin.000001.tar.gz /var/lib/mysql/mysql-bin.000001;</code><br><code>find -name &#39;mysql-bin.0000*&#39; ! -name &#39;*.gz&#39; -exec tar -zcvf {}.tar.gz {} \;</code><br><code>find -name &#39;mysql-bin.0000*&#39; ! -name &#39;*.gz&#39; -exec echo {} \;</code></p>
 
           
         
@@ -1389,482 +1876,22 @@
         
           
             <ul>
-<li><p>网卡临时添加ip<br>ifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up</p>
+<li><p>网卡临时添加ip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 10.25.114.30 netmask 255.255.255.192 up</span><br><span class="line">ifconfig eth0 30.30.3.67 netmask 255.255.255.192 broadcast 30.30.3.127 up</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加静态路由<br>route add -net 10.25.0.0/16 gw 30.30.3.65</p>
+<li><p>添加静态路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">route add -net 10.25.0.0/16 gw 30.30.3.65</span><br><span class="line">route del -net 0.0.0.0/0 gw 192.168.68.229</span><br><span class="line"></span><br><span class="line">route add -net 10.25.91.0 gw 10.25.114.1 netmask 255.255.255.0 dev eth0 metric 0</span><br><span class="line">route del -net 10.25.91.0 gw 10.25.114.1 netmask 255.255.255.0 dev eth0</span><br><span class="line"></span><br><span class="line">sudo route add -net default gw 10.25.60.161 netmask 0.0.0.0 dev eth0 metric 1</span><br><span class="line">sudo route del -net default gw 10.25.60.161 netmask 0.0.0.0 dev eth0 metric 1</span><br><span class="line"></span><br><span class="line">ip route add 10.25.0.0/16 via 10.25.60.161 dev eth0</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ethtool<br>ethtool ens5f1</p>
+<li><p>ethtool<br><code>ethtool ens5f1</code></p>
 </li>
-<li><p>lldptool<br>lldptool -t -n -i ens5f1</p>
+<li><p>lldptool<br><code>lldptool -t -n -i ens5f1</code></p>
 </li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/25/python001/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/02/25/python001/" itemprop="url">python问题记录001</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T10:55:25+08:00">
-                2019-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>@property 方法？</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/23/css003/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/02/23/css003/" itemprop="url">初识css003</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T19:49:40+08:00">
-                2019-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>body 默认margin 8px</li>
-<li>使用link引用</li>
-</ul>
-<h2 id="文字两端对齐"><a href="#文字两端对齐" class="headerlink" title="文字两端对齐"></a>文字两端对齐</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">span&#123;</span><br><span class="line">  border: 1px solid green;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 5em;</span><br><span class="line">  text-align: justify;</span><br><span class="line">  line-height: 20px;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  height: 20px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">span::after&#123;</span><br><span class="line">  content: '';</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 100%;</span><br><span class="line">  border: 1px solid blue;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="文字断行"><a href="#文字断行" class="headerlink" title="文字断行"></a>文字断行</h2><p><code>word-break: break-all;</code><br>使用连字符: -</p>
-<h2 id="文字省略"><a href="#文字省略" class="headerlink" title="文字省略"></a>文字省略</h2><p>不换行<br><code>white-space: nowrap;</code><br>超出部分隐藏<br><code>overflow: hidden;</code><br>超出部分以…显示<br><code>text-overflow: ellipsis;</code></p>
-<p>多行省略搜索:<br>css multi line text ellipsis  </p>
-<figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">border: 1px solid red;</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-line-clamp: 2;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">overflow: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>转化</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">height 40px -&gt;</span><br><span class="line">line-height: 24px;</span><br><span class="line">padding: 8px 0;</span><br></pre></td></tr></table></figure></p>
-<p>margin 合并<br>如果有东西挡住，不会合并<br>否则会合并</p>
-<h2 id="1-1自适应的div"><a href="#1-1自适应的div" class="headerlink" title="1:1自适应的div"></a>1:1自适应的div</h2><p>border: 1px solid red;<br>padding-top: 100%;</p>
-<h2 id="理解堆叠上下文"><a href="#理解堆叠上下文" class="headerlink" title="理解堆叠上下文"></a>理解堆叠上下文</h2><p><img src="/hexo-blog/2019/02/23/css003/001.jpg" alt="堆叠顺序" title="堆叠顺序"><br><strong>当不在同一个堆叠上下文中，可以理解为不在同一个部门中</strong><br><strong>部门级别高的，一定更高</strong></p>
-<ul>
-<li>形成堆叠上下文的条件<ul>
-<li>z-index 值不为 “auto”的 绝对/相对定位</li>
-<li>根元素 (HTML) </li>
-</ul>
+<li><p>bond<br><code>cat /proc/net/bonding/bond0</code></p>
+</li>
+<li><p>没有自动分配ip<br>需要在/etc/sysconfig/network-scripts 里面增加 ifcfg-eth1 并且使用dhcp</p>
 </li>
 </ul>
-<p>完整的条件查看:<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" title="堆叠上下文" target="_blank" rel="noopener">形成堆叠上下文的所有条件MDN</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/23/javascript02/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/02/23/javascript02/" itemprop="url">初识javascript02</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-23T19:39:40+08:00">
-                2019-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>事件<br>// 键盘事件<br>onkeypress<br>// 鼠标点击<br>onclick<br>// 错误<br>onerror<br>// 按住鼠标<br>onmousedown<br>// 移动鼠标<br>onmousemove<br>// 松开鼠标<br>onmouseup<br>// touch 事件<br>ontouchstart<br>ontouchmove<br>ontouchend  </li>
-</ul>
-<p>search js detect touch<br>支持 touch null 不支持 touch undefined<br>document.body.ontouchstart !== undefined<br>‘ontouchstart’ in document.body  </p>
-<p>getElementById<br>createElement<br>appendChild  </p>
-<ul>
-<li>坐标<br>鼠标的坐标<br>clientX<br>clientY<br>触控的坐标 // 注意有多点触控<br>touches[0].clientX<br>touches[0].clientY<br>小 tips：<br>(x-3) (y-3)<br><strong>canvas 不需要</strong>  </li>
-</ul>
-<p>canvas 默认样式inline-block<br>不能通过 css width height指定画布大小<br>解决方案：<br>获取初始viewport宽高<br>var pageWidth = document.documentElement.clientWidth<br>var pageHeight = document.documentElement.clientHeight<br>canvas.width = pageWidth<br>canvas.height = pageHeight<br>动态调整<br>window.onresize时再次获取   </p>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>var ctx = canvas.getContext(‘2d’)  </p>
-<h2 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h2><p>ctx.fillStyle = ‘red’;<br>ctx.fillRect(10,10,100,100); //rectangle 矩形<br>分别代表x,y,长,宽  </p>
-<p>ctx.strokeStyle = ‘yellow’;<br>ctx.strokeRect(10,10,100,100); //stroke 描边  </p>
-<p>ctx.clearRect(50,50,10,10); //橡皮擦  </p>
-<h2 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h2><p>ctx.fillStyle = ‘red’;<br>ctx.beginPath();<br>ctx.moveTo(240,240);<br>ctx.lineTo(300,240);<br>ctx.lineTo(300,300);<br>ctx.fill();  </p>
-<h2 id="圆弧"><a href="#圆弧" class="headerlink" title="圆弧"></a>圆弧</h2><p>ctx.beginPath();<br>ctx.arc(150,150,20,0,Math.PI<em>2); // x,y,半径,开始弧度,结束弧度<br>弧度=(Math.PI/180)</em>角度。<br>ctx.fill(); //填充<br>ctx.stroke(); //描边  </p>
-<p>canvas 画图时坐标是相对于viewport的而不是body<br>1.可以去掉body的margin  </p>
-<p>解决填充频率的方法：<br>使用canvas在两点间画线  </p>
-<h2 id="画线"><a href="#画线" class="headerlink" title="画线"></a>画线</h2><p>ctx.beginPath()<br>ctx.moveTo(0,0)<br>ctx.lineTo(100,0)<br>ctx.stroke() //需要closePath闭合<br>ctx.fill() //会自动闭合<br>ctx.closePath()  </p>
-<p>ctx.lineWidth = 10; //线宽  </p>
-<p>点击开关<br>eraserEnabled = !eraserEnabled  </p>
-<p>关于画笔 橡皮檫<br>使用两个按钮表示<br>如果将if else 表示为平铺直叙，会减少代码bug  </p>
-<p>禁用滚动<br>preventDefault()  </p>
+<p>*</p>
 
           
         
@@ -1904,7 +1931,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/hexo-blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/hexo-blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexo-blog/page/3/">3</a><a class="page-number" href="/hexo-blog/page/4/">4</a><a class="extend next" rel="next" href="/hexo-blog/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/hexo-blog/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/hexo-blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/hexo-blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/hexo-blog/page/5/">5</a><a class="extend next" rel="next" href="/hexo-blog/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1952,7 +1979,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1963,7 +1990,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1974,7 +2001,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

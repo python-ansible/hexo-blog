@@ -87,10 +87,12 @@
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:description" content="7种数据类型JavaScript 是一种弱类型或者说动态语言。这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。这也意味着你可以使用同一个变量保存不同类型的数据。number/string/boolean/symbol/null/undefined/object number十进制 3二进制 0b11 = 3八进制 011 = 9十六进制 0x11 = 17   string多">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T01:41:33.010Z">
+<meta property="og:image" content="https://python-ansible.github.io/hexo-blog/2019/03/14/javascript04/内存图.png">
+<meta property="og:updated_time" content="2019-04-02T09:51:38.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript04">
 <meta name="twitter:description" content="7种数据类型JavaScript 是一种弱类型或者说动态语言。这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。这也意味着你可以使用同一个变量保存不同类型的数据。number/string/boolean/symbol/null/undefined/object number十进制 3二进制 0b11 = 3八进制 011 = 9十六进制 0x11 = 17   string多">
+<meta name="twitter:image" content="https://python-ansible.github.io/hexo-blog/2019/03/14/javascript04/内存图.png">
 
 
 
@@ -499,6 +501,7 @@
 <p>简单数据直接存在 Stack<br>复杂数据在 Stack 存储 Heap 地址，是对内存的引用。</p>
 <p>循环引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;  </span><br><span class="line">a.self = a  </span><br><span class="line">a.self.self</span><br></pre></td></tr></table></figure></p>
 <p>面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;;</span><br><span class="line">alert(a.x); //undefined</span><br><span class="line">alert(b.x); //[object Object]</span><br></pre></td></tr></table></figure></p>
+<p><img src="/hexo-blog/2019/03/14/javascript04/内存图.png" alt="内存图" title="内存图"></p>
 <h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>如果一个对象没有被引用，将被回收。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;</span><br><span class="line">document.body.onclick = fn</span><br><span class="line">fn = null //function()&#123;&#125; 不会被回收</span><br></pre></td></tr></table></figure></p>
 <p>深拷贝 vs 浅拷贝<br>对于简单类型，赋值就是深拷贝<br>改变b，完全不会影响到a<br>针对对象<br>浅拷贝<br>var a = {name: ‘frank’}<br>var b = a<br>b.name = ‘b’<br>a.name === ‘b’ //true<br>深拷贝 对 Heap 内存完全拷贝</p>
 
@@ -622,7 +625,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -633,7 +636,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -644,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
