@@ -291,6 +291,594 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/04/04/javascript08/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/04/04/javascript08/" itemprop="url">javascript08</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T20:12:55+08:00">
+                2019-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DOM API<br>Document Object Model  </p>
+<blockquote>
+<p>有点类似 ORM 一个是将数据库映射为对象，一个是将 documnet 映射为对象 , 主要功能是将页面中的节点通过对应的构造函数转换成对象</p>
+</blockquote>
+<blockquote>
+<p>Node 包含：</p>
+<ul>
+<li>Documnet  </li>
+<li>Element  </li>
+<li>Text </li>
+<li>其他(比如comment)<br>Node API 关键字：</li>
+<li>child/children/parent</li>
+<li>node/nodes</li>
+<li>first/last</li>
+<li>next/previous</li>
+<li>sibling/siblings 兄弟</li>
+<li>type</li>
+<li>value/text/content</li>
+<li>inner/outer</li>
+<li>element<br>Node 属性:</li>
+<li>childNodes \ 子节点</li>
+<li>children \ 子标签，不包含 text</li>
+<li>firstChild lastChild \ 包含text</li>
+<li>firstElementChild lastElementChild \ 不包含text</li>
+<li>previousSibling nextSibling</li>
+<li>previousElementSibling nextElementSibling</li>
+<li>outerText innerText  // 触发重排，性能低；清除其他子元素</li>
+<li>textContent // 包括 script 和 style；会返回隐藏元素文本 </li>
+<li>nodeName nodeValue nodeType // 1 element 3 text</li>
+<li>ownerDocument</li>
+<li>parentElement parentNode</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>DocumentFragment 优化</p>
+</blockquote>
+<blockquote>
+<p>Node 方法：</p>
+<ul>
+<li>appendChild()</li>
+<li>cloneNode(false)  // 默认浅拷贝，true 深拷贝</li>
+<li>contains()</li>
+<li>hasChildNodes()</li>
+<li>insertBefore()</li>
+<li>isEqualNode() // 相等</li>
+<li>isSameNode() // 相同 ===</li>
+<li>removeChild()</li>
+<li>replaceChild()</li>
+<li>normalize() // 常规化</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Document 属性</p>
+<ul>
+<li>anchors // 弃用，获取所有a标签，必须要有name</li>
+<li>body</li>
+<li>characterSet // 字符编码</li>
+<li>childElementCount </li>
+<li>children</li>
+<li>doctype</li>
+<li>documentElement // html 元素</li>
+<li>domain // 域名</li>
+<li>head</li>
+<li>images</li>
+<li>links // 获取所有a标签</li>
+<li>location</li>
+<li>onXxx</li>
+<li>plugins // 插件</li>
+<li>readyState </li>
+<li>referrer // 引荐人，从哪一个页面跳转来的，安全性</li>
+<li>scripts</li>
+<li>scrollingElement</li>
+<li>styleSheets</li>
+<li>title</li>
+<li>visibilityState // 页面激活状态<br>Document 方法</li>
+<li>open()</li>
+<li>close()</li>
+<li>write()</li>
+<li>wirteln() // writeline</li>
+<li>createDocumentFragment()</li>
+<li>createElement()</li>
+<li>createNextNode()</li>
+<li>execCommand()</li>
+<li>exitFullscreen() // 退出全屏</li>
+<li>getElementById()</li>
+<li>getElementByClassName()</li>
+<li>getElementByName()</li>
+<li>getElementByTagName()</li>
+<li>getSelection() // 获取选中文本</li>
+<li>hasFocus()</li>
+<li>querySelector() // 支持路径法 div &gt; div; 伪数组</li>
+<li>querySelectorAll()</li>
+<li>registerElement()<br>document 类似 file，都有open -&gt; wirte -&gt; close<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.write(1)</span><br><span class="line">document.write(2)</span><br><span class="line">setTimeout(()=&gt;&#123;</span><br><span class="line">  document.write(3)</span><br><span class="line">&#125;,3000) // 3 write 的危险性</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>childNodes 是动态集合。DOM树删除或新增一个相关节点，都会立刻反映在NodeList接口中。<br>document.querySelectorAll返回的是一个静态集合。DOM内部的变化，并不会实时反映在返回结果之中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var parent = document.getElementById(&apos;parent&apos;);</span><br><span class="line">parent.childNodes.length // 假设是2</span><br><span class="line">parent.appendChild(document.createElement(&apos;div&apos;));</span><br><span class="line">parent.childNodes.length // 3</span><br><span class="line"></span><br><span class="line">var allDiv = document.querySelectorAll(&apos;div&apos;)</span><br><span class="line">allDiv.length // 假设是 2</span><br><span class="line">document.body.appendChild(  document.createElement(&apos;div&apos;)  )</span><br><span class="line">allDiv.length // 2</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>element 属性</p>
+<ul>
+<li>attributes</li>
+<li>childElementCount</li>
+<li>children</li>
+<li>classList</li>
+<li>className</li>
+<li>clientHeight clientWidth clientLeft clientTop</li>
+<li>id</li>
+<li>firstElementChild lastElementChild</li>
+<li>innerHTML // 不要用，安全问题<br>element 方法</li>
+<li>querySelector()</li>
+<li>querySelectorAll()</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>HTMLCollection &amp; NodeList</p>
+<ul>
+<li>HTMLCollection实例对象的成员只能是Element节点，NodeList实例对象的成员可以包含其他节点。</li>
+<li>HTMLCollection实例对象可以用id属性或name属性引用节点元素，NodeList只能使用数字索引引用。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>ChildNode<br>ChildNode是一个原始接口，它通过Element、DocumentType 和 CharacterData 对象实现。</p>
+<ul>
+<li>ChildNode.remove()</li>
+<li>ChildNode.before()</li>
+<li>ChildNode.after()</li>
+<li>ChildNode.replaceWith()</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/04/03/sftp001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/04/03/sftp001/" itemprop="url">sftp001</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T22:52:34+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/sftp/" itemprop="url" rel="index">
+                    <span itemprop="name">sftp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>连接sftp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sftp root@27.48.137.6</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sftp 帮助</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pwd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br><span class="line">lpwd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ls</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line">lls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>浏览本地目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explore</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上传文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">put file</span><br><span class="line">mput *.xls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get file</span><br><span class="line">mget *.xls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd </span><br><span class="line">lcd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mkdir</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir dir</span><br><span class="line">lmkdir dir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm file</span><br><span class="line">rmdir dir</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>exit sftp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bye</span><br><span class="line">exit</span><br><span class="line">quit</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/04/03/neutron001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/04/03/neutron001/" itemprop="url">neutron001</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T15:17:27+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/neutron/" itemprop="url" rel="index">
+                    <span itemprop="name">neutron</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from ipallocations where ip_address=&apos;30.30.3.66&apos;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/27/javascript07/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1514,449 +2102,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/06/css012/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/06/css012/" itemprop="url">css-IFC</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T09:27:41+08:00">
-                2019-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>inline formatting context</p>
-<p>font-size: 100px;<br>类似活字印刷磨具的大小 em-square<br>可以超出 bleed outside</p>
-<p>line-height: 100px;<br>指定内联元素的真实占位<br>不同字体基线对齐<br>line-height 默认normal，值不确定，每个字体的设计师给出</p>
-<p>vertical-align: top;<br>实际占地面积的顶部对齐<br>vertical-align: middle;<br>也不靠谱，用flex,float(inline-block 也不好)<br>align-items: center;</p>
-<ul>
-<li><p>图片下面有空隙<br>div 里面放一个img<br>img和div里看不见的字体基线对齐？？？<br>1.vertical-align: middle|top;<br>2.img{display: block;}<br>3.不要font-size: 0;</p>
-</li>
-<li><p>inline-block 对不齐时 有空隙时<br>用 flex float</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/06/css011/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/06/css011/" itemprop="url">css-bootstrap</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-06T09:27:35+08:00">
-                2019-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>bootstrap 是给后端用的UI工具。。。<br>bootstrap.css 完全版<br>bootstrap.min.css 删除回车空格后的版本<br>依赖jquery<br>栅格系统 grid system 一共十二格<br>row -15px;<br>控制布局<br>col-$大小-n 占位<br>col-$大小-offset-n 偏移量<br>默认响应式<br>四个分界值<br>0~768 xs<br>768~992 sm<br>992~1200 md<br>1200~ lg</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/04/css010/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/04/css010/" itemprop="url">css-表单美化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-04T09:08:39+08:00">
-                2019-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>百度搜索栏制作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg&gt;</span><br><span class="line">    &lt;use xlink:href=&quot;#icon-fake&quot;&gt;&lt;/use&gt;</span><br><span class="line">&lt;/svg&gt;</span><br><span class="line">fill: #4b94fc; svg填充颜色</span><br><span class="line">cursor: pointer; 手指型鼠标</span><br><span class="line">LVHA</span><br><span class="line">:link 尚未访问的链接</span><br><span class="line">:visited 已经访问过的链接</span><br><span class="line">:hover 虚指</span><br><span class="line">:active 激活</span><br><span class="line">:focus 点击、触摸、tab时触发</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>上传文件<br>vertical-align: top; 消除img下方的空隙<br>opacity: 0; 透明<br>底层img<br>上层input<br><a href="https://frankfang.github.io/wheels/demos/image-picker.html" target="_blank" rel="noopener">https://frankfang.github.io/wheels/demos/image-picker.html</a></p>
-</li>
-<li><p>涟漪按钮<br>transform: scale(10); 放大<br>visibility: hidden; -&gt;<br>visibility: visible;<br>pointer-events: none; 穿透<br>堆叠上下文<br>监听鼠标点击位置放大</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2009,7 +2154,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2020,7 +2165,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2031,7 +2176,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
