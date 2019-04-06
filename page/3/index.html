@@ -291,6 +291,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/27/yum001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/02/27/yum001/" itemprop="url">yum001</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-27T11:50:20+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/yum/" itemprop="url" rel="index">
+                    <span itemprop="name">yum</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>yum install createrepo</p>
+<p>创建目录 不同平台需要单独存放<br>mkdir -p /data/yum/centos/6/{i386,x86_64}</p>
+<p>初始化repo<br>createrepo -p -d -o yum/centos/6/i386 yum/centos/6/i386<br>createrepo -p -d -o yum/centos/6/x86_64 yum/centos/6/x86_64</p>
+<p>更新repo<br>createrepo –workers 10</p>
+<p>服务端配置<br>yum install httpd<br>chown -R apache:apache /home/yum/<br>vim /etc/httpd/conf/httpd.conf</p>
+<p>NameVirtualHost *:80</p>
+<virtualhost *:80=""><br>DocumentRoot /home/yum<br>ServerName XXX.XXX.XXX #填写绑定的域名<br><directory "="" home="" yum"=""><br>Options Indexes FollowSymlinks<br></directory><br></virtualhost>
+
+<p>repo配置文件<br>[test]<br>name=yum test<br>baseurl=<a href="http://XXX.XXX.XXX/centos/6" target="_blank" rel="noopener">http://XXX.XXX.XXX/centos/6</a><br>enabled=1<br>gpgcheck=1<br>gpgkey=<a href="http://XXX.XXX.XXX/centos/RPM-GPG-KEY-TESTREPO" target="_blank" rel="noopener">http://XXX.XXX.XXX/centos/RPM-GPG-KEY-TESTREPO</a></p>
+<p>yum<br>written in python<br>查看yumvar<br>python -c ‘import yum, pprint; yb = yum.YumBase(); pprint.pprint(yb.conf.yumvar, width=1)’<br>$releasever 发行版 7<br>$arch cpu平台 ia32e<br>$basearch 基本平台 x86_64</p>
+<p>查看远程所有版本的包<br>yum search –showduplicates orchestration</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/26/javascript03/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1709,130 +1861,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/02/12/algorithm001/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/02/12/algorithm001/" itemprop="url">algorithm001</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-12T22:37:51+08:00">
-                2019-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p>可以自己定义语法，不用纠结细节</p>
-<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>开始结束圆角<br>正常步骤方形<br>分支语句菱形</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>输入<br>输出<br>明确性<br>有限性<br>有效性</p>
-<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>分析问题，想出数据结构<br>想出对应的算法</p>
-<h2 id="算法分类"><a href="#算法分类" class="headerlink" title="算法分类"></a>算法分类</h2><p>分治法<br>动态规划法<br>贪婪算法<br>线性规划法<br>简并法</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1885,7 +1913,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

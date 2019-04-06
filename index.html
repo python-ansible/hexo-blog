@@ -291,6 +291,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/04/05/javascript09/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/04/05/javascript09/" itemprop="url">javascript09</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-05T14:55:10+08:00">
+                2019-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>jQUERY<br>jQuery 的本质，选取元素，对其操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 修改公共prototype</span><br><span class="line">Node.prototype.getSiblings = function ()&#123;</span><br><span class="line">  var allChildren = this.parentNode.children</span><br><span class="line">  var array = &#123;length:0&#125;</span><br><span class="line">  for (let i=0; i&lt;allChildren.length; i++)&#123;</span><br><span class="line">    if (allChildren[i] !== this)&#123;</span><br><span class="line">      array[i] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return array</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Node.prototype.addClass = function (classes)&#123;</span><br><span class="line">  for (let key in classes)&#123;</span><br><span class="line">    var value = classes[key]</span><br><span class="line">    method = value ? &apos;add&apos; : &apos;remove&apos;</span><br><span class="line">    this.classList[method](key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">item.getSiblings()</span><br><span class="line">item.addClass(&#123;&apos;a&apos;:true, &apos;b&apos;:false&#125;)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">// 无侵入node</span><br><span class="line">window.jQuery = function(nodeOrString)&#123;</span><br><span class="line">  let node</span><br><span class="line">  if(typeof nodeOrString === &apos;string&apos;)&#123;</span><br><span class="line">    node = document.querySelector(nodeOrString)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    node = nodeOrString</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  return&#123;</span><br><span class="line">    getSiblings: function ()&#123;</span><br><span class="line">  var allChildren = node.parentNode.children</span><br><span class="line">  var array = &#123;length:0&#125;</span><br><span class="line">  for (let i=0; i&lt;allChildren.length; i++)&#123;</span><br><span class="line">    if (allChildren[i] !== node)&#123;</span><br><span class="line">      array[i] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return array</span><br><span class="line">&#125;,</span><br><span class="line">    addClass: function (classes)&#123;</span><br><span class="line">  for (let key in classes)&#123;</span><br><span class="line">    var value = classes[key]</span><br><span class="line">    method = value ? &apos;add&apos; : &apos;remove&apos;</span><br><span class="line">    node.classList[method](key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var node2 = jQuery (item)</span><br><span class="line">node2.getSiblings()</span><br><span class="line">node2.addClass(&#123;&apos;a&apos;:true, &apos;b&apos;:false&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrString)&#123;</span><br><span class="line">  let nodes = &#123;&#125;</span><br><span class="line">  if(typeof nodeOrString === &apos;string&apos;)&#123;</span><br><span class="line">    let temp = document.querySelectorAll(nodeOrString)</span><br><span class="line">    for (let i=0; i&lt;temp.length; i++)&#123;</span><br><span class="line">      nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">  &#125; else if (nodeOrString instanceof Node)&#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrString,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  nodes.addClass = function(classes)&#123;</span><br><span class="line">    classes.forEach((value) =&gt; &#123;</span><br><span class="line">      for (let i=0; i&lt;nodes.length; i++)&#123;</span><br><span class="line">        nodes[i].classList.add(value)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  nodes.text = function(text)&#123;</span><br><span class="line">    if (text === undefined)&#123;</span><br><span class="line">    	var texts = []</span><br><span class="line">      for (let i=0; i&lt;nodes.length; i++)&#123;</span><br><span class="line">        texts.push(nodes[i].textContent)</span><br><span class="line">      &#125;</span><br><span class="line">      return texts</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      for (let i=0; i&lt;nodes.length; i++)&#123;</span><br><span class="line">        nodes[i].textContent = text</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = jQuery;</span><br><span class="line">var $node2 = $(&apos;ul &gt; li&apos;)</span><br><span class="line">$node2.addClass([&apos;blue&apos;])</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.jquery123.com" title="jQuery中文文档" target="_blank" rel="noopener">jQuery中文文档</a></p>
+<blockquote>
+<p>window.$ = jQuery (alias)</p>
+<p>jQuery 构造出来的对象也最好以 $ 开头</p>
+</blockquote>
+<blockquote>
+<p>jQuery 下载包的区别：</p>
+<ul>
+<li>production：压缩、转换后的的源码</li>
+<li>development： 源码</li>
+<li>map： 信息文件，记录了转换后的代码所对应的转换前的位置信息。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>jQuery 获取元素</p>
+<ul>
+<li><p>by id：<code>$(&quot;#id&quot;)</code></p>
+</li>
+<li><p>by class: <code>$(&quot;.classs&quot;)</code></p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">面试题 请说出 div 和 $div 的区别和联系：</span><br><span class="line">&lt;div id=x&gt;&lt;/div&gt;</span><br><span class="line">var div = document.getElementById(&apos;x&apos;)</span><br><span class="line">var $div = $(&apos;#x&apos;)</span><br><span class="line"></span><br><span class="line">$div 是 jQuery 对象，div 是 DOM 对象，不能混用对方的方法。</span><br><span class="line">$div 得到的是[object Object] div 得到的是[object HTMLDivElement]</span><br><span class="line">$div 转 div: $div[0] 或者 $div.get(0)</span><br><span class="line">div 转 $div: $(div)</span><br><span class="line">div 的属性和方法有 childNodes firstChid nodeType 等  </span><br><span class="line">$div 的 属性和方法有 addClass removeClass toggleClass 等</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/04/04/javascript08/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1843,265 +2011,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/03/14/javascript04/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang Zelin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Dogblog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/hexo-blog/2019/03/14/javascript04/" itemprop="url">javascript04</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-14T09:03:35+08:00">
-                2019-03-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/hexo-blog/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="7种数据类型"><a href="#7种数据类型" class="headerlink" title="7种数据类型"></a>7种数据类型</h2><p>JavaScript 是一种<strong>弱类型</strong>或者说<strong>动态</strong>语言。<br>这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。<br>这也意味着你可以使用同一个变量保存不同类型的数据。<br>number/string/boolean/symbol/null/undefined/object</p>
-<h3 id="number"><a href="#number" class="headerlink" title="number"></a>number</h3><p>十进制 3<br>二进制 0b11 = 3<br>八进制 011 = 9<br>十六进制 0x11 = 17  </p>
-<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><p>多行字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">不推荐</span><br><span class="line">var s1 = &apos;12345 \</span><br><span class="line">          67890&apos;</span><br><span class="line">推荐</span><br><span class="line">var s2 = &apos;12345&apos; + </span><br><span class="line">         &apos;67890&apos;</span><br><span class="line">ES6</span><br><span class="line">var s3 = `12345</span><br><span class="line">67890`</span><br></pre></td></tr></table></figure></p>
-<h3 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h3><p>&amp;&amp; 与 || 或</p>
-<h3 id="null-amp-undefined"><a href="#null-amp-undefined" class="headerlink" title="null &amp; undefined"></a>null &amp; undefined</h3><ol>
-<li>变量没有赋值 undefined</li>
-<li>空对象 unll</li>
-<li>空非对象 undefined</li>
-</ol>
-<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><p>key 如果有引号，无限制<br>如果没有引号遵循变量名命名规范<br>符合规范的也可以使用 person.name 方式 ，注意：name 表示 ‘name’<br>delete person.name  </p>
-<h3 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h3><p>主要用于生成唯一值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var race = &#123;</span><br><span class="line">  protoss: Symbol(&apos;protoss&apos;),</span><br><span class="line">  terran: Symbol(&apos;terran&apos;),</span><br><span class="line">  zerg: Symbol(&apos;zerg&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">race.protoss !== race.terran // true</span><br><span class="line">race.protoss !== race.zerg // true</span><br></pre></td></tr></table></figure></p>
-<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">–&gt;</th>
-<th>number</th>
-<th>string</th>
-<th>boolean</th>
-<th>symbol</th>
-<th>null</th>
-<th>undefined</th>
-<th>object</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">number</td>
-<td>\</td>
-<td>toString 或者 + ‘’</td>
-<td>Boolean() 或者!!</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">string</td>
-<td>.</td>
-<td>\</td>
-<td>!!</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">boolean</td>
-<td>.</td>
-<td>toString 或者 + ‘’</td>
-<td>\</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">symbol</td>
-<td>.</td>
-<td>X</td>
-<td></td>
-<td>\</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">null</td>
-<td>.</td>
-<td>toString报错 + ‘’</td>
-<td>!!</td>
-<td></td>
-<td>\</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">undefined</td>
-<td>.</td>
-<td>toString报错 + ‘’</td>
-<td>!!</td>
-<td></td>
-<td></td>
-<td>\</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:center">object</td>
-<td>.</td>
-<td>toString 或者+ ‘’ ‘[obj Obj]’</td>
-<td>!!</td>
-<td></td>
-<td></td>
-<td></td>
-<td>\</td>
-</tr>
-</tbody>
-</table>
-<p>老司机使用 + ‘’ 代替 toString 也可以用 String()  </p>
-<p>String<br>String(null) // “null”<br>String(undefined) // “undefined”</p>
-<h3 id="七个falsy值："><a href="#七个falsy值：" class="headerlink" title="七个falsy值："></a>七个falsy值：</h3><p>flase 0 NaN ‘’ “” null undefined<br>所有对象都是true</p>
-<h3 id="str-–-gt-number"><a href="#str-–-gt-number" class="headerlink" title="str –&gt; number"></a>str –&gt; number</h3><ol>
-<li>Number(‘1’) === 1</li>
-<li>parseInt(‘1’,10) === 1</li>
-<li>parseFloat(‘1.23’) === 1.23</li>
-<li>‘1’ - 0 === 1 推荐</li>
-<li><code>+ &#39;1&#39; === 1</code></li>
-</ol>
-<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><ol>
-<li>typeof null : object</li>
-<li>typeof fn : function</li>
-</ol>
-<h3 id="转码"><a href="#转码" class="headerlink" title="转码"></a>转码</h3><p>btoa 转Base64<br>atob 转回<br>非ASCII码<br>btoa(encodeURI(‘王’)) //encodeURIComponent<br>decodeURI(atob(“JUU3JThFJThC”)) //decodeURIComponent  </p>
-<p>简单数据直接存在 Stack<br>复杂数据在 Stack 存储 Heap 地址，是对内存的引用。</p>
-<p>循环引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;  </span><br><span class="line">a.self = a  </span><br><span class="line">a.self.self</span><br></pre></td></tr></table></figure></p>
-<p>面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;;</span><br><span class="line">alert(a.x); //undefined</span><br><span class="line">alert(b.x); //[object Object]</span><br></pre></td></tr></table></figure></p>
-<p><img src="/hexo-blog/2019/03/14/javascript04/内存图.png" alt="内存图" title="内存图"></p>
-<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>如果一个对象没有被引用，将被回收。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;</span><br><span class="line">document.body.onclick = fn</span><br><span class="line">fn = null //function()&#123;&#125; 不会被回收</span><br></pre></td></tr></table></figure></p>
-<p>深拷贝 vs 浅拷贝<br>对于简单类型，赋值就是深拷贝<br>改变b，完全不会影响到a<br>针对对象<br>浅拷贝<br>var a = {name: ‘frank’}<br>var b = a<br>b.name = ‘b’<br>a.name === ‘b’ //true<br>深拷贝 对 Heap 内存完全拷贝</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2154,7 +2063,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">45</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
