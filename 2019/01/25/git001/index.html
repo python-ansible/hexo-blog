@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Dogblog">
 <meta property="og:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-07T11:14:37.596Z">
+<meta property="og:updated_time" content="2019-04-17T03:35:03.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基础命令">
 <meta name="twitter:description" content="本文主要介绍git init git add git commit的使用方法git init1234567Initializes a new local Git repository. - Initialize a new local repository:   git init - Initialize a barebones repository, suitable for use as a">
@@ -390,12 +390,13 @@
 <h2 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h2><p>钻石合并<br>git merge bugFix</p>
 <h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><p>线性合并<br>-i 交互式 interactive<br>git rebase -i HEAD~4 从前四次选择<br>git rebase -i master 从当前分支选择然后和master合并<br>git rebase bugFix master 把bugFix分支的内容合并到master分支上</p>
 <h2 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a>git describe</h2><p>描述离你最近的tag<br>git describe master<br>git describe c1<br>v1_2_gc5<br>显示距离2个提交有一个tag名称是v1，提交记录是c5</p>
-<h2 id="git-branch-f"><a href="#git-branch-f" class="headerlink" title="git branch -f"></a>git branch -f</h2><p>git branch -f master c3<br>把分支强制指定到提交c3</p>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><p>本地创建分支推送到远端<br>git push origin $remote_branch:$local_branch<br>拉取远端分支<br>git pull origin $remote_branch:$local_branch<br>查看所有分支<br>git branch -vva<br>切换分支<br>git checkout $branch_name<br>git checkout -b $branch_name 创建并切换<br>git checkout –force $branch_name 强制切换，丢弃修改<br>删除分支<br>git branch -d $branch_name<br>删除远程分支<br>git push origin:$branch_name<br>git push origin –delete $branch_name<br>把分支强制指定到提交c3<br>git branch -f master c3</p>
 <h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p>git cherry-pick c3 c5 c7<br>把某一个分支的提交抓取到当前分支的HEAD上<br>1.如果 a,b 两个提交修改一个文件，pick 后一个，需要手动修改冲突。<br>2.如果 a,b 两个提交修改不同文件，pick 后一个，只会合入后一个的代码。</p>
 <h2 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h2><p>^ 向上移动一个提交记录<br>^2 多个父节点时，选择第二个父节点<br>~<num> 向上移动多个提交记录</num></p>
 <h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><p>切换分支 分离HEAD<br>git checkout $branch<br>git checkout c1</p>
 <h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>备份更改，暂存到git中，回到干净的工作目录。<br>git stash 备份当前<br>git stash list<br>git stash pop<br>git stash clear<br>git stash apply 取出某一个stash</p>
 <h2 id="git-放弃本地修改-强制更新"><a href="#git-放弃本地修改-强制更新" class="headerlink" title="git 放弃本地修改 强制更新"></a>git 放弃本地修改 强制更新</h2><p>git fetch –all<br>git reset –hard origin/master</p>
+<h2 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h2><p>对分支打 tag<br>git tag -am “origin az-nsp with keystone &amp;&amp; rabbitmq” az-nsp-pvt-1.0<br>对提交打 tag<br>git tag -a nspv3.0.1.0 ee4c<br>git push origin az-nsp-pvt-1.0<br>基于 tag 创建分支<br>git checkout -b $branchname nspv3.0.1.0<br>git tag -d nspv3.0.1.0<br>git push –force origin:refs/tags/nspv3.0.1.0</p>
 
       
     </div>
@@ -517,7 +518,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -528,7 +529,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -539,7 +540,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -600,7 +601,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文主要介绍git-init-git-add-git-commit的使用方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍git init git add git commit的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">1.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">1.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">1.3.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-number">1.4.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">1.5.</span> <span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-describe"><span class="nav-number">1.6.</span> <span class="nav-text">git describe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch-f"><span class="nav-number">1.7.</span> <span class="nav-text">git branch -f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">1.8.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对引用"><span class="nav-number">1.9.</span> <span class="nav-text">相对引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout"><span class="nav-number">1.10.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-number">1.11.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-放弃本地修改-强制更新"><span class="nav-number">1.12.</span> <span class="nav-text">git 放弃本地修改 强制更新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#本文主要介绍git-init-git-add-git-commit的使用方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍git init git add git commit的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-init"><span class="nav-number">1.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">1.2.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">1.3.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-merge"><span class="nav-number">1.4.</span> <span class="nav-text">git merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rebase"><span class="nav-number">1.5.</span> <span class="nav-text">git rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-describe"><span class="nav-number">1.6.</span> <span class="nav-text">git describe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-branch"><span class="nav-number">1.7.</span> <span class="nav-text">git branch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-cherry-pick"><span class="nav-number">1.8.</span> <span class="nav-text">git cherry-pick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相对引用"><span class="nav-number">1.9.</span> <span class="nav-text">相对引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-checkout"><span class="nav-number">1.10.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-stash"><span class="nav-number">1.11.</span> <span class="nav-text">git stash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-放弃本地修改-强制更新"><span class="nav-number">1.12.</span> <span class="nav-text">git 放弃本地修改 强制更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-tag"><span class="nav-number">1.13.</span> <span class="nav-text">git tag</span></a></li></ol></li></ol></div>
             
 
           </div>

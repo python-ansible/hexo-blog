@@ -291,6 +291,682 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/31/bash001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/01/31/bash001/" itemprop="url">bash001</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T10:49:49+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>转载自：<br><a href="https://linuxtoy.org/archives/bash-shortcuts.html" title="LinuxTOY" target="_blank" rel="noopener"><font color="0433ff">LinuxTOY</font></a></p>
+<h2 id="编辑命令"><a href="#编辑命令" class="headerlink" title="编辑命令"></a>编辑命令</h2><ul>
+<li>Ctrl + a ：移到命令行首</li>
+<li>Ctrl + e ：移到命令行尾</li>
+<li>Ctrl + f ：按字符前移（右向）</li>
+<li>Ctrl + b ：按字符后移（左向）</li>
+<li>Alt + f ：按单词前移（右向）</li>
+<li>Alt + b ：按单词后移（左向）</li>
+<li>Ctrl + xx：在命令行首和光标之间移动</li>
+<li>Ctrl + u ：从光标处删除至命令行首</li>
+<li>Ctrl + k ：从光标处删除至命令行尾</li>
+<li>Ctrl + w ：从光标处删除至字首</li>
+<li>Alt + d ：从光标处删除至字尾</li>
+<li>Ctrl + d ：删除光标处的字符</li>
+<li>Ctrl + h ：删除光标前的字符</li>
+<li>Ctrl + y ：粘贴至光标后</li>
+<li>Alt + c ：从光标处更改为首字母大写的单词</li>
+<li>Alt + u ：从光标处更改为全部大写的单词</li>
+<li>Alt + l ：从光标处更改为全部小写的单词</li>
+<li>Ctrl + t ：交换光标处和之前的字符</li>
+<li>Alt + t ：交换光标处和之前的单词</li>
+<li>Alt + Backspace：与 Ctrl + w <del>相同</del>类似，分隔符有些差别 [感谢 rezilla 指正]</li>
+</ul>
+<h2 id="重新执行命令"><a href="#重新执行命令" class="headerlink" title="重新执行命令"></a>重新执行命令</h2><ul>
+<li>Ctrl + r：逆向搜索命令历史</li>
+<li>Ctrl + g：从历史搜索模式退出</li>
+<li>Ctrl + p：历史中的上一条命令</li>
+<li>Ctrl + n：历史中的下一条命令</li>
+<li>Alt + .：使用上一条命令的最后一个参数</li>
+</ul>
+<h2 id="控制命令"><a href="#控制命令" class="headerlink" title="控制命令"></a>控制命令</h2><ul>
+<li>Ctrl + l：清屏</li>
+<li>Ctrl + o：执行当前命令，并选择上一条命令</li>
+<li>Ctrl + s：阻止屏幕输出</li>
+<li>Ctrl + q：允许屏幕输出</li>
+<li>Ctrl + c：终止命令</li>
+<li>Ctrl + z：挂起命令</li>
+</ul>
+<h2 id="Bang-命令"><a href="#Bang-命令" class="headerlink" title="Bang (!) 命令"></a>Bang (!) 命令</h2><ul>
+<li>!!：执行上一条命令</li>
+<li>!blah：执行最近的以 blah 开头的命令，如 !ls</li>
+<li>!blah:p：仅打印输出，而不执行</li>
+<li>!$：上一条命令的最后一个参数，与 Alt + . 相同</li>
+<li>!$:p：打印输出 !$ 的内容</li>
+<li>!*：上一条命令的所有参数</li>
+<li>!<em>:p：打印输出 !</em> 的内容</li>
+<li>^blah：删除上一条命令中的 blah</li>
+<li>^blah^foo：将上一条命令中的 blah 替换为 foo</li>
+<li>^blah^foo^：将上一条命令中所有的 blah 都替换为 foo</li>
+</ul>
+<h2 id="友情提示："><a href="#友情提示：" class="headerlink" title="友情提示："></a><em>友情提示</em>：</h2><p>以上介绍的大多数 Bash 快捷键仅当在 emacs 编辑模式时有效，若你将 Bash 配置为 vi 编辑模式，那将遵循 vi 的按键绑定。Bash 默认为 emacs 编辑模式。如果你的 Bash 不在 emacs 编辑模式，可通过 set -o emacs 设置。</p>
+<p>^S、^Q、^C、^Z 是由终端设备处理的，可用 stty 命令设置。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/31/vim001/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/01/31/vim001/" itemprop="url">vim学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-31T09:39:47+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vim教程vimtutor"><a href="#vim教程vimtutor" class="headerlink" title="vim教程vimtutor"></a>vim教程<code>vimtutor</code></h2><p><strong>operator [number] motion</strong><br><br><strong>vim支持重复操作，只要在motion前加入[number]</strong></p>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。</span><br><span class="line">h (左移)</span><br><span class="line">j (下行)      </span><br><span class="line">k (上行)     </span><br><span class="line">l (右移)</span><br><span class="line"></span><br><span class="line">行首：0</span><br><span class="line">行尾：$</span><br></pre></td></tr></table></figure>
+<h3 id="进入"><a href="#进入" class="headerlink" title="进入"></a>进入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim $file</span><br></pre></td></tr></table></figure>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:q! 放弃所有改动。</span><br><span class="line">:wq 保存改动。</span><br></pre></td></tr></table></figure>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">o 在光标下方插入一行。</span><br><span class="line">O 在光标上方插入一行。</span><br><span class="line"></span><br><span class="line">i 在光标前插入文本</span><br><span class="line">a 在光标后插入文本。</span><br><span class="line">A 在光标所在的行末之后插入文本。</span><br></pre></td></tr></table></figure>
+<h3 id="operator-number-motion"><a href="#operator-number-motion" class="headerlink" title="operator [number] motion"></a>operator [number] motion</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在正常模式下修改命令的格式是：</span><br><span class="line">operator   [number]   motion</span><br><span class="line">其中：</span><br><span class="line">operator - 操作符，代表要做的事情，比如 d 代表删除</span><br><span class="line">[number] - 可以附加的数字，代表动作重复的次数</span><br><span class="line">motion   - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，e 使光标移动到单词末尾。 </span><br><span class="line">2w #向前移动两个单词</span><br><span class="line">3e #向前移动三个单词的末尾</span><br><span class="line">0 #移动到行首</span><br></pre></td></tr></table></figure>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">撤消以前的操作：u</span><br><span class="line">撤消在一行中所做的改动：U</span><br><span class="line">撤消以前的撤消命令，恢复以前的操作结果：CTRL-R</span><br></pre></td></tr></table></figure>
+<h3 id="删除、复制、粘贴"><a href="#删除、复制、粘贴" class="headerlink" title="删除、复制、粘贴"></a>删除、复制、粘贴</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">在正常模式下删除光标所在位置的字符：x</span><br><span class="line">从当前光标删除至下一个单词：dw</span><br><span class="line">从当前光标删除至当前行末尾：d$</span><br><span class="line">删除整行：dd</span><br><span class="line">删除到当前单词末尾：de </span><br><span class="line">删除到某个字符为止：dt$字符</span><br><span class="line">2dd #ndd删除多行</span><br><span class="line">d4w&amp;d3w #删除大写字母单词 </span><br><span class="line">this line FGHI JK LMN OP of words is Q RS TUV cleaned up.</span><br><span class="line">—》</span><br><span class="line">this line of words is cleaned up.</span><br><span class="line"></span><br><span class="line">yy-p #即复制粘贴</span><br><span class="line">删除后的内容，会放在vim寄存器中，使用p可以粘贴。</span><br><span class="line">内容置于光标之后，如果删除的是整行，将置于当前光标所在行的下一行。</span><br><span class="line"></span><br><span class="line">#粘贴所有</span><br><span class="line">ggyG</span><br><span class="line">%y</span><br><span class="line">#删除所有</span><br><span class="line">ggdG</span><br><span class="line">%d</span><br><span class="line">删除以#号开头的行：</span><br><span class="line">:g/^#/d</span><br><span class="line">删除空白行：</span><br><span class="line">:g/^$/d</span><br></pre></td></tr></table></figure>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">r 替换光标所在位置 </span><br><span class="line">R 进入替换模式，按 &lt;ESC&gt; 键回到正常模式。</span><br><span class="line"></span><br><span class="line">ce 可以替换当前光标到单词末尾的内容；</span><br><span class="line">c$ 可以替换当前光标到行末的内容。</span><br><span class="line">cw</span><br><span class="line">c [number] e|w #多个单词的替换</span><br><span class="line"></span><br><span class="line">行内替换第一个字符串:s/old/new</span><br><span class="line">行内替换所有字符串:s/old/new/g</span><br><span class="line">在两行内替换所有字符串:#,#s/old/new/g</span><br><span class="line">文件内替换所有字符串:%s/old/new/g</span><br><span class="line">全文替换时确认每个替换:%s/old/new/gc</span><br></pre></td></tr></table></figure>
+<h3 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CTRL-G 显示光标所在位置和文件信息。</span><br><span class="line">G 将光标跳转至文件最后一行。</span><br><span class="line">gg 将光标跳转至文件第一行。</span><br><span class="line">[number]G #跳转任意行</span><br><span class="line"></span><br><span class="line">ctrl+f 向下翻页</span><br><span class="line">ctrl+b 向上翻页</span><br><span class="line">ctrl+d 向下半页</span><br><span class="line">ctrl+u 向上半页</span><br></pre></td></tr></table></figure>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/ $str 正向查找字符串。</span><br><span class="line">? $str 反向查找字符串。</span><br><span class="line">n 键重复上一次的命令</span><br><span class="line">N 向相反方向查找</span><br><span class="line">CTRL-O 跳转回旧的位置，</span><br><span class="line">CTRL-I 带您到较新的位置。</span><br><span class="line">SHIFT * 选中单词查找</span><br><span class="line"></span><br><span class="line">如果光标当前位置是括号(、)、[、]、&#123;、&#125;，按 % 会将光标移动到配对的括号上。</span><br></pre></td></tr></table></figure>
+<h3 id="编码常用"><a href="#编码常用" class="headerlink" title="编码常用"></a>编码常用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">zo 打开代码折叠</span><br><span class="line">zc 关闭代码折叠</span><br><span class="line"></span><br><span class="line">注：可以是任意的成对符号，比如&apos; &quot; ( [ &#123; &lt;</span><br><span class="line">ci$ 更改符号内的文本</span><br><span class="line">di$ 删除符号内的文本</span><br><span class="line">yi$ 复制符号内的文本</span><br><span class="line">vi$ 选中符号内的文本</span><br><span class="line">i-&gt;a 即包括符号一起</span><br><span class="line"></span><br><span class="line">复制系统剪贴板内容到vim</span><br><span class="line">reg 查看寄存器</span><br><span class="line">按照提示操作，最后需要加上p</span><br><span class="line">复制vim到系统剪贴板</span><br><span class="line">&quot;+yy 复制当前行</span><br><span class="line">&quot;+ny 复制n行</span><br><span class="line"></span><br><span class="line">默认使用系统剪切板</span><br><span class="line">set clipboard=unnamed</span><br></pre></td></tr></table></figure>
+<h3 id="外部命令"><a href="#外部命令" class="headerlink" title="外部命令"></a>外部命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">:!command 用于执行一个外部命令 command。</span><br><span class="line"></span><br><span class="line">请看一些实际例子：</span><br><span class="line">(MS-DOS)         (Unix)</span><br><span class="line">:!dir            :!ls            -  用于显示当前目录的内容。</span><br><span class="line">:!del FILENAME   :!rm FILENAME   -  用于删除名为 FILENAME 的文件。</span><br><span class="line"></span><br><span class="line">:w FILENAME  将当前 VIM 中编辑的文件保存到FILENAME中。</span><br><span class="line"></span><br><span class="line">v motion :w FILENAME 将编辑文件中可视模式下选中的内容保存到FILENAME 中。</span><br><span class="line"></span><br><span class="line">:r FILENAME 读取磁盘文件 FILENAME 将其插入到当前文件的光标位置后。</span><br><span class="line"></span><br><span class="line">:r !dir 可以读取 dir 命令的输出并将其放到当前文件的光标后面。</span><br><span class="line"></span><br><span class="line">:e! 重新载入文件</span><br></pre></td></tr></table></figure>
+<h3 id="选项设置"><a href="#选项设置" class="headerlink" title="选项设置"></a>选项设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">:set xxx ，一些有用的选项如下：</span><br><span class="line">&apos;ic&apos; &apos;ignorecase&apos;       查找时忽略字母大小写</span><br><span class="line">&apos;is&apos; &apos;incsearch&apos;        查找短语时显示部分匹配</span><br><span class="line">&apos;hls&apos; &apos;hlsearch&apos;        高亮显示所有的匹配短语</span><br><span class="line">选项名可以用完整版本，也可以用缩略版本。</span><br><span class="line"></span><br><span class="line">在选项前加上 no 可以关闭选项：  :set noic</span><br></pre></td></tr></table></figure>
+<h3 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">:help 或者按 &lt;F1&gt; 键或 &lt;Help&gt; 键可以打开帮助窗口。</span><br><span class="line"></span><br><span class="line">:help cmd 可以找到关于 cmd 命令的帮助。</span><br><span class="line"></span><br><span class="line">CTRL-W CTRL-W  可以使您在窗口之间跳转。</span><br><span class="line"></span><br><span class="line">:q 以关闭帮助窗口</span><br><span class="line"></span><br><span class="line">可以创建 vimrc 启动脚本文件用来保存偏好设置。</span><br><span class="line">读取vimrc 示例文件 </span><br><span class="line">:r $VIMRUNTIME/vimrc_example.vim</span><br><span class="line"></span><br><span class="line">输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。</span><br><span class="line">按 &lt;TAB&gt; 可以使用一个补全。</span><br></pre></td></tr></table></figure>
+<h3 id="以后再研究"><a href="#以后再研究" class="headerlink" title="以后再研究"></a>以后再研究</h3><p><code>z</code> 和 <code>fzf</code> 快速搜索<br><code>zsh</code> 比vim更好用   <br><code>ColorPix</code> 取色工具</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/27/markdown/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang Zelin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/hexo-blog/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dogblog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/hexo-blog/2019/01/27/markdown/" itemprop="url">markdown说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-27T22:18:04+08:00">
+                2019-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/hexo-blog/categories/Markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">Markdown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<h2 id="本文转载自-younghz的markdown库"><a href="#本文转载自-younghz的markdown库" class="headerlink" title="本文转载自 younghz的markdown库"></a>本文转载自 <a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">younghz的markdown库</a></h2></blockquote>
+<p><strong>部分内容稍作增改</strong></p>
+<h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><blockquote>
+<p>Markdown<em>是什么</em>？<br><em>谁</em>创造了它？<br><em>为什么</em>要使用它？<br><em>怎么</em>使用？<br><em>谁</em>在用？<br>尝试一下</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="Markdown是什么？"><a href="#Markdown是什么？" class="headerlink" title="Markdown是什么？"></a>Markdown<em>是什么</em>？</h3><p><strong>Markdown</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>Markdown</strong>也可以理解为将以MARKDOWN语法编写的语言转换成HTML内容的工具。    </p>
+<h3 id="谁创造了它？"><a href="#谁创造了它？" class="headerlink" title="谁创造了它？"></a><em>谁</em>创造了它？</h3><p>它由<a href="http://www.aaronsw.com/" target="_blank" rel="noopener"><strong>Aaron Swartz</strong></a>和<strong>John Gruber</strong>共同设计，<strong>Aaron Swartz</strong>就是那位于<em>2013年1月11日</em>自杀,有着<strong>开挂</strong>一般人生经历的程序员。维基百科对他的<a href="http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8" target="_blank" rel="noopener">介绍</a>是：<strong>软件工程师、作家、政治组织者、互联网活动家、维基百科人</strong>。    </p>
+<p>他有着足以让你跪拜的人生经历：    </p>
+<ul>
+<li><strong>14岁</strong>参与RSS 1.0规格标准的制订。     </li>
+<li><strong>2004</strong>年入读<strong>斯坦福</strong>，之后退学。   </li>
+<li><strong>2005</strong>年创建<a href="http://infogami.org/" target="_blank" rel="noopener">Infogami</a>，之后与<a href="http://www.reddit.com/" target="_blank" rel="noopener">Reddit</a>合并成为其合伙人。   </li>
+<li><strong>2010</strong>年创立求进会（Demand Progress），积极参与禁止网络盗版法案（SOPA）活动，最终该提案被撤回。   </li>
+<li><strong>2011</strong>年7月19日，因被控从MIT和JSTOR下载480万篇学术论文并以免费形式上传于网络被捕。     </li>
+<li><strong>2013</strong>年1月自杀身亡。    </li>
+</ul>
+<p><img src="https://github.com/younghz/Markdown/raw/master/resource/Aaron_Swartz.jpg" alt="Aaron Swartz"></p>
+<p>天才都有早逝的归途。</p>
+<h3 id="为什么要使用它？"><a href="#为什么要使用它？" class="headerlink" title="为什么要使用它？"></a><em>为什么</em>要使用它？</h3><ul>
+<li>它是易读（看起来舒服）、易写（语法简单）、易更改<strong>纯文本</strong>。处处体现着<strong>极简主义</strong>的影子。</li>
+<li>兼容HTML，可以转换为HTML格式发布。</li>
+<li>跨平台使用。</li>
+<li>越来越多的网站支持Markdown。</li>
+<li>更方便清晰地组织你的电子邮件。（Markdown-here, Airmail, <a href="https://github.com/mmanela/MarkdownOutlook" target="_blank" rel="noopener">MarkdownOutlook</a>)</li>
+<li>摆脱Word（我不是认真的）。</li>
+</ul>
+<h3 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a><em>怎么</em>使用？</h3><p>如果不算<strong>扩展</strong>，Markdown的语法绝对<strong>简单</strong>到让你爱不释手。</p>
+<p>Markdown语法主要分为如下几大部分：<br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠 <code>\</code></strong>，<strong>符号’`’</strong>。</p>
+<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>两种形式：<br>1）使用<code>=</code>和<code>-</code>标记一级和二级标题。</p>
+<blockquote>
+<p>一级标题<br><code>=========</code><br>二级标题<br><code>---------</code></p>
+</blockquote>
+<p>效果：<br><img src="/hexo-blog/2019/01/27/markdown/标题效果01.png" alt="标题效果" title="标题效果"></p>
+<p>2）使用<code>#</code>，可表示1-6级标题。</p>
+<blockquote>
+<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题    </p>
+</blockquote>
+<p>效果：<br><img src="/hexo-blog/2019/01/27/markdown/标题效果02.png" alt="标题效果" title="标题效果"></p>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车（引用中换行省略回车）。</p>
+<h4 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h4><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
+<blockquote>
+<p>> 区块引用<br>>&gt; 嵌套引用  </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p>区块引用  </p>
+<blockquote>
+<p>嵌套引用</p>
+</blockquote>
+</blockquote>
+<h4 id="代码和语法高亮"><a href="#代码和语法高亮" class="headerlink" title="代码和语法高亮"></a>代码和语法高亮</h4><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如<br>普通段落：</p>
+<p>void main()<br>{<br>    printf(“Hello, Markdown.”);<br>}    </p>
+<p>代码区块：</p>
+<pre><code>void main()
+{
+    printf(&quot;Hello, Markdown.&quot;);
+}
+</code></pre><p><strong>注意</strong>:需要和普通段落之间存在空行。</p>
+<p>行内代码<br>本文是一篇介绍`Markdown`的文章</p>
+<p>效果：本文是一篇介绍<code>Markdown</code>的文章</p>
+<p>语法高亮</p>
+<p>```html<br>    <div>Syntax Highlighting</div><br>```</p>
+<p>效果：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Syntax Highlighting<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>```python<br>    s = “Python syntax highlighting”<br>    print s<br>```</p>
+<p>效果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">"Python syntax highlighting"</span></span><br><span class="line"><span class="keyword">print</span> s</span><br></pre></td></tr></table></figure></p>
+<h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><p>在强调内容两侧分别加上<code>*</code>或者<code>_</code>，如：</p>
+<blockquote>
+<p>*斜体*，_斜体_<br>**粗体**，__粗体__</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><em>斜体</em>，_斜体_<br><strong>粗体</strong>，<strong>粗体</strong></p>
+</blockquote>
+<h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
+<blockquote>
+<p>-（+*） 第一项<br>-（+*） 第二项<br>- （+*）第三项</p>
+</blockquote>
+<p><strong>注意</strong>：标记后面最少有一个_空格_或<em>制表符</em>。若不在引用区块中，必须和前方段落之间存在空行。</p>
+<p>效果：</p>
+<blockquote>
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+</blockquote>
+<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
+<blockquote>
+<p>1 . 第一项<br>2 . 第二项<br>3 . 第三项    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+</blockquote>
+<h4 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h4><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库](<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a> “Markdown”)。</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">younghz的Markdown库</a>。</p>
+</blockquote>
+<p><strong>参考式</strong>：</p>
+<blockquote>
+<p>[younghz的Markdown库1][1]<br>[younghz的Markdown库2][2]<br>[1]:<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a> “Markdown”<br>[2]:<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a> “Markdown”    </p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">younghz的Markdown库1</a><br><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">younghz的Markdown库2</a></p>
+</blockquote>
+<p><strong>注意</strong>：上述的<code>[1]:https:://github.com/younghz/Markdown &quot;Markdown&quot;</code>不出现在区块中。</p>
+<h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。</p>
+<p><strong>行内式</strong>：</p>
+<blockquote>
+<p>![替代文字](<a href="http://statics.w3cschool.cn/images/w3c/index-logo.png" target="_blank" rel="noopener">http://statics.w3cschool.cn/images/w3c/index-logo.png</a> “标题文字”)</p>
+</blockquote>
+<p>效果：<br><img src="/hexo-blog/2019/01/27/markdown/logo.png" alt="替代文字" title="标题文字"></p>
+<p><strong>参考式</strong>：</p>
+<blockquote>
+<p>![替代文字][logo]<br>[logo]:<a href="http://statics.w3cschool.cn/images/w3c/index-logo.png" target="_blank" rel="noopener">http://statics.w3cschool.cn/images/w3c/index-logo.png</a> “标题文字”</p>
+</blockquote>
+<p>效果：<br>![替代文字][logo]<br>[logo]:markdown/logo.png “标题文字”</p>
+<p><strong>注意</strong>：Markdown还支持传统html写法，比如&lt;a href=”<a href="https://www.w3cschool.cn/&quot;\&gt;W3Cschool" target="_blank" rel="noopener">https://www.w3cschool.cn/&quot;\&gt;W3Cschool</a>&lt;/a></p>
+<h4 id="反斜杠"><a href="#反斜杠" class="headerlink" title="反斜杠\"></a>反斜杠<code>\</code></h4><p>相当于<strong>反转义</strong>作用。使符号成为普通符号。</p>
+<h4 id="符号’-’"><a href="#符号’-’" class="headerlink" title="符号’`’"></a>符号’`’</h4><p>起到标记作用。如：</p>
+<blockquote>
+<p>`ctrl+a`</p>
+</blockquote>
+<p>效果：</p>
+<blockquote>
+<p><code>ctrl+a</code>  </p>
+</blockquote>
+<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><p>列表的使用(非traditonal markdown)：</p>
+<p>用<code>|</code>表示表格纵向边界，表头和表内容用<code>-</code>隔开，并可用<code>:</code>进行对齐设置，两边都有<code>:</code>则表示居中，若不加<code>:</code>则默认左对齐。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码库</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">MarkDown</td>
+<td><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a></td>
+</tr>
+<tr>
+<td style="text-align:center">MarkDownCopy</td>
+<td><a href="https://github.com/younghz/Markdown" title="Markdown" target="_blank" rel="noopener">https://github.com/younghz/Markdown</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="颜色和字体"><a href="#颜色和字体" class="headerlink" title="颜色和字体"></a>颜色和字体</h4><p><code>&lt;font color=0433ff face=&quot;verdana&quot; size=&quot;3&quot;&gt;颜色和字体&lt;/font&gt;</code></p>
+<p>效果：  </p>
+<font color="0433ff" face="verdana" size="4">颜色和字体</font>
+
+<h4 id="谁在用？"><a href="#谁在用？" class="headerlink" title="谁在用？"></a><em>谁</em>在用？</h4><p>Markdown的使用者：</p>
+<ul>
+<li>GitHub</li>
+<li>简书</li>
+<li>Stack Overflow</li>
+<li>Apollo</li>
+<li>Moodle</li>
+<li>Reddit</li>
+<li>等等</li>
+</ul>
+<h4 id="尝试一下"><a href="#尝试一下" class="headerlink" title="尝试一下"></a>尝试一下</h4><ul>
+<li><strong>Chrome</strong>下的插件诸如<code>stackedit</code>与<code>markdown-here</code>等非常方便，也不用担心平台受限。</li>
+<li><strong>在线</strong>的dillinger.io评价也不错   </li>
+<li><strong>Windowns</strong>下的MarkdownPad也用过，不过免费版的体验不是很好。    </li>
+<li><strong>Mac</strong>下的Mou是国人贡献的，口碑很好。</li>
+<li><strong>Linux</strong>下的ReText不错。    </li>
+</ul>
+<p><strong>当然，最终境界永远都是笔下是语法，心中格式化 :)。</strong></p>
+<hr>
+<p><strong>注意</strong>：不同的Markdown解释器或工具对相应语法（扩展语法）的解释效果不尽相同，具体可参见工具的使用说明。<br>虽然有人想出面搞一个所谓的标准化的Markdown，[没想到还惹怒了健在的创始人John Gruber]<br>(<a href="http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。" target="_blank" rel="noopener">http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/)。</a></p>
+<hr>
+<p>以上基本是所有traditonal markdown的语法。</p>
+<p>关于其它扩展语法可参见具体工具的使用说明。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://python-ansible.github.io/hexo-blog/2019/01/27/html001/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -734,7 +1410,16 @@
 </ul>
 <h3 id="HTTP2-0"><a href="#HTTP2-0" class="headerlink" title="HTTP2.0"></a>HTTP2.0</h3><p>最初由google研发，2015年5月作为互联网标准正式发布。</p>
 <p><img src="/hexo-blog/2019/01/27/http001/001.png" alt="服务器与浏览器的交互" title="服务器与浏览器的交互"></p>
-<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="请求方法8种"><a href="#请求方法8种" class="headerlink" title="请求方法8种"></a>请求方法8种</h3><ul>
+<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="请求四部分"><a href="#请求四部分" class="headerlink" title="请求四部分"></a>请求四部分</h3><ul>
+<li>请求行<br><code>GET /index.html HTTP/1.1</code></li>
+<li><p>请求头</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cache-Control:max-age=0</span><br><span class="line">Cookie:gsScrollPos=; _ga=GA1.2.329038035.1465891024; _gat=1</span><br><span class="line">If-Modified-Since:Sun, 01 May 2016 11:19:03 GMT</span><br><span class="line">User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>空行</p>
+</li>
+<li>消息体</li>
+</ul>
+<h3 id="请求方法8种"><a href="#请求方法8种" class="headerlink" title="请求方法8种"></a>请求方法8种</h3><ul>
 <li>GET<br>读取数据</li>
 <li>HEAD<br>与GET一样是发出资源请求，服务器不返回资源的文本部分。</li>
 <li>POST<br>提交数据（文件或表单）</li>
@@ -770,7 +1455,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="HTTP响应状态码"><a href="#HTTP响应状态码" class="headerlink" title="HTTP响应状态码"></a>HTTP响应状态码</h3><p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" title="HTTP Status-code" target="_blank" rel="noopener"><font color="#0099ff">详细说明</font></a></p>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="响应四部分"><a href="#响应四部分" class="headerlink" title="响应四部分"></a>响应四部分</h3><ul>
+<li>状态行<br><code>HTTP/1.1 200 OK</code></li>
+<li><p>响应头</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Connection:keep-alive</span><br><span class="line">Content-Encoding:gzip</span><br><span class="line">Content-Type:text/html; charset=utf-8</span><br><span class="line">Date:Fri, 24 Jun 2016 06:23:31 GMT</span><br><span class="line">Server:nginx/1.9.12</span><br><span class="line">Transfer-Encoding:chunked</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>空行</p>
+</li>
+<li>消息体</li>
+</ul>
+<h3 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h3><p><a href="https://zh.wikipedia.org/wiki/HTTP%E7%8A%B6%E6%80%81%E7%A0%81" title="HTTP Status-code" target="_blank" rel="noopener"><font color="#0099ff">详细说明</font></a></p>
 <p><strong>常用status_code:</strong>    </p>
 <ul>
 <li><p>1xx消息–请求已经被服务器接受，继续处理<br>不常用，略</p>
@@ -956,9 +1650,9 @@
       
         
           
-            <h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">inline-block不用关注</span><br><span class="line">html标签没有块级元素和内联元素的区别的，css才有</span><br><span class="line">html不应该管样式，只管内容</span><br><span class="line">html定义结构和内容</span><br><span class="line">css管样式</span><br><span class="line">js管什么？</span><br><span class="line">alt 可选内容alternative</span><br><span class="line">a 标签全称 anchor 连接 锚</span><br><span class="line">banner 底层大图</span><br><span class="line">form 必须有提交按钮</span><br><span class="line">form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？</span><br><span class="line">submit 可以提交</span><br><span class="line">checkbox 勾选框</span><br><span class="line">label标记input</span><br><span class="line">老司机写法：label包含input</span><br><span class="line">input要有name，不然实际没有起作用</span><br><span class="line">checkbox 多选</span><br><span class="line">radio 单选</span><br><span class="line">select 下拉列表，多选，单选</span><br><span class="line">textarea 多行输入</span><br><span class="line">colgroup col</span><br><span class="line">现在都用class了设定表格样式，collapse</span><br></pre></td></tr></table></figure>
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">inline-block不用关注</span><br><span class="line">html标签没有块级元素和内联元素的区别的，css才有</span><br><span class="line">html不应该管样式，只管内容</span><br><span class="line">html定义结构和内容</span><br><span class="line">css管样式</span><br><span class="line">js管动作</span><br><span class="line">alt 可选内容alternative</span><br><span class="line">a 标签全称 anchor 连接 锚</span><br><span class="line">banner 底层大图</span><br><span class="line">form 必须有提交按钮</span><br><span class="line">form button自动升级为提交按钮， 如果type=button不会，普通按钮，反而没有用？</span><br><span class="line">submit 可以提交</span><br><span class="line">checkbox 勾选框</span><br><span class="line">label标记input</span><br><span class="line">老司机写法：label包含input</span><br><span class="line">input要有name，不然实际没有起作用</span><br><span class="line">checkbox 多选</span><br><span class="line">radio 单选</span><br><span class="line">select 下拉列表，多选，单选</span><br><span class="line">textarea 多行输入</span><br><span class="line">colgroup col</span><br><span class="line">现在都用class了设定表格样式，collapse</span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">子元素float left 浮动 父元素必须添加clearfix</span><br><span class="line">inherit 继承</span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">20190203</span><br><span class="line">所有非空标签都有伪类</span><br><span class="line">比如 ::before ::after</span><br><span class="line">有点像python里面的with或者tearup，teardown。不过用法不太一样？</span><br><span class="line">剪切板管理器</span><br><span class="line">yd 插件</span><br><span class="line">css shadow generator</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">20190203</span><br><span class="line">所有非空标签都有伪类</span><br><span class="line">比如 ::before ::after</span><br><span class="line">有点像python里面的with或者tearup，teardown。不过用法不太一样？</span><br><span class="line">css shadow generator</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1249,12 +1943,13 @@
 <h2 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h2><p>钻石合并<br>git merge bugFix</p>
 <h2 id="git-rebase"><a href="#git-rebase" class="headerlink" title="git rebase"></a>git rebase</h2><p>线性合并<br>-i 交互式 interactive<br>git rebase -i HEAD~4 从前四次选择<br>git rebase -i master 从当前分支选择然后和master合并<br>git rebase bugFix master 把bugFix分支的内容合并到master分支上</p>
 <h2 id="git-describe"><a href="#git-describe" class="headerlink" title="git describe"></a>git describe</h2><p>描述离你最近的tag<br>git describe master<br>git describe c1<br>v1_2_gc5<br>显示距离2个提交有一个tag名称是v1，提交记录是c5</p>
-<h2 id="git-branch-f"><a href="#git-branch-f" class="headerlink" title="git branch -f"></a>git branch -f</h2><p>git branch -f master c3<br>把分支强制指定到提交c3</p>
+<h2 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h2><p>本地创建分支推送到远端<br>git push origin $remote_branch:$local_branch<br>拉取远端分支<br>git pull origin $remote_branch:$local_branch<br>查看所有分支<br>git branch -vva<br>切换分支<br>git checkout $branch_name<br>git checkout -b $branch_name 创建并切换<br>git checkout –force $branch_name 强制切换，丢弃修改<br>删除分支<br>git branch -d $branch_name<br>删除远程分支<br>git push origin:$branch_name<br>git push origin –delete $branch_name<br>把分支强制指定到提交c3<br>git branch -f master c3</p>
 <h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p>git cherry-pick c3 c5 c7<br>把某一个分支的提交抓取到当前分支的HEAD上<br>1.如果 a,b 两个提交修改一个文件，pick 后一个，需要手动修改冲突。<br>2.如果 a,b 两个提交修改不同文件，pick 后一个，只会合入后一个的代码。</p>
 <h2 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用"></a>相对引用</h2><p>^ 向上移动一个提交记录<br>^2 多个父节点时，选择第二个父节点<br>~<num> 向上移动多个提交记录</num></p>
 <h2 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h2><p>切换分支 分离HEAD<br>git checkout $branch<br>git checkout c1</p>
 <h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>备份更改，暂存到git中，回到干净的工作目录。<br>git stash 备份当前<br>git stash list<br>git stash pop<br>git stash clear<br>git stash apply 取出某一个stash</p>
 <h2 id="git-放弃本地修改-强制更新"><a href="#git-放弃本地修改-强制更新" class="headerlink" title="git 放弃本地修改 强制更新"></a>git 放弃本地修改 强制更新</h2><p>git fetch –all<br>git reset –hard origin/master</p>
+<h2 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h2><p>对分支打 tag<br>git tag -am “origin az-nsp with keystone &amp;&amp; rabbitmq” az-nsp-pvt-1.0<br>对提交打 tag<br>git tag -a nspv3.0.1.0 ee4c<br>git push origin az-nsp-pvt-1.0<br>基于 tag 创建分支<br>git checkout -b $branchname nspv3.0.1.0<br>git tag -d nspv3.0.1.0<br>git push –force origin:refs/tags/nspv3.0.1.0</p>
 
           
         
@@ -1487,7 +2182,7 @@
               
                 <a href="/hexo-blog/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1498,7 +2193,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/hexo-blog/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1509,7 +2204,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/hexo-blog/tags/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
